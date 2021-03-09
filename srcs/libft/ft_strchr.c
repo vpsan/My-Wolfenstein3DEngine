@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/09 16:02:13 by bhatches         ###   ########.fr       */
+/*   Created: 2020/11/01 18:42:38 by bhatches          #+#    #+#             */
+/*   Updated: 2020/11/11 23:44:25 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
-#include "get_next_line.h"
-#include "map_parser.h"
-#include "mlx.h"
 
-int main()
+char	*ft_strchr(const char *str, int value)
 {
-	void	*mlx = NULL;
-	void	*window = NULL;
+	int		len;
+	int		i;
 
-	mlx = mlx_init();
-	window = mlx_new_window(mlx, 640, 480, "main");
-	
-	map_parser();
-
-	mlx_loop(mlx);
-	return (0);
+	len = ft_strlen(str);
+	i = 0;
+	while (i < len)
+	{
+		if (*str == (char)value)
+		{
+			return ((char*)str);
+		}
+		str++;
+		i++;
+	}
+	if ((char)value == '\0')
+	{
+		return ((char*)str);
+	}
+	return (NULL);
 }

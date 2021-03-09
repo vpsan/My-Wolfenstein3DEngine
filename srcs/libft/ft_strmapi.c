@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/09 16:02:13 by bhatches         ###   ########.fr       */
+/*   Created: 2020/11/06 15:17:22 by bhatches          #+#    #+#             */
+/*   Updated: 2020/11/11 23:44:15 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
-#include "get_next_line.h"
-#include "map_parser.h"
-#include "mlx.h"
 
-int main()
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	void	*mlx = NULL;
-	void	*window = NULL;
+	int		len;
+	char	*new_s;
+	int		i;
 
-	mlx = mlx_init();
-	window = mlx_new_window(mlx, 640, 480, "main");
-	
-	map_parser();
-
-	mlx_loop(mlx);
-	return (0);
+	if (s == NULL)
+	{
+		return (NULL);
+	}
+	len = ft_strlen(s);
+	new_s = (char*)malloc((len + 1) * sizeof(char));
+	if (new_s == NULL)
+	{
+		return (NULL);
+	}
+	i = 0;
+	while (i < len)
+	{
+		new_s[i] = (*f)(i, s[i]);
+		i++;
+	}
+	new_s[i++] = '\0';
+	return (new_s);
 }

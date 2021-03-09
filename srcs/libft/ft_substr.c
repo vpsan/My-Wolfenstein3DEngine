@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/09 16:02:13 by bhatches         ###   ########.fr       */
+/*   Created: 2020/11/05 17:26:27 by bhatches          #+#    #+#             */
+/*   Updated: 2020/11/11 23:44:07 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
-#include "get_next_line.h"
-#include "map_parser.h"
-#include "mlx.h"
 
-int main()
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void	*mlx = NULL;
-	void	*window = NULL;
+	char	*substr;
+	char	*buf;
 
-	mlx = mlx_init();
-	window = mlx_new_window(mlx, 640, 480, "main");
-	
-	map_parser();
-
-	mlx_loop(mlx);
-	return (0);
+	if (s == NULL)
+		return (NULL);
+	if (start >= ft_strlen(s))
+	{
+		return (ft_strdup(""));
+	}
+	substr = (char *)malloc(len * sizeof(char) + 1);
+	if (substr == NULL)
+	{
+		return (NULL);
+	}
+	buf = substr;
+	while (len-- && s[start] != '\0')
+	{
+		*substr = s[start++];
+		substr++;
+	}
+	*substr = '\0';
+	return (buf);
 }

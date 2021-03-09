@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/09 16:02:13 by bhatches         ###   ########.fr       */
+/*   Created: 2020/11/02 19:01:29 by bhatches          #+#    #+#             */
+/*   Updated: 2020/11/11 19:45:37 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
-#include "get_next_line.h"
-#include "map_parser.h"
-#include "mlx.h"
 
-int main()
+int		ft_isdigit(int value)
 {
-	void	*mlx = NULL;
-	void	*window = NULL;
-
-	mlx = mlx_init();
-	window = mlx_new_window(mlx, 640, 480, "main");
-	
-	map_parser();
-
-	mlx_loop(mlx);
-	return (0);
+	if (value >= '0' && value <= '9')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }

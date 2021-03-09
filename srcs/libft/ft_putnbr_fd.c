@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/09 16:02:13 by bhatches         ###   ########.fr       */
+/*   Created: 2020/11/07 18:51:46 by bhatches          #+#    #+#             */
+/*   Updated: 2020/11/11 19:47:46 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
-#include "get_next_line.h"
-#include "map_parser.h"
-#include "mlx.h"
 
-int main()
+void	ft_putnbr_fd(int n, int fd)
 {
-	void	*mlx = NULL;
-	void	*window = NULL;
-
-	mlx = mlx_init();
-	window = mlx_new_window(mlx, 640, 480, "main");
-	
-	map_parser();
-
-	mlx_loop(mlx);
-	return (0);
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11 * sizeof(char));
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
+	}
+	else if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+	{
+		ft_putchar_fd(n + '0', fd);
+	}
 }

@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/09 16:02:13 by bhatches         ###   ########.fr       */
+/*   Created: 2020/11/01 17:42:58 by bhatches          #+#    #+#             */
+/*   Updated: 2020/11/11 23:44:18 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
-#include "get_next_line.h"
-#include "map_parser.h"
-#include "mlx.h"
 
-int main()
+size_t		ft_strlcpy(char *dst, const char *src, size_t dst_len)
 {
-	void	*mlx = NULL;
-	void	*window = NULL;
+	size_t src_len;
 
-	mlx = mlx_init();
-	window = mlx_new_window(mlx, 640, 480, "main");
-	
-	map_parser();
-
-	mlx_loop(mlx);
-	return (0);
+	if (dst == NULL || src == NULL)
+	{
+		return (0);
+	}
+	if (dst_len == 0)
+	{
+		return (ft_strlen(src));
+	}
+	src_len = ft_strlen(src);
+	if (src_len < dst_len - 1)
+	{
+		ft_memcpy(dst, src, src_len + 1);
+	}
+	else if (dst_len != 0)
+	{
+		ft_memcpy(dst, src, dst_len - 1);
+		dst[dst_len - 1] = '\0';
+	}
+	return (src_len);
 }

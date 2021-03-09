@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/09 16:02:13 by bhatches         ###   ########.fr       */
+/*   Created: 2020/11/01 13:24:08 by bhatches          #+#    #+#             */
+/*   Updated: 2020/11/11 19:47:30 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
-#include "get_next_line.h"
-#include "map_parser.h"
-#include "mlx.h"
 
-int main()
+void	*ft_memmove(void *dst, const void *src, size_t size)
 {
-	void	*mlx = NULL;
-	void	*window = NULL;
+	unsigned char	*ptr_dst;
+	unsigned char	*ptr_src;
 
-	mlx = mlx_init();
-	window = mlx_new_window(mlx, 640, 480, "main");
-	
-	map_parser();
-
-	mlx_loop(mlx);
-	return (0);
+	if (src == NULL && dst == NULL)
+	{
+		return (NULL);
+	}
+	ptr_dst = (unsigned char*)dst;
+	ptr_src = (unsigned char*)src;
+	if (ptr_dst < ptr_src)
+	{
+		while (size--)
+		{
+			*ptr_dst++ = *ptr_src++;
+		}
+	}
+	if (ptr_dst >= ptr_src)
+	{
+		while (size--)
+		{
+			ptr_dst[size] = ptr_src[size];
+		}
+	}
+	return (dst);
 }

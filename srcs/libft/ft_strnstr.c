@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/09 16:02:13 by bhatches         ###   ########.fr       */
+/*   Created: 2020/11/05 09:46:40 by bhatches          #+#    #+#             */
+/*   Updated: 2020/11/11 23:44:12 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
-#include "get_next_line.h"
-#include "map_parser.h"
-#include "mlx.h"
 
-int main()
+char	*ft_strnstr(const char *s1, const char *s2, size_t size)
 {
-	void	*mlx = NULL;
-	void	*window = NULL;
+	size_t s2_len;
 
-	mlx = mlx_init();
-	window = mlx_new_window(mlx, 640, 480, "main");
-	
-	map_parser();
-
-	mlx_loop(mlx);
-	return (0);
+	s2_len = ft_strlen(s2);
+	if (s2_len == 0)
+		return ((char*)s1);
+	while (*s1 != '\0' && size >= s2_len)
+	{
+		if (*s1 == *s2 && !ft_memcmp(s1, s2, s2_len))
+		{
+			return ((char*)s1);
+		}
+		s1++;
+		size--;
+	}
+	return (NULL);
 }

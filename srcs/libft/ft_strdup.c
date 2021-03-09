@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/09 16:02:13 by bhatches         ###   ########.fr       */
+/*   Created: 2020/11/05 12:10:14 by bhatches          #+#    #+#             */
+/*   Updated: 2020/11/11 23:44:24 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
-#include "get_next_line.h"
-#include "map_parser.h"
-#include "mlx.h"
 
-int main()
+char	*ft_strdup(const char *s1)
 {
-	void	*mlx = NULL;
-	void	*window = NULL;
+	size_t		s1_len;
+	char		*s_copy;
 
-	mlx = mlx_init();
-	window = mlx_new_window(mlx, 640, 480, "main");
-	
-	map_parser();
-
-	mlx_loop(mlx);
-	return (0);
+	s1_len = ft_strlen(s1);
+	s_copy = malloc(s1_len * sizeof(char) + 1);
+	if (s_copy == NULL)
+	{
+		return (NULL);
+	}
+	ft_memcpy(s_copy, s1, s1_len);
+	*(s_copy + s1_len) = '\0';
+	return (s_copy);
 }
