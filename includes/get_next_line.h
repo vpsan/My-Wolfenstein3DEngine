@@ -27,9 +27,9 @@ int			get_next_line(int fd, char **line);
 int			gnl_check_or_creat_buf(int fd, char **buf);
 int			gnl_read_line(int fd, char **buf, char **line);
 
-char		*ft_strchr(const char *str, int value);
-size_t		ft_strlen_sep(const char *str, int value);
-int			ft_free_str(char **s);
+//char		*ft_strchr(const char *str, int value);
+//size_t		ft_strlen_sep(const char *str, int value);
+//int			ft_free_str(char **s);
 char		*ft_leftjoin_sep(char *s1, char *s2, int value);
 char		*ft_rewrite_str(char *s, int value);
 
