@@ -13,37 +13,37 @@
 NAME = cub3D
 
 SRCS	=	main.c\
-			$(MAP_PARSER)\
+			$(FILE_PARSER)\
 			$(GET_NEXT_LINE)
+
+# *********************** HDRS ************************************************ #
+
+INCLD 	= 	includes/
+HDRS	=	$(INCLD)libft.h\
+			$(INCLD)get_next_line.h\
+			$(INCLD)file_parser.h\
+			$(INCLD)mlx.h
 
 # *********************** LIBFT *********************************************** #	
 
 LIBFT_DIR 	= srcs/libft/
 LIBFT 		= $(LIBFT_DIR)libft.a
 
-# *********************** MLX ************************************************* #	
-
-MLX_DIR 	= srcs/mlx/
-MLX			= $(MLX_DIR)libmlx.a
-
-# *********************** GET_NEXT_LINE *************************************** #				 
+# *********************** GET_NEXT_LINE *************************************** #
 
 GET_NEXT_LINE_DIR 	= 	srcs/get_next_line/
 GET_NEXT_LINE		= 	$(GET_NEXT_LINE_DIR)get_next_line.c\
 						$(GET_NEXT_LINE_DIR)get_next_line_utils.c
 
-# *********************** MAP_PARSER ****************************************** #		
+# *********************** MLX ************************************************* #	
 
-MAP_PARSER_DIR		= 	srcs/map_parser/
-MAP_PARSER			=	$(MAP_PARSER_DIR)map_parser.c\
-			
-# *********************** HDRS ************************************************ #	
+MLX_DIR 	= srcs/mlx/
+MLX			= $(MLX_DIR)libmlx.a
 
-INCLD 	= 	includes/			
-HDRS	=	$(INCLD)libft.h\
-			$(INCLD)get_next_line.h\
-			$(INCLD)map_parser.h\
-			$(INCLD)mlx.h
+# *********************** FILE_PARSER ****************************************** #
+
+FILE_PARSER_DIR		= 	srcs/file_parser/
+FILE_PARSER			=	$(FILE_PARSER_DIR)file_parser.c\
 
 # ***************************************************************************** #	
 

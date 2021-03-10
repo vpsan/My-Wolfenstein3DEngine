@@ -3,11 +3,6 @@
 #include "strct.h"
 #include <stdio.h>
 
-void 	ft_putendl(char *map_i)
-{
-	printf("%s\n", map_i);
-}
-
 char	**make_map(t_list **head, int size)
 {
 	char 	**map = ft_calloc(size + 1, sizeof(char *));
@@ -21,11 +16,11 @@ char	**make_map(t_list **head, int size)
 	}
 	i = -1;
 	while (map[++i])
-		ft_putendl(map[i]);
+		printf("%s\n", map[i]);
 	return (map);
 }
 
-int map_parser(int fd, t_game *cube)
+int file_parser(int fd, t_game *cube)
 {
 	char 	*line = NULL;
 	t_list	*head = NULL;
