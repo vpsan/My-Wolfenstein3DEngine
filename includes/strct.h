@@ -21,9 +21,9 @@ typedef struct	s_win //структура для окна
 	void		*win;
 	void		*img;
 	void		*addr;
-	int			line_l;
+	int			size_line;
 	int			bpp;
-	int			en;
+	int			endian;
 }				t_win;
 
 typedef struct	s_point // структура для точки
