@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/10 14:50:37 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/03/10 15:30:27 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		check_argcount_argv1_extension(int argc, char **argv)
 {
 	int argv1_len;
 	
-	if (1 < argc && argc > 3)
+	if (argc < 2 || argc > 3)
 		return (false);
 	argv1_len = ft_strlen(argv[1]);
 	while (argv1_len-- != 0)
