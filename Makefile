@@ -13,7 +13,7 @@
 NAME = cub3D
 
 SRCS	=	main.c\
-			$(FILE_PARSER)\
+			$(FILE_PARSE_FILE)\
 			$(GET_NEXT_LINE)
 
 # *********************** HDRS ************************************************ #
@@ -40,10 +40,10 @@ GET_NEXT_LINE		= 	$(GET_NEXT_LINE_DIR)get_next_line.c\
 MLX_DIR 	= srcs/mlx/
 MLX			= $(MLX_DIR)libmlx.a
 
-# *********************** FILE_PARSER ****************************************** #
+# *********************** FILE_PARSE_FILE ****************************************** #
 
-FILE_PARSER_DIR		= 	srcs/file_parser/
-FILE_PARSER			=	$(FILE_PARSER_DIR)file_parser.c\
+FILE_PARSE_FILE_DIR		= 	srcs/file_parse_file/
+FILE_PARSE_FILE			=	$(FILE_PARSE_FILE_DIR)file_parse_file.c\
 
 # ***************************************************************************** #	
 

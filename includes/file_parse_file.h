@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file_parser.h                                       :+:      :+:    :+:   */
+/*   file_parse_file.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -16,6 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int     file_parser(int fd, t_game* cube);
+int     file_parse_file(int fd, t_game* cube);
 
 #endif

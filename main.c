@@ -12,8 +12,7 @@
 
 #include "libft.h"
 #include "strct.h"
-#include "get_next_line.h"
-#include "file_parser.h"
+#include "file_parse_file.h"
 #include "mlx.h"
 
 #include <stdbool.h>
@@ -54,7 +53,7 @@ int		main(int argc, char **argv)
 	if ((fd = open(argv[1], O_RDONLY)) < 0)
 		write_error_exit();
 	//game_init(&cube);
-	file_parser(fd, &cube);
+	file_parse_file(fd, &cube);
 	close(fd);
 	return (0);
 }
