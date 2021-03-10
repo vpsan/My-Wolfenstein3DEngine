@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/03/09 15:53:30 by bhatches         ###   ########.fr        #
+#    Updated: 2021/03/10 14:49:43 by bhatches         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,11 +61,11 @@ all:		$(NAME)
 $(NAME):	$(OBJ)
 			make -C $(LIBFT_DIR)
 			make -C $(MLX_DIR)
-			#$(CC) $(CFLAGS) $(LIBFT) $(OBJ) -o $(NAME)
-			$(CC) $(CFLAGS) $(MLXFLAGS) $(MLX) $(LIBFT) $(OBJ) -o $(NAME)
+			$(CC) $(CDEBUG) $(MLXFLAGS) $(MLX) $(LIBFT) $(OBJ) -o $(NAME)
+			     #$(CFLAGS)
 .c.o:
-			@$(CC) $(CFLAGS) -I$(INCLD) -c $< -o $(<:.c=.o)
-			#$(CC) -I$(INCLD) -c $< -o $(<:.c=.o) gdrive edit
+			@$(CC) $(CDEBUG) -I$(INCLD) -c $< -o $(<:.c=.o)
+			      #$(CFLAGS)	
 
 clean:
 			make clean -C $(LIBFT_DIR)
@@ -78,9 +78,3 @@ fclean:		clean
 			@rm -rf $(NAME)
 
 re:			fclean all
-
-#debug:		$(SRCS)
-#			@$(CC) $(CDEBUG) -I$(INCLD) $(SRCS) test_printf_main_1.c -o a.out
-
-#norm:		$(SRCS)
-#			norminette $(FT_PARSER)* $(FT_PROCESSOR)* $(FT_UTILS)* $(INCLD)* ft_printf.c

@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 18:20:35 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/09 19:54:32 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/03/10 14:46:55 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ typedef struct	s_game // структура для всего вместе
 	t_plr		*plr;
 	char		**map;
 }				t_game;
+
+void	game_init(t_game *cube);
 
 #endif
