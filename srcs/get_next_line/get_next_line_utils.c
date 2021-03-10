@@ -11,23 +11,24 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "libft.h"
 
-char		*ft_strchr(const char *str, int value)
-{
-	while (*str != '\0')
-	{
-		if (*str == (char)value)
-		{
-			return ((char*)str);
-		}
-		str++;
-	}
-	if ((char)value == '\0')
-	{
-		return ((char*)str);
-	}
-	return (NULL);
-}
+//char		*ft_strchr(const char *str, int value)
+//{
+//	while (*str != '\0')
+//	{
+//		if (*str == (char)value)
+//		{
+//			return ((char*)str);
+//		}
+//		str++;
+//	}
+//	if ((char)value == '\0')
+//	{
+//		return ((char*)str);
+//	}
+//	return (NULL);
+//}
 
 /*
 **	DESCRIPTION
@@ -37,20 +38,20 @@ char		*ft_strchr(const char *str, int value)
 **	ft_strlen_sep() returns type size_t.
 */
 
-size_t		ft_strlen_sep(const char *str, int value)
-{
-	size_t	i;
-
-	i = 0;
-	if (str == NULL)
-		return (0);
-	while (*str != '\0' && *str != value)
-	{
-		i = i + 1;
-		str++;
-	}
-	return (i);
-}
+//size_t		ft_strlen_sep(const char *str, int value)
+//{
+//	size_t	i;
+//
+//	i = 0;
+//	if (str == NULL)
+//		return (0);
+//	while (*str != '\0' && *str != value)
+//	{
+//		i = i + 1;
+//		str++;
+//	}
+//	return (i);
+//}
 
 /*
 **	DESCRIPTION
@@ -59,15 +60,15 @@ size_t		ft_strlen_sep(const char *str, int value)
 **	ft_free_str() returns 0.
 */
 
-int			ft_free_str(char **s)
-{
-	if (*s != NULL)
-	{
-		free(*s);
-	}
-	*s = NULL;
-	return (0);
-}
+//int			ft_free_str(char **s)
+//{
+//	if (*s != NULL)
+//	{
+//		free(*s);
+//	}
+//	*s = NULL;
+//	return (0);
+//}
 
 /*
 **	DESCRIPTION

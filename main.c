@@ -51,7 +51,7 @@ int		main(int argc, char **argv)
 
 	if (check_argcount_argv1_extension(argc, argv) == false)
 		write_error_exit();
-	if ((fd = open(argv[1], O_RDONLY)) == -1)
+	if ((fd = open(argv[1], O_RDONLY)) < 0)
 		write_error_exit();
 	//game_init(&cube);
 	map_parser(fd, &cube);

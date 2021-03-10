@@ -36,7 +36,9 @@ SRC		= ft_memset.c\
 		  ft_itoa.c\
 		  ft_strmapi.c\
 		  ft_split.c \
-		  $(BON)
+		  $(BON) \
+		  $(MyNew)
+
 
 BON		= ft_lstnew.c\
 		  ft_lstadd_front.c\
@@ -47,6 +49,10 @@ BON		= ft_lstnew.c\
 		  ft_lstclear.c\
 		  ft_lstiter.c\
 	      ft_lstmap.c
+
+MyNew	= ft_strlen_sep.c \
+		  ft_free_str.c \
+		  ft_free_str_arr.c
 
 OBJ		= $(SRC:.c=.o)
 

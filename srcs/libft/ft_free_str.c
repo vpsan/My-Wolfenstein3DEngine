@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_free_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/01 18:42:38 by bhatches          #+#    #+#             */
-/*   Updated: 2020/11/11 23:44:25 by bhatches         ###   ########.fr       */
+/*   Created: 2021/03/10 17:56:34 by bhatches          #+#    #+#             */
+/*   Updated: 2021/03/10 17:56:38 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int value)
+/*
+**	DESCRIPTION
+**	ft_free_str() must free up malloc'ed memory of s and set s as NULL.
+**	RETURN VALUES
+**	ft_free_str() returns 0.
+*/
+
+int			ft_free_str(char **s)
 {
-	while (*str != '\0')
+	if (*s != NULL)
 	{
-		if (*str == (char)value)
-		{
-			return ((char*)str);
-		}
-		str++;
+		free(*s);
 	}
-	if ((char)value == '\0')
-	{
-		return ((char*)str);
-	}
-	return (NULL);
+	*s = NULL;
+	return (0);
 }

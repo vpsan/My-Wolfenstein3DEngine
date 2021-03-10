@@ -12,18 +12,18 @@
 
 #include "libft.h"
 
-static size_t	ft_strlen_sep(const char *str, char sep)
-{
-	size_t i;
-
-	i = 0;
-	while (*str != sep && *str != '\0')
-	{
-		i = i + 1;
-		str++;
-	}
-	return (i);
-}
+//static size_t	ft_strlen_sep(const char *str, char sep)
+//{
+//	size_t i;
+//
+//	i = 0;
+//	while (*str != sep && *str != '\0')
+//	{
+//		i = i + 1;
+//		str++;
+//	}
+//	return (i);
+//}
 
 static int		ft_count_words(char const *s, char c)
 {
@@ -49,21 +49,21 @@ static int		ft_count_words(char const *s, char c)
 	return (count);
 }
 
-static void		*ft_free_all_arr(char **arr)
-{
-	char	**begin;
-	int		i;
-
-	i = 0;
-	begin = arr;
-	while (arr[i] != NULL)
-	{
-		free(arr[i]);
-		i++;
-	}
-	free(begin);
-	return (NULL);
-}
+//static void		*ft_free_str_arr(char **arr)
+//{
+//	char	**begin;
+//	int		i;
+//
+//	i = 0;
+//	begin = arr;
+//	while (arr[i] != NULL)
+//	{
+//		free(arr[i]);
+//		i++;
+//	}
+//	free(begin);
+//	return (NULL);
+//}
 
 char			**ft_split(char const *s, char c)
 {
@@ -84,7 +84,7 @@ char			**ft_split(char const *s, char c)
 		while (*s == c && *s != '\0')
 			s++;
 		if (!(*arr = (char*)malloc(sizeof(char) * (ft_strlen_sep(s, c) + 1))))
-			return (ft_free_all_arr(begin));
+			return (ft_free_str_arr(&begin));
 		i = 0;
 		while (*s != c && *s != '\0')
 			(*arr)[i++] = *s++;
