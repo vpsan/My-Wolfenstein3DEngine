@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/10 15:30:27 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/03/13 02:55:57 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 #include "mlx.h"
 
 #include <stdbool.h>
-#include <fcntl.h>
-//#include <stdio.h>
+#include <stdio.h>
 
 int		check_argcount_argv1_extension(int argc, char **argv)
 {
@@ -46,14 +45,22 @@ void	write_error_exit(void)
 int		main(int argc, char **argv)
 {
 	t_game	cube;
-	int		fd;
+//	int		*check_memory_leaks;
+//	check_memory_leaks = (int*)malloc(1* sizeof(int*));
 
 	if (check_argcount_argv1_extension(argc, argv) == false)
 		write_error_exit();
-	if ((fd = open(argv[1], O_RDONLY)) < 0)
+	game_init(&cube);
+	if (file_main_parsing_function(argv[1], &cube) == ERROR)
 		write_error_exit();
-	//game_init(&cube);
-	file_parse_file(fd, &cube);
-	close(fd);
+
+	int i;
+	i = 0;
+	while (cube.map[i] != '\0')
+	{
+		printf("%s\n", cube.map[i]);
+		i++;
+	}
+
 	return (0);
 }
