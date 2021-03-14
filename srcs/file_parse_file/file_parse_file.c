@@ -6,23 +6,6 @@
 #include <stdbool.h>
 #include <fcntl.h>
 
-char	**make_map(t_list **head, int size)
-{
-	char	  **map = ft_calloc(size + 1, sizeof(char *));
-	int		  i = -1;
-	t_list	*tmp = *head;
-
-	while (tmp)
-	{
-		map[++i] = tmp->content;
-		tmp= tmp->next;
-	}
-	i = -1;
-	while (map[++i])
-		printf("%s\n", map[i]);
-	return (map);
-}
-
 int 	file_creat_map(t_game **cube)
 {
 	int		i;
@@ -49,8 +32,6 @@ int		file_creat_lstmap(char *line, t_game *****cube)
 //		return (true);	// everything ok, just skeep this line
 	new_line = ft_strdup(line); // why ???
 	ft_lstadd_back(&(****cube)->head_lstmap, ft_lstnew(new_line));
-	//ft_free_str(new_line);
-	//printf("!!!!!\n");
 	return (true);
 }
 

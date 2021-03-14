@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/13 02:55:57 by valery           ###   ########.fr       */
+/*   Updated: 2021/03/13 14:56:58 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,15 @@ int		main(int argc, char **argv)
 	game_init(&cube);
 	if (file_main_parsing_function(argv[1], &cube) == ERROR)
 		write_error_exit();
+	//screenshot_function
+	game_start(&cube);
 
-	int i;
-	i = 0;
-	while (cube.map[i] != '\0')
-	{
-		printf("%s\n", cube.map[i]);
-		i++;
-	}
-
+//	int i;
+//	i = 0;
+//	while (cube.map[i] != '\0')
+//	{
+//		printf("%s\n", cube.map[i]);
+//		i++;
+//	}
 	return (0);
 }

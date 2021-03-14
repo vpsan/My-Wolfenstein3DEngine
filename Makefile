@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/03/13 01:03:12 by valery           ###   ########.fr        #
+#    Updated: 2021/03/13 12:07:11 by valery           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,7 +96,8 @@ MLX			= $(MLX_DIR)libmlx.a
 # *********************** GAME ************************************************ #
 
 GAME_DIR 	= 	srcs/game/
-GAME		= 	$(GAME_DIR)game_init.c
+GAME		= 	$(GAME_DIR)game_init.c\
+				$(GAME_DIR)game_start.c
 
 # *********************** FILE_PARSE_FILE ****************************************** #
 
