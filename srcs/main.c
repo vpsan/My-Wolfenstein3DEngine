@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/17 23:41:24 by valery           ###   ########.fr       */
+/*   Updated: 2021/03/17 23:47:53 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,15 @@ int 	print_check_map(char **map)
 	int i;
 
 	i = 0;
-	while (map[i] != '\0')
+	while (map[i] != NULL)
 	{
 		printf("%s\n", map[i]);
 		i++;
 	}
+	return (0);
 }
 
-int		check_argcount_argv1_extension(int argc, char **argv, t_game *cube)
+int		check_argcount_argv1_extension(int argc, char **argv)
 {
 	int argv1_len;
 	
@@ -53,7 +54,7 @@ int		main(int argc, char **argv)
 	t_game	cube;
 
 	my_errors_init();
-	if (check_argcount_argv1_extension(argc, argv, &cube) == false)
+	if (check_argcount_argv1_extension(argc, argv) == false)
 	{
 		my_errors_call(1);
 		exit(1);
