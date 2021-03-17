@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/17 23:03:25 by valery           ###   ########.fr       */
+/*   Updated: 2021/03/17 23:41:24 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,12 @@ int		main(int argc, char **argv)
 		exit(1);
 	}
 	game_map_init(&cube);
-	if (file_main_parsing_function(argv[1], &cube) == 0)
+	if (file_main_parsing_function(argv[1], &cube) == ERROR)
 	{
 		my_errors_call(2);
 		exit(1);
 	}
-//	print_check_map(cube.map);
+	print_check_map(cube.map);
 //	screenshot_function
 //	game_init(&cube);
 //	game_start(&cube, argc);

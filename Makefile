@@ -13,9 +13,9 @@
 NAME = cub3D
 
 SRCS	=	$(MAIN) \
-			$(FILE_PARSE) \
-			$(GET_NEXT_LINE) \
 			$(LIBFT_SRCS) \
+			$(GET_NEXT_LINE) \
+			$(FILE_PARSE) \
 			$(GAME) \
 			$(MY_ERRORS)
 
