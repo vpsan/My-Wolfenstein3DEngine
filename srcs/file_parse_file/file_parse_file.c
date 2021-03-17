@@ -1,6 +1,6 @@
 #include "libft.h"
 #include "get_next_line.h"
-#include "strct.h"
+#include "game.h"
 #include <stdio.h>
 
 #include <stdbool.h>

@@ -6,19 +6,30 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/13 14:56:58 by valery           ###   ########.fr       */
+/*   Updated: 2021/03/17 20:31:34 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "strct.h"
+#include "game.h"
 #include "file_parse_file.h"
-#include "mlx.h"
 
 #include <stdbool.h>
 #include <stdio.h>
 
-int		check_argcount_argv1_extension(int argc, char **argv)
+int 	print_check_map(char **map)
+{
+	int i;
+
+	i = 0;
+	while (map[i] != '\0')
+	{
+		printf("%s\n", map[i]);
+		i++;
+	}
+}
+
+int		check_argcount_argv1_extension(int argc, char **argv, t_game *cube)
 {
 	int argv1_len;
 	
@@ -45,23 +56,16 @@ void	write_error_exit(void)
 int		main(int argc, char **argv)
 {
 	t_game	cube;
-//	int		*check_memory_leaks;
-//	check_memory_leaks = (int*)malloc(1* sizeof(int*));
 
-	if (check_argcount_argv1_extension(argc, argv) == false)
+	if (check_argcount_argv1_extension(argc, argv, &cube) == false)
 		write_error_exit();
-	game_init(&cube);
+	game_map_init(&cube);
 	if (file_main_parsing_function(argv[1], &cube) == ERROR)
 		write_error_exit();
-	//screenshot_function
-	game_start(&cube);
+	print_check_map(cube.map);
+//	screenshot_function
+//	game_init(&cube);
+//	game_start(&cube, argc);
 
-//	int i;
-//	i = 0;
-//	while (cube.map[i] != '\0')
-//	{
-//		printf("%s\n", cube.map[i]);
-//		i++;
-//	}
 	return (0);
 }

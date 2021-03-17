@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 18:20:35 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/13 14:50:54 by valery           ###   ########.fr       */
+/*   Updated: 2021/03/17 19:29:49 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,41 +20,45 @@
 # define SCALE 16
 # define ERROR -1
 
-typedef struct	s_wndw //структура для окна
+typedef struct	s_texture
 {
-	void		*mlx;
-	void		*win;
-	void		*img;
-	void		*addr;
+	void 		*img;
+	char 		*addr;
 	int			size_line;
-	int			bpp;
-	int			endian;
-}				t_wndw;
+	int 		bpp;
+	int 		endian;
+	int 		width;
+	int 		height;
+}				t_texture;
 
-typedef struct	s_point // структура для точки
+typedef struct	s_keys
 {
-	int			x;
-	int			y;
-}				t_point;
+	int 		w;
+	int 		a;
+	int 		s;
+	int 		d;
+	int 		left;
+	int 		right;
+}				t_keys;
 
-typedef struct	s_plr //структура для игрока и луча
-{
-	float		x;
-	float		y;
-	float		dir;
-	float		start;
-	float		end;
-}				t_plr;
 
 typedef struct	s_game // структура для всего вместе
 {
-	t_wndw		wndw;
-	t_plr		plr;
+	void		*mlx;
+	void		*win;
+	t_keys		keys;
+	t_texture	no_txtr;
+	t_texture	so_txtr;
+	t_texture 	we_txtr;
+	t_texture 	ea_txtr;
+//	t_texture	sprts;
+//	t_player	plr;
 	char		**map;
 	t_list		*head_lstmap;
 }				t_game;
 
-void	game_init(t_game *cube);
-int 	game_start(t_game *cube);
+int		game_map_init(t_game *cube);
+int		game_init(t_game *cube);
+int		game_start(t_game *cube, int argc);
 
 #endif
