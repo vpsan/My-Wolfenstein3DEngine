@@ -6,17 +6,18 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/03/17 20:37:08 by valery           ###   ########.fr        #
+#    Updated: 2021/03/17 23:07:15 by valery           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3D
 
 SRCS	=	$(MAIN) \
-			$(FILE_PARSE_FILE) \
+			$(FILE_PARSE) \
 			$(GET_NEXT_LINE) \
 			$(LIBFT_SRCS) \
 			$(GAME) \
+			$(MY_ERRORS)
 
 # *********************** MAIN ************************************************ #
 
@@ -98,16 +99,21 @@ GET_NEXT_LINE		= 	$(GET_NEXT_LINE_DIR)get_next_line.c\
 MLX_DIR 	= srcs/mlx/
 MLX			= $(MLX_DIR)libmlx.a
 
+# *********************** ERROR *********************************************** #
+
+MY_ERRORS_DIR 	= 	srcs/my_errors/
+MY_ERRORS		= 	$(MY_ERRORS_DIR)my_errors.c
+
 # *********************** GAME ************************************************ #
 
 GAME_DIR 	= 	srcs/game/
 GAME		= 	$(GAME_DIR)game_init.c\
 				$(GAME_DIR)game_start.c
 
-# *********************** FILE_PARSE_FILE ************************************* #
+# *********************** FILE_PARSE ****************************************** #
 
-FILE_PARSE_FILE_DIR		= 	srcs/file_parse_file/
-FILE_PARSE_FILE			=	$(FILE_PARSE_FILE_DIR)file_parse_file.c\
+FILE_PARSE_DIR		= 	srcs/file_parse/
+FILE_PARSE			=	$(FILE_PARSE_DIR)file_parse.c
 
 # ***************************************************************************** #
 

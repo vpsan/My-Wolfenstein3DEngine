@@ -108,4 +108,5 @@ int		file_main_parsing_function(char *argv_1, t_game *cube)
 	ft_lstclear(&(cube)->head_lstmap, free);
 	if (close(fd) < 0) // NOT CLOSED !!!
 		return (ERROR);
+	return (0);
 }

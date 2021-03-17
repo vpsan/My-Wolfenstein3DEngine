@@ -6,13 +6,14 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/17 20:31:34 by valery           ###   ########.fr       */
+/*   Updated: 2021/03/17 23:03:25 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "game.h"
-#include "file_parse_file.h"
+#include "file_parse.h"
+#include "my_errors.h"
 
 #include <stdbool.h>
 #include <stdio.h>
@@ -47,22 +48,23 @@ int		check_argcount_argv1_extension(int argc, char **argv, t_game *cube)
 	return (false);
 }
 
-void	write_error_exit(void)
-{
-	write(2, "ERROR!", 6*sizeof(char));
-	exit(0);
-}
-
 int		main(int argc, char **argv)
 {
 	t_game	cube;
 
+	my_errors_init();
 	if (check_argcount_argv1_extension(argc, argv, &cube) == false)
-		write_error_exit();
+	{
+		my_errors_call(1);
+		exit(1);
+	}
 	game_map_init(&cube);
-	if (file_main_parsing_function(argv[1], &cube) == ERROR)
-		write_error_exit();
-	print_check_map(cube.map);
+	if (file_main_parsing_function(argv[1], &cube) == 0)
+	{
+		my_errors_call(2);
+		exit(1);
+	}
+//	print_check_map(cube.map);
 //	screenshot_function
 //	game_init(&cube);
 //	game_start(&cube, argc);

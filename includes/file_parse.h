@@ -1,5 +1,5 @@
-#ifndef FILE_PARSER_H
-# define FILE_PARSER_H
+#ifndef FILE_PARSE_H
+# define FILE_PARSE_H
 
 # include <stdlib.h>
 # include <unistd.h>

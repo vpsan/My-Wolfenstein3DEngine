@@ -8,15 +8,15 @@ int		game_map_init(t_game *cube)
 	return (0);
 }
 
-int 	game_window_init(t_game *cube)
-{
-	if ((cube->mlx = mlx_init())== NULL)
-	{
-		ft_free_str_arr(cube->map);
-		//my_exit(1);
-	}
-	return (0);
-}
+//int 	game_window_init(t_game *cube)
+//{
+//	if ((cube->mlx = mlx_init())== NULL)
+//	{
+//		ft_free_str_arr(cube->map);
+//		//my_exit(1);
+//	}
+//	return (0);
+//}
 
 int		game_init(t_game *cube)
 {
