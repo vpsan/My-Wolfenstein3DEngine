@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 18:20:35 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/17 19:29:49 by valery           ###   ########.fr       */
+/*   Updated: 2021/03/17 20:30:55 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct	s_keys
 }				t_keys;
 
 
-typedef struct	s_game // структура для всего вместе
+typedef struct	s_game
 {
 	void		*mlx;
 	void		*win;

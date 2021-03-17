@@ -6,17 +6,22 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/03/13 12:07:11 by valery           ###   ########.fr        #
+#    Updated: 2021/03/17 20:37:08 by valery           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3D
 
-SRCS	=	main.c \
+SRCS	=	$(MAIN) \
 			$(FILE_PARSE_FILE) \
 			$(GET_NEXT_LINE) \
 			$(LIBFT_SRCS) \
 			$(GAME) \
+
+# *********************** MAIN ************************************************ #
+
+MAIN_DIR 	= 	srcs/
+MAIN		= 	$(MAIN_DIR)main.c
 
 # *********************** HDRS ************************************************ #
 
@@ -99,12 +104,12 @@ GAME_DIR 	= 	srcs/game/
 GAME		= 	$(GAME_DIR)game_init.c\
 				$(GAME_DIR)game_start.c
 
-# *********************** FILE_PARSE_FILE ****************************************** #
+# *********************** FILE_PARSE_FILE ************************************* #
 
 FILE_PARSE_FILE_DIR		= 	srcs/file_parse_file/
 FILE_PARSE_FILE			=	$(FILE_PARSE_FILE_DIR)file_parse_file.c\
 
-# ***************************************************************************** #	
+# ***************************************************************************** #
 
 OBJ		=	$(SRCS:.c=.o)
 
