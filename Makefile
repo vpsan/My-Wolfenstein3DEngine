@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/03/17 23:07:15 by valery           ###   ########.fr        #
+#    Updated: 2021/03/17 23:43:23 by valery           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,7 +99,7 @@ GET_NEXT_LINE		= 	$(GET_NEXT_LINE_DIR)get_next_line.c\
 MLX_DIR 	= srcs/mlx/
 MLX			= $(MLX_DIR)libmlx.a
 
-# *********************** ERROR *********************************************** #
+# *********************** MY_ERRORS ******************************************* #
 
 MY_ERRORS_DIR 	= 	srcs/my_errors/
 MY_ERRORS		= 	$(MY_ERRORS_DIR)my_errors.c

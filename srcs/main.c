@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/17 23:47:53 by valery           ###   ########.fr       */
+/*   Updated: 2021/03/18 03:28:50 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,29 @@ int 	print_check_map(char **map)
 		i++;
 	}
 	return (0);
+}
+
+void 	my_preparsing_init(t_game *cube)
+{
+	cube->map_prmtrs.win_width = 1000;
+	cube->map_prmtrs.win_height = 800;
+
+	cube->map_prmtrs.no_path = "./textures/marbface.xpm";
+	cube->map_prmtrs.so_path = "./textures/mountains.xpm";
+	cube->map_prmtrs.we_path = "./textures/metal.xpm";
+	cube->map_prmtrs.ea_path = "./textures/brick.xpm";
+	cube->map_prmtrs.sprts_path = "./textures/skeleton.xpm";
+
+	cube->no_txtr.width = 10;
+	cube->so_txtr.width = 10;
+	cube->we_txtr.width = 10;
+	cube->ea_txtr.width = 10;
+	cube->sprts_txtr.width = 10;
+	cube->no_txtr.height = 10;
+	cube->so_txtr.height = 10;
+	cube->we_txtr.height = 10;
+	cube->ea_txtr.height = 10;
+	cube->sprts_txtr.height = 10;
 }
 
 int		check_argcount_argv1_extension(int argc, char **argv)
@@ -65,10 +88,15 @@ int		main(int argc, char **argv)
 		my_errors_call(2);
 		exit(1);
 	}
-	print_check_map(cube.map);
+//	print_check_map(cube.map);
 //	screenshot_function
-//	game_init(&cube);
+	my_preparsing_init(&cube);
+	game_init(&cube);
 //	game_start(&cube, argc);
-
+	printf("------------------------  Check ------------------------\n");
+	printf("%d\n", cube.keys.w);
+//	printf("%p\n", cube.no_txtr.img_ptr);
+	if (cube.no_txtr.img_ptr == NULL)
+		printf("NULL!\n");
 	return (0);
 }
