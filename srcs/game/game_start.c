@@ -1,5 +1,4 @@
 #include "game.h"
-#include "mlx.h"
 
 int 	hook_close_window(t_game *cube)
 {
@@ -43,12 +42,6 @@ int		hook_press_off_keys(int keycode, t_game *cube)
 		cube->keys.left = 0;
 	if (keycode == KEY_RIGHT)
 		cube->keys.right = 0;
-	return (0);
-}
-
-int 	hook_next_frame(t_game *cube)
-{
-
 	return (0);
 }
 
