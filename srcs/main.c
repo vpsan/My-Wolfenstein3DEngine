@@ -11,53 +11,13 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "game.h"
-#include "file_parse.h"
 #include "my_errors.h"
+#include "file_parse.h"
+#include "game.h"
+#include "debug_fun.h"
 
 #include <stdbool.h>
 #include <stdio.h>
-
-int 	print_check_map(char **map)
-{
-	int i;
-
-	i = 0;
-	while (map[i] != NULL)
-	{
-		printf("%s\n", map[i]);
-		i++;
-	}
-	return (0);
-}
-
-void 	my_preparsing_init(t_game *cube)
-{
-	cube->map_prmtrs.win_width = 640;
-	cube->map_prmtrs.win_height = 480;
-
-	cube->map_prmtrs.no_path = "textures/marbface.xpm";
-	cube->map_prmtrs.so_path = "textures/mountains.xpm";
-	cube->map_prmtrs.we_path = "textures/metal.xpm";
-	cube->map_prmtrs.ea_path = "textures/brick.xpm";
-	cube->map_prmtrs.sprts_path = "textures/skeleton.xpm";
-
-	cube->no_txtr.width = 64;
-	cube->no_txtr.height = 64;
-
-	cube->so_txtr.width = 64;
-	cube->so_txtr.height = 64;
-
-	cube->we_txtr.width = 64;
-	cube->we_txtr.height = 64;
-
-	cube->ea_txtr.width = 64;
-	cube->ea_txtr.height = 64;
-
-	cube->sprts_txtr.width = 64;
-	cube->sprts_txtr.height = 64;
-
-}
 
 int		check_argcount_argv1_extension(int argc, char **argv)
 {
@@ -93,9 +53,9 @@ int		main(int argc, char **argv)
 		my_errors_call(2);
 		exit(1);
 	}
-//	print_check_map(cube.map);
+//	debug_print_check_map(cube.map);
 //	screenshot_function
-	my_preparsing_init(&cube);
+	game_preparsing_init(&cube);
 	game_init(&cube);
 	game_start(&cube, argc);
 	printf("------------------------  Check ------------------------\n");

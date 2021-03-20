@@ -7,6 +7,6 @@
 void	my_errors_init(void);
 void	my_errors_call(int number);
 
-char*	error_arr[20];
+char	*g_error_arr[20];
 
 #endif

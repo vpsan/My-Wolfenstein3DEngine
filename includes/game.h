@@ -78,8 +78,13 @@ typedef struct	s_game
 	t_list			*head_lstmap;
 }					t_game;
 
-int		game_map_init(t_game *cube);
 int		game_init(t_game *cube);
+int		game_map_init(t_game *cube);
+int 	game_preparsing_init(t_game *cube);
+int 	game_window_init(t_game *cube);
+int 	game_keys_init(t_game *cube);
+int 	game_textures_img_init(t_game *cube);
+int 	game_textures_adr_init(t_game *cube);
 int		game_start(t_game *cube, int argc);
 
 #endif

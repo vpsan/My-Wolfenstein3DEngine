@@ -15,9 +15,10 @@ NAME = cub3D
 SRCS	=	$(MAIN) \
 			$(LIBFT_SRCS) \
 			$(GET_NEXT_LINE) \
+			$(MY_ERRORS) \
 			$(FILE_PARSE) \
 			$(GAME) \
-			$(MY_ERRORS)
+			$(DEBUG_FUN)
 
 # *********************** MAIN ************************************************ #
 
@@ -104,16 +105,21 @@ MLX			= $(MLX_DIR)libmlx.a
 MY_ERRORS_DIR 	= 	srcs/my_errors/
 MY_ERRORS		= 	$(MY_ERRORS_DIR)my_errors.c
 
+# *********************** FILE_PARSE ****************************************** #
+
+FILE_PARSE_DIR		= 	srcs/file_parse/
+FILE_PARSE			=	$(FILE_PARSE_DIR)file_parse.c
+
 # *********************** GAME ************************************************ #
 
 GAME_DIR 	= 	srcs/game/
 GAME		= 	$(GAME_DIR)game_init.c\
 				$(GAME_DIR)game_start.c
 
-# *********************** FILE_PARSE ****************************************** #
+# *********************** DEBUG_FUN ******************************************* #
 
-FILE_PARSE_DIR		= 	srcs/file_parse/
-FILE_PARSE			=	$(FILE_PARSE_DIR)file_parse.c
+DEBUG_FUN_DIR 	= 	srcs/debug_fun/
+DEBUG_FUN		= 	$(DEBUG_FUN_DIR)debug_fun.c
 
 # ***************************************************************************** #
 
