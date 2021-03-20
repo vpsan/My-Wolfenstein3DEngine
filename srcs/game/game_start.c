@@ -13,17 +13,17 @@ int		hook_press_on_keys(int keycode, t_game *cube)
 {
 	if (keycode == KEY_ESC)
 		hook_close_window(cube);
-	if (keycode == KEY_W)
+	else if (keycode == KEY_W)
 		cube->keys.w = 1;
-	if (keycode == KEY_S)
+	else if (keycode == KEY_S)
 		cube->keys.s = 1;
-	if (keycode == KEY_A)
+	else if (keycode == KEY_A)
 		cube->keys.a = 1;
-	if (keycode == KEY_D)
+	else if (keycode == KEY_D)
 		cube->keys.d = 1;
-	if (keycode == KEY_LEFT)
+	else if (keycode == KEY_LEFT)
 		cube->keys.left = 1;
-	if (keycode == KEY_RIGHT)
+	else if (keycode == KEY_RIGHT)
 		cube->keys.right = 1;
 	return (0);
 }
@@ -32,25 +32,25 @@ int		hook_press_off_keys(int keycode, t_game *cube)
 {
 	if (keycode == KEY_W)
 		cube->keys.w = 0;
-	if (keycode == KEY_S)
+	else if (keycode == KEY_S)
 		cube->keys.s = 0;
-	if (keycode == KEY_A)
+	else if (keycode == KEY_A)
 		cube->keys.a = 0;
-	if (keycode == KEY_D)
+	else if (keycode == KEY_D)
 		cube->keys.d = 0;
-	if (keycode == KEY_LEFT)
+	else if (keycode == KEY_LEFT)
 		cube->keys.left = 0;
-	if (keycode == KEY_RIGHT)
+	else if (keycode == KEY_RIGHT)
 		cube->keys.right = 0;
 	return (0);
 }
 
 int 	game_start(t_game *cube, int argc)
 {
-	if (argc == 3)
-	{
-		return 0; // screenshot_function
-	}
+//	if (argc == 3)
+//	{
+//		return 0; // screenshot_function
+//	}
 	mlx_do_key_autorepeatoff(cube->mlx_ptr);
 	mlx_hook(cube->win_ptr, 2, 0, hook_press_on_keys, cube);
 	mlx_hook(cube->win_ptr, 3, 0, hook_press_off_keys, cube);

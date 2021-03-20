@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "mlx.h"
 # include "libft.h"
 
 # define SCALE 16
@@ -30,25 +31,25 @@
 
 # define ERROR -1
 
-typedef struct	s_texture
+typedef struct		s_texture
 {
-	void 			*img_ptr;
-	char 			*addr_ptr;
+	void			*img_ptr;
+	char			*addr_ptr;
 	int				size_line;
-	int 			bits_per_pixel;
-	int 			endian;
-	int 			width;
-	int 			height;
+	int				bits_per_pixel;
+	int				endian;
+	int				width;
+	int				height;
 }					t_texture;
 
-typedef struct	s_keys
+typedef struct		s_keys
 {
-	int 			w;
-	int 			a;
-	int 			s;
-	int 			d;
-	int 			left;
-	int 			right;
+	int				w;
+	int				a;
+	int				s;
+	int				d;
+	int				left;
+	int				right;
 }					t_keys;
 
 typedef struct		s_map_prmtrs
@@ -62,7 +63,7 @@ typedef struct		s_map_prmtrs
 	char 			*sprts_path;
 }					t_map_prmtrs;
 
-typedef struct	s_game
+typedef struct		s_game
 {
 	void			*mlx_ptr;
 	void			*win_ptr;
@@ -70,21 +71,25 @@ typedef struct	s_game
 	t_keys			keys;
 	t_texture		no_txtr;
 	t_texture		so_txtr;
-	t_texture 		we_txtr;
-	t_texture 		ea_txtr;
+	t_texture		we_txtr;
+	t_texture		ea_txtr;
 	t_texture		sprts_txtr;
 	t_map_prmtrs	map_prmtrs;
 	char			**map;
 	t_list			*head_lstmap;
 }					t_game;
 
-int		game_init(t_game *cube);
-int		game_map_init(t_game *cube);
-int 	game_preparsing_init(t_game *cube);
-int 	game_window_init(t_game *cube);
-int 	game_keys_init(t_game *cube);
-int 	game_textures_img_init(t_game *cube);
-int 	game_textures_adr_init(t_game *cube);
-int		game_start(t_game *cube, int argc);
+int					game_init(t_game *cube);
+int					game_map_init(t_game *cube);
+int					game_preparsing_init(t_game *cube);
+int					game_window_init(t_game *cube);
+int					game_keys_init(t_game *cube);
+int					game_textures_img_init(t_game *cube);
+int					game_textures_adr_init(t_game *cube);
+int					game_start(t_game *cube, int argc);
+int					hook_press_on_keys(int keycode, t_game *cube);
+int					hook_press_off_keys(int keycode, t_game *cube);
+int					hook_close_window(t_game *cube);
+int					hook_next_frame(t_game *cube);
 
 #endif

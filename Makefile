@@ -114,7 +114,8 @@ FILE_PARSE			=	$(FILE_PARSE_DIR)file_parse.c
 
 GAME_DIR 	= 	srcs/game/
 GAME		= 	$(GAME_DIR)game_init.c\
-				$(GAME_DIR)game_start.c
+				$(GAME_DIR)game_start.c\
+				$(GAME_DIR)hook_next_frame.c
 
 # *********************** DEBUG_FUN ******************************************* #
 

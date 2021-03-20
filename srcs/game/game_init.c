@@ -92,6 +92,7 @@ int 	game_textures_img_init(t_game *cube)
 //												  &cube->map_prmtrs.sprts_path,
 //												  &cube->sprts_txtr.width,
 //												  &cube->sprts_txtr.height);
+//	check ptrs == NULL
 	return (0);
 }
 
@@ -117,6 +118,7 @@ int 	game_textures_adr_init(t_game *cube)
 //											   &cube->sprts_txtr.bits_per_pixel,
 //											   &cube->sprts_txtr.size_line,
 //											   &cube->sprts_txtr.endian);
+//	check ptrs == NULL
 	return (0);
 }
 

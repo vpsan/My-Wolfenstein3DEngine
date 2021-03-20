@@ -57,7 +57,6 @@ int		file_fill_game(char *line, char **arr_split_line, t_game ****cube)
 		printf("C\n");  // fun_C
 	else
 		file_creat_lstmap(line, &cube);
-		//printf("map\n");
 	return (0);
 }
 
