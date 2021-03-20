@@ -18,6 +18,16 @@
 # include "libft.h"
 
 # define SCALE 16
+# define KEY_ESC 53
+# define KEY_W 13
+# define KEY_S 1
+# define KEY_A 0
+# define KEY_D 2
+# define KEY_LEFT 123
+# define KEY_RIGHT 124
+# define SPEED_MOVE 0.1 // change speed
+# define SPEED_TURN 0.05 // change speed
+
 # define ERROR -1
 
 typedef struct	s_texture

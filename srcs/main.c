@@ -33,8 +33,8 @@ int 	print_check_map(char **map)
 
 void 	my_preparsing_init(t_game *cube)
 {
-	cube->map_prmtrs.win_width = 1000;
-	cube->map_prmtrs.win_height = 800;
+	cube->map_prmtrs.win_width = 640;
+	cube->map_prmtrs.win_height = 480;
 
 	cube->map_prmtrs.no_path = "textures/marbface.xpm";
 	cube->map_prmtrs.so_path = "textures/mountains.xpm";
@@ -56,7 +56,6 @@ void 	my_preparsing_init(t_game *cube)
 
 	cube->sprts_txtr.width = 64;
 	cube->sprts_txtr.height = 64;
-
 
 }
 
@@ -98,7 +97,7 @@ int		main(int argc, char **argv)
 //	screenshot_function
 	my_preparsing_init(&cube);
 	game_init(&cube);
-//	game_start(&cube, argc);
+	game_start(&cube, argc);
 	printf("------------------------  Check ------------------------\n");
 	return (0);
 }
