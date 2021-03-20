@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 18:20:35 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/18 02:36:40 by valery           ###   ########.fr       */
+/*   Updated: 2021/03/19 17:01:30 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct	s_texture
 	void 			*img_ptr;
 	char 			*addr_ptr;
 	int				size_line;
-	int 			bpp;
+	int 			bits_per_pixel;
 	int 			endian;
 	int 			width;
 	int 			height;
