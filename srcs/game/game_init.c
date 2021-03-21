@@ -122,10 +122,71 @@ int 	game_textures_adr_init(t_game *cube)
 	return (0);
 }
 
+int		set_player_dir(t_game *cube, char plr_dir)
+{
+	if (plr_dir == 'N')
+	{
+		cube->plr.dir_x = 0;
+		cube->plr.dir_y = -1;
+		cube->plr.plane_x = -0.66;
+		cube->plr.plane_y = 0;
+	}
+	if (plr_dir == 'S')
+	{
+		cube->plr.dir_x = 0;
+		cube->plr.dir_y = 1;
+		cube->plr.plane_x = 0.66;
+		cube->plr.plane_y = 0;
+	}
+	if (plr_dir == 'E')
+	{
+		cube->plr.dir_x = 1;
+		cube->plr.dir_y = 0;
+		cube->plr.plane_x = 0;
+		cube->plr.plane_y = -0.66;
+	}
+	if (plr_dir == 'W')
+	{
+		cube->plr.dir_x = -1;
+		cube->plr.dir_y = 0;
+		cube->plr.plane_x = 0;
+		cube->plr.plane_y = 0.66;
+	}
+	return (0);
+}
+
+int 	game_player_init(t_game *cube)
+{
+	char 	**mp_tmp;
+	int 	i;
+	int 	j;
+
+	mp_tmp = &cube->map;
+	i = 0;
+	while (mp_tmp[i] != NULL)
+	{
+		j = 0;
+		while (mp_tmp[i][j] != '\0')
+		{
+			if (mp_tmp[i][j] == 'N' || mp_tmp[i][j] == 'S' ||
+				mp_tmp[i][j] == 'E' || mp_tmp[i][j] == 'W')
+			{
+				cube->plr.pos_x = i;
+				cube->plr.pos_y = j;
+				set_player_dir(cube, mp_tmp[i][j]);
+				return (0);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
 int		game_init(t_game *cube)
 {
 	game_window_init(cube);
-//	game_player_init();
+	game_player_init(cube);
 	game_keys_init(cube);
 	game_textures_img_init(cube);
 	game_textures_adr_init(cube);

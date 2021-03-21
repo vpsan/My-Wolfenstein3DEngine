@@ -78,6 +78,8 @@ typedef struct 		s_player
 	int 			pos_y;
 	int 			dir_x;
 	int 			dir_y;
+	int 			plane_x;
+	int 			plane_y;
 }					t_player;
 
 typedef struct		s_game
