@@ -72,12 +72,20 @@ typedef struct		s_map_prmtrs
 	char 			*sprts_path;
 }					t_map_prmtrs;
 
+typedef struct 		s_player
+{
+	int 			pos_x;
+	int 			pos_y;
+	int 			dir_x;
+	int 			dir_y;
+}					t_player;
+
 typedef struct		s_game
 {
 	void			*mlx_ptr;
 	void			*win_ptr;
 	t_img_frame		nxt_frame;
-	//	t_player		plr;
+	t_player		plr;
 	t_keys			keys;
 	t_texture		no_txtr;
 	t_texture		so_txtr;
