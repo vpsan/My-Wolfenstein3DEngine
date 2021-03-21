@@ -48,14 +48,15 @@ int		main(int argc, char **argv)
 		exit(1);
 	}
 	game_map_init(&cube);
-	if (file_main_parsing_function(argv[1], &cube) == ERROR)
-	{
-		my_errors_call(2);
-		exit(1);
-	}
+//	if (file_main_parsing_function(argv[1], &cube) == ERROR)
+//	{
+//		my_errors_call(2);
+//		exit(1);
+//	}
+	debug_fill_map_instead_parsing(&cube);
 //	screenshot_function
 	game_preparsing_init(&cube);
-	debug_print_check_map(cube.map);
+	debug_print_check_map(cube);
 	game_init(&cube);
 	game_start(&cube, argc);
 	printf("------------------------  Check ------------------------\n");

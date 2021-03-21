@@ -1,9 +1,10 @@
 #include "game.h"
+#include <stdio.h>
 
 int 	hook_close_window(t_game *cube)
 {
 	mlx_destroy_window(cube->mlx_ptr, cube->win_ptr);
-	ft_free_str_arr(&cube->map);
+//	ft_free_str_arr(&cube->map);
 	//sprites_free();
 	exit(0);
 	return (0);
@@ -51,6 +52,9 @@ int 	game_start(t_game *cube, int argc)
 //	{
 //		return 0; // screenshot_function
 //	}
+	printf("%d\n", cube->plr.pos_x);
+	printf("%d\n", cube->plr.dir_y);
+	printf("%d\n", cube->plr.plane_x);
 	mlx_do_key_autorepeatoff(cube->mlx_ptr);
 	mlx_hook(cube->win_ptr, 2, 0, hook_press_on_keys, cube);
 	mlx_hook(cube->win_ptr, 3, 0, hook_press_off_keys, cube);

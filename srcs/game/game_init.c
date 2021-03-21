@@ -157,23 +157,21 @@ int		set_player_dir(t_game *cube, char plr_dir)
 
 int 	game_player_init(t_game *cube)
 {
-	char 	**mp_tmp;
 	int 	i;
 	int 	j;
 
-	mp_tmp = &cube->map;
 	i = 0;
-	while (mp_tmp[i] != NULL)
+	while (cube->map[i] != NULL)
 	{
 		j = 0;
-		while (mp_tmp[i][j] != '\0')
+		while (cube->map[i][j] != '\0')
 		{
-			if (mp_tmp[i][j] == 'N' || mp_tmp[i][j] == 'S' ||
-				mp_tmp[i][j] == 'E' || mp_tmp[i][j] == 'W')
+			if (cube->map[i][j] == 'N' || cube->map[i][j] == 'S' ||
+				cube->map[i][j] == 'E' || cube->map[i][j] == 'W')
 			{
 				cube->plr.pos_x = i;
 				cube->plr.pos_y = j;
-				set_player_dir(cube, mp_tmp[i][j]);
+				set_player_dir(cube, cube->map[i][j]);
 				return (0);
 			}
 			j++;

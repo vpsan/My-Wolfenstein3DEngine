@@ -74,12 +74,12 @@ typedef struct		s_map_prmtrs
 
 typedef struct 		s_player
 {
-	int 			pos_x;
-	int 			pos_y;
-	int 			dir_x;
-	int 			dir_y;
-	int 			plane_x;
-	int 			plane_y;
+	double 			pos_x;
+	double 			pos_y;
+	double 			dir_x;
+	double 			dir_y;
+	double 			plane_x;
+	double 			plane_y;
 }					t_player;
 
 typedef struct		s_game
