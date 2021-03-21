@@ -31,16 +31,14 @@
 
 # define ERROR -1
 
-typedef struct		s_texture
+typedef struct		s_img_frame
 {
 	void			*img_ptr;
 	char			*addr_ptr;
 	int				size_line;
 	int				bits_per_pixel;
 	int				endian;
-	int				width;
-	int				height;
-}					t_texture;
+}					t_img_frame;
 
 typedef struct		s_keys
 {
@@ -51,6 +49,17 @@ typedef struct		s_keys
 	int				left;
 	int				right;
 }					t_keys;
+
+typedef struct		s_texture
+{
+	void			*img_ptr;
+	char			*addr_ptr;
+	int				size_line;
+	int				bits_per_pixel;
+	int				endian;
+	int				width;
+	int				height;
+}					t_texture;
 
 typedef struct		s_map_prmtrs
 {
@@ -67,6 +76,7 @@ typedef struct		s_game
 {
 	void			*mlx_ptr;
 	void			*win_ptr;
+	t_img_frame		nxt_frame;
 	//	t_player		plr;
 	t_keys			keys;
 	t_texture		no_txtr;
@@ -91,5 +101,7 @@ int					hook_press_on_keys(int keycode, t_game *cube);
 int					hook_press_off_keys(int keycode, t_game *cube);
 int					hook_close_window(t_game *cube);
 int					hook_next_frame(t_game *cube);
+void				rcstng_color_pixel(t_img_frame *nxt_frame, int x, int y,
+						   int color);
 
 #endif
