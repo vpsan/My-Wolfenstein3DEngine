@@ -52,9 +52,6 @@ int 	game_start(t_game *cube, int argc)
 //	{
 //		return 0; // screenshot_function
 //	}
-	printf("%d\n", cube->plr.pos_x);
-	printf("%d\n", cube->plr.dir_y);
-	printf("%d\n", cube->plr.plane_x);
 	mlx_do_key_autorepeatoff(cube->mlx_ptr);
 	mlx_hook(cube->win_ptr, 2, 0, hook_press_on_keys, cube);
 	mlx_hook(cube->win_ptr, 3, 0, hook_press_off_keys, cube);

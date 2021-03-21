@@ -57,8 +57,9 @@ int		main(int argc, char **argv)
 //	screenshot_function
 	game_preparsing_init(&cube);
 	debug_print_check_map(cube);
+	printf("------------------------  Check.1 ------------------------\n");
 	game_init(&cube);
 	game_start(&cube, argc);
-	printf("------------------------  Check ------------------------\n");
+	printf("------------------------  Check.2 ------------------------\n");
 	return (0);
 }
