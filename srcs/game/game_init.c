@@ -14,7 +14,7 @@ int 	game_preparsing_init(t_game *cube)
 {
 	cube->map_prmtrs.win_width = 640;
 	cube->map_prmtrs.win_height = 480;
-
+	//////////////////////////////////////////////////////////
 	cube->map_prmtrs.no_path = "textures/marbface.xpm";
 	cube->map_prmtrs.so_path = "textures/mountains.xpm";
 	cube->map_prmtrs.we_path = "textures/metal.xpm";
@@ -35,6 +35,9 @@ int 	game_preparsing_init(t_game *cube)
 
 	cube->sprts_txtr.width = 64;
 	cube->sprts_txtr.height = 64;
+	///////////////////////////////////////////////////////
+	cube->map_prmtrs.clr_flr = 70;
+	cube->map_prmtrs.clr_clng = 255;
 	return (0);
 }
 
@@ -56,6 +59,18 @@ int 	game_window_init(t_game *cube)
 		my_errors_call(3);
 		exit(1);
 	}
+	return (0);
+}
+
+int 	game_frame_init(t_game *cube)
+{
+	cube->nxt_frame.img_ptr = mlx_new_image(cube->mlx_ptr,
+										 cube->map_prmtrs.win_width,
+										 cube->map_prmtrs.win_height);
+	cube->nxt_frame.addr_ptr = mlx_get_data_addr(cube->nxt_frame.img_ptr,
+										&cube->nxt_frame.bits_per_pixel,
+										&cube->nxt_frame.size_line,
+										&cube->nxt_frame.endian);
 	return (0);
 }
 
@@ -181,13 +196,20 @@ int 	game_player_init(t_game *cube)
 	return (0);
 }
 
+int 	game_raycasting_init(t_game *cube)
+{
+
+	return (0);
+}
+
 int		game_init(t_game *cube)
 {
 	game_window_init(cube);
+	game_frame_init(cube);
 	game_player_init(cube);
 	game_keys_init(cube);
 	game_textures_img_init(cube);
 	game_textures_adr_init(cube);
-//	game_raycasting_init();
+	game_raycasting_init(cube);
 	return (0);
 }

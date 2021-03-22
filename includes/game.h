@@ -13,6 +13,7 @@
 #ifndef STRCT_H
 # define STRCT_H
 
+#include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include "mlx.h"
@@ -69,6 +70,8 @@ typedef struct		s_map_prmtrs
 	char 			*so_path;
 	char 			*we_path;
 	char 			*ea_path;
+	int 			clr_flr;
+	int 			clr_clng;
 	char 			*sprts_path;
 }					t_map_prmtrs;
 
