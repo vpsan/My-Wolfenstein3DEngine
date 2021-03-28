@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 18:20:35 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/19 17:01:30 by valery           ###   ########.fr       */
+/*   Updated: 2021/03/29 01:42:01 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,5 +116,12 @@ int					hook_close_window(t_game *cube);
 int					hook_next_frame(t_game *cube);
 void				rcstng_color_pixel(t_img_frame *nxt_frame, int x, int y,
 						   int color);
+
+int 	move_w(t_game *cube);
+int 	move_s(t_game *cube);
+int 	move_a(t_game *cube);
+int 	move_d(t_game *cube);
+int 	move_right(t_game *cube);
+int 	move_left(t_game *cube);
 
 #endif
