@@ -133,7 +133,7 @@ OBJ		=	$(SRCS:.c=.o)
 CC		=	gcc
 
 CFLAGS	=	-Wall -Wextra -Werror -g
-CDEBUG	=	-g
+CDEBUG	=	-g #-fsanitize=address
 OPTFLGS	=	-O2
 MLXFLAGS =	-framework OpenGL -framework AppKit
 

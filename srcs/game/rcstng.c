@@ -2,7 +2,51 @@
 
 int 	rcstng_init_2(t_game *cube)
 {
+//	if(rayDirX < 0)
+//	{
+//		stepX = -1;
+//		sideDistX = (posX - mapX) * deltaDistX;
+//	}
+//	else
+//	{
+//		stepX = 1;
+//		sideDistX = (mapX + 1.0 - posX) * deltaDistX;
+//	}
+//	if(rayDirY < 0)
+//	{
+//		stepY = -1;
+//		sideDistY = (posY - mapY) * deltaDistY;
+//	}
+//	else
+//	{
+//		stepY = 1;
+//		sideDistY = (mapY + 1.0 - posY) * deltaDistY;
+//	}
 
+	if(cube->rcstg.ray_dir_x < 0)
+	{
+		cube->rcstg.step_x = -1;
+		cube->rcstg.side_dist_x =
+		(cube->plr.pos_x - cube->rcstg.map_x) * cube->rcstg.delta_dist_x;
+	}
+	else
+	{
+		cube->rcstg.step_x = 1;
+		cube->rcstg.side_dist_x =
+		(cube->rcstg.map_x + 1.0 - cube->plr.pos_x) * cube->rcstg.delta_dist_x;
+	}
+	if(cube->rcstg.ray_dir_y < 0 < 0)
+	{
+		cube->rcstg.step_y = -1;
+		cube->rcstg.side_dist_y =
+		(cube->plr.pos_y - cube->rcstg.map_y) * cube->rcstg.delta_dist_y;
+	}
+	else
+	{
+		cube->rcstg.step_y = 1;
+		cube->rcstg.side_dist_y =
+		(cube->rcstg.map_y + 1.0 - cube->plr.pos_y) * cube->rcstg.delta_dist_y;
+	}
 	return (0);
 }
 
