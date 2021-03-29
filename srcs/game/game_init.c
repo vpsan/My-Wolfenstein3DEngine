@@ -213,6 +213,7 @@ int 	game_raycasting_init(t_game *cube)
 	cube->rcstg.step_y = 0;
 	cube->rcstg.hit = 0;
 	cube->rcstg.side = 0;
+	cube->rcstg.side = 0;
 	cube->rcstg.line_height = 0;
 	cube->rcstg.draw_start = 0;
 	cube->rcstg.draw_end = 0;

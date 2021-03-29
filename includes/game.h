@@ -31,6 +31,11 @@
 # define SPEED_MOVE 0.1 // change speed
 # define SPEED_TURN 0.05 // change speed
 
+#define RED 240
+#define BLUE 150
+#define WHITE 100
+#define GREEN 0
+
 # define ERROR -1
 
 typedef struct		s_img_frame
@@ -111,6 +116,7 @@ typedef struct 		s_rcstg
 	int			line_height;
 	int			draw_start;
 	int			draw_end;
+	unsigned int color;//for no textures
 //	double		wall_x;
 //	t_texture	*tex;
 //	int			tex_x;
