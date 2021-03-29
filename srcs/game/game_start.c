@@ -58,6 +58,7 @@ int 	game_start(t_game *cube, int argc)
 	mlx_hook(cube->win_ptr, 17, 0, hook_close_window, cube);
 	mlx_loop_hook(cube->mlx_ptr, hook_next_frame, cube);
 	mlx_loop(cube->mlx_ptr);
+
 	return 0;
 }
 
