@@ -86,6 +86,51 @@ typedef struct 		s_player
 	double 			plane_y;
 }					t_player;
 
+typedef struct 		s_rcstg
+{
+//	double		pos_x;
+//	double		pos_y;
+//	double		dir_x;
+//	double		dir_y;
+//	double		plane_x;
+//	double		plane_y;
+	double		camera_x;
+	double		ray_dir_x;
+	double		ray_dir_y;
+	int			map_x;
+	int			map_y;
+	double		side_dist_x;
+	double		side_dist_y;
+	double		delta_dist_x;
+	double		delta_dist_y;
+	double		perp_wall_dist;
+	int			step_x;
+	int			step_y;
+	int			hit;
+	int			side;
+	int			line_height;
+	int			draw_start;
+	int			draw_end;
+//	double		wall_x;
+//	t_texture	*tex;
+//	int			tex_x;
+//	int			tex_y;
+//	double		tex_step;
+//	double		tex_pos;
+//	double		sprite_x;
+//	double		sprite_y;
+//	double		inv_det;
+//	double		transform_x;
+//	double		transform_y;
+//	int			sprite_screen_x;
+//	int			sprite_height;
+//	int			sprite_width;
+//	int			draw_start_y;
+//	int			draw_end_y;
+//	int			draw_start_x;
+//	int			draw_end_x;
+}					t_rcstg;
+
 typedef struct		s_game
 {
 	void			*mlx_ptr;
@@ -99,6 +144,7 @@ typedef struct		s_game
 	t_texture		ea_txtr;
 	t_texture		sprts_txtr;
 	t_map_prmtrs	map_prmtrs;
+	t_rcstg			rcstg;
 	char			**map;
 	t_list			*head_lstmap;
 }					t_game;
@@ -124,5 +170,7 @@ int 	move_a(t_game *cube);
 int 	move_d(t_game *cube);
 int 	move_right(t_game *cube);
 int 	move_left(t_game *cube);
+
+int 	rcstng(t_game *cube);
 
 #endif

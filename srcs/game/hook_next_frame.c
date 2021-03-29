@@ -62,7 +62,7 @@ int 	hook_next_frame(t_game *cube)
 	pre_rcstng_move_player(cube);
 	pre_rcstng_draw_ceiling(cube);
 	pre_rcstng_draw_floor(cube);
-//	rcstng(cube);
+	rcstng(cube);
 	mlx_put_image_to_window(cube->mlx_ptr,
 						 cube->win_ptr,
 						 cube->nxt_frame.img_ptr,0, 0);

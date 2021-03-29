@@ -117,7 +117,8 @@ GAME		= 	$(GAME_DIR)game_init.c\
 				$(GAME_DIR)game_start.c\
 				$(GAME_DIR)hook_next_frame.c\
 				$(GAME_DIR)rcstng_color_pixel.c\
-				$(GAME_DIR)move_player.c
+				$(GAME_DIR)move_player.c\
+				$(GAME_DIR)rcstng.c\
 
 # *********************** DEBUG_FUN ******************************************* #
 
