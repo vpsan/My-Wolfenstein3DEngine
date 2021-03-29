@@ -4,7 +4,7 @@
 int 	hook_close_window(t_game *cube)
 {
 	mlx_destroy_window(cube->mlx_ptr, cube->win_ptr);
-//	ft_free_str_arr(&cube->map);
+	ft_free_str_arr(&cube->map);
 	//sprites_free();
 	exit(0);
 	return (0);

@@ -177,7 +177,6 @@ int 	game_player_init(t_game *cube)
 	int 	j;
 
 	i = 0;
-	debug_print_check_map(cube);
 	while (cube->map[i] != NULL)
 	{
 		j = 0;
