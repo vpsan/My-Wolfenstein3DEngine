@@ -15,33 +15,13 @@ int		rcstng_init_1(t_game *cube, int x_i)
 	cube->rcstg.delta_dist_y = fabs((1/cube->rcstg.ray_dir_y));
 
 	cube->rcstg.hit = 0;
+	cube->rcstg.side = -1;
 	return (0);
 }
 
 int 	rcstng_init_2(t_game *cube)
 {
-//	if(rayDirX < 0)
-//	{
-//		stepX = -1;
-//		sideDistX = (posX - mapX) * deltaDistX;
-//	}
-//	else
-//	{
-//		stepX = 1;
-//		sideDistX = (mapX + 1.0 - posX) * deltaDistX;
-//	}
-//	if(rayDirY < 0)
-//	{
-//		stepY = -1;
-//		sideDistY = (posY - mapY) * deltaDistY;
-//	}
-//	else
-//	{
-//		stepY = 1;
-//		sideDistY = (mapY + 1.0 - posY) * deltaDistY;
-//	}
-
-	if(cube->rcstg.ray_dir_x < 0)
+	if (cube->rcstg.ray_dir_x < 0)
 	{
 		cube->rcstg.step_x = -1;
 		cube->rcstg.side_dist_x =
@@ -53,7 +33,7 @@ int 	rcstng_init_2(t_game *cube)
 		cube->rcstg.side_dist_x =
 				(cube->rcstg.map_x + 1.0 - cube->plr.pos_x) * cube->rcstg.delta_dist_x;
 	}
-	if(cube->rcstg.ray_dir_y < 0 < 0)
+	if (cube->rcstg.ray_dir_y < 0)
 	{
 		cube->rcstg.step_y = -1;
 		cube->rcstg.side_dist_y =
@@ -70,10 +50,9 @@ int 	rcstng_init_2(t_game *cube)
 
 int 	rcstng_3(t_game *cube, int x)
 {
-
 	while (cube->rcstg.hit == 0)
 	{
-		//jump to next map square, OR in x-direction, OR in y-direction
+		//Jump to next map square, OR in x-direction, OR in y-direction
 		if (cube->rcstg.side_dist_x < cube->rcstg.side_dist_y)
 		{
 			cube->rcstg.side_dist_x += cube->rcstg.delta_dist_x;
@@ -103,7 +82,7 @@ int 	rcstng_3(t_game *cube, int x)
 	cube->rcstg.line_height = (int)(cube->map_prmtrs.win_height / cube->rcstg
 			.perp_wall_dist);
 
-	//calculate lowest and highest pixel to fill in current stripe
+	//Calculate lowest and highest pixel to fill in current stripe
 	cube->rcstg.draw_start = -cube->rcstg.line_height / 2 + cube->map_prmtrs.win_height / 2;
 	if(cube->rcstg.draw_start < 0)
 		cube->rcstg.draw_start = 0;
@@ -121,7 +100,6 @@ int 	rcstng_3(t_game *cube, int x)
 	else if (cube->plr.pos_x < cube->rcstg.map_x && !cube->rcstg.side)
 		cube->rcstg.color = GREEN;
 
-//	ft_line(i, drawStart, drawEnd, color, sign, &img);
 	while (cube->rcstg.draw_start < cube->rcstg.draw_end)
 	{
 		rcstng_color_pixel(&cube->nxt_frame, x, cube->rcstg.draw_start,
@@ -134,7 +112,6 @@ int 	rcstng_3(t_game *cube, int x)
 int 	rcstng(t_game *cube)
 {
 	int		x;
-	double	buf[cube->map_prmtrs.win_width];
 
 	x = 0;
 	while (x < cube->map_prmtrs.win_width)

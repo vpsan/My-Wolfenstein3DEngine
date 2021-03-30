@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 18:20:35 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/29 01:42:01 by valery           ###   ########.fr       */
+/*   Updated: 2021/03/31 00:57:09 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include "libft.h"
 
 # define SCALE 16
+
 # define KEY_ESC 53
 # define KEY_W 13
 # define KEY_S 1
@@ -28,13 +29,14 @@
 # define KEY_D 2
 # define KEY_LEFT 123
 # define KEY_RIGHT 124
-# define SPEED_MOVE 0.1 // change speed
-# define SPEED_TURN 0.05 // change speed
+# define SPEED_MOVE 0.2
+# define SPEED_TURN 0.1
 
-#define RED 240
-#define BLUE 150
-#define WHITE 100
-#define GREEN 0
+# define BLACK 0x00000000
+# define WHITE 0x00FFFFFF
+# define RED 0x00FF0000
+# define GREEN 0x0000FF00
+# define BLUE 0x000000FF
 
 # define ERROR -1
 

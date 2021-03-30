@@ -13,8 +13,8 @@ int		game_map_init(t_game *cube)
 
 int 	game_preparsing_init(t_game *cube)
 {
-	cube->map_prmtrs.win_width = 640;
-	cube->map_prmtrs.win_height = 480;
+	cube->map_prmtrs.win_width = 1020;//640;
+	cube->map_prmtrs.win_height = 960;//480;
 	//////////////////////////////////////////////////////////
 	cube->map_prmtrs.no_path = "textures/marbface.xpm";
 	cube->map_prmtrs.so_path = "textures/mountains.xpm";
@@ -38,7 +38,7 @@ int 	game_preparsing_init(t_game *cube)
 	cube->sprts_txtr.height = 64;
 	///////////////////////////////////////////////////////
 	cube->map_prmtrs.clr_flr = 70;
-	cube->map_prmtrs.clr_clng = 255;
+	cube->map_prmtrs.clr_clng = BLACK;
 	return (0);
 }
 
@@ -188,6 +188,7 @@ int 	game_player_init(t_game *cube)
 				cube->plr.pos_x = i;
 				cube->plr.pos_y = j;
 				set_player_dir(cube, cube->map[i][j]);
+				cube->map[i][j] = '0';
 				return (0);
 			}
 			j++;
