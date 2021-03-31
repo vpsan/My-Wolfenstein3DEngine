@@ -16,7 +16,7 @@ SRCS	=	$(MAIN) \
 			$(LIBFT_SRCS) \
 			$(GET_NEXT_LINE) \
 			$(MY_ERRORS) \
-			$(FILE_PARSE) \
+			$(PRSNG_VLDTN) \
 			$(GAME) \
 			$(DEBUG_FUN)
 
@@ -28,10 +28,12 @@ MAIN		= 	$(MAIN_DIR)main.c
 # *********************** HDRS ************************************************ #
 
 INCLD 	= 	includes/
-HDRS	=	$(INCLD)libft.h\
-			$(INCLD)get_next_line.h\
-			$(INCLD)file_parser.h\
-			$(INCLD)mlx.h
+HDRS	=	$(INCLD)mlx.h \
+			$(INCLD)libft.h \
+			$(INCLD)get_next_line.h \
+			$(INCLD)my_errors.h \
+			$(INCLD)prsng_vldtn.h\
+			$(INCLD)game.h
 
 # *********************** LIBFT *********************************************** #	
 
@@ -105,10 +107,11 @@ MLX			= $(MLX_DIR)libmlx.a
 MY_ERRORS_DIR 	= 	srcs/my_errors/
 MY_ERRORS		= 	$(MY_ERRORS_DIR)my_errors.c
 
-# *********************** FILE_PARSE ****************************************** #
+# *********************** PRSNG_VLDTN ***************************************** #
 
-FILE_PARSE_DIR		= 	srcs/file_parse/
-FILE_PARSE			=	$(FILE_PARSE_DIR)file_parse.c
+PRSNG_VLDTN_DIR	= 	srcs/prsng_vldtn/
+PRSNG_VLDTN		=	$(PRSNG_VLDTN_DIR)prsng_vldtn.c\
+					$(PRSNG_VLDTN_DIR)prsng.c
 
 # *********************** GAME ************************************************ #
 
@@ -125,6 +128,7 @@ GAME		= 	$(GAME_DIR)game_init.c\
 DEBUG_DIR 	= 	srcs/debug/
 DEBUG_FUN	= 	$(DEBUG_DIR)debug_print_check_map.c\
 				$(DEBUG_DIR)debug_fill_map_instead_parsing.c\
+				$(DEBUG_DIR)debug_preparsing_init.c
 
 # ***************************************************************************** #
 

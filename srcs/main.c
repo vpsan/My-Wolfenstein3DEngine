@@ -10,14 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "my_errors.h"
-#include "file_parse.h"
-#include "game.h"
-#include "debug.h"
-
 #include <stdbool.h>
 #include <stdio.h>
+#include "libft.h"
+#include "my_errors.h"
+#include "prsng_vldtn.h"
+#include "game.h"
+#include "debug.h"
 
 int		check_argcount_argv1_extension(int argc, char **argv)
 {
@@ -48,14 +47,15 @@ int		main(int argc, char **argv)
 		exit(1);
 	}
 	game_map_init(&cube);
-	if (file_main_parsing_function(argv[1], &cube) == ERROR)
+	printf("------------------------  Check.0 ------------------------\n");
+	if (prsng_vldtn(argv[1], &cube) == ERROR)
 	{
 		my_errors_call(2);
 		exit(1);
 	}
 //	debug_fill_map_instead_parsing(&cube);
 //	screenshot_function
-	game_preparsing_init(&cube);
+	debug_map_prmtrs_init(&cube);
 	debug_print_check_map(&cube);
 	printf("------------------------  Check.1 ------------------------\n");
 	game_init(&cube);

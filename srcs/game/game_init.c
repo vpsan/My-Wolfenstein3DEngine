@@ -11,37 +11,6 @@ int		game_map_init(t_game *cube)
 	return (0);
 }
 
-int 	game_preparsing_init(t_game *cube)
-{
-	cube->map_prmtrs.win_width = 1020;//640;
-	cube->map_prmtrs.win_height = 960;//480;
-	//////////////////////////////////////////////////////////
-	cube->map_prmtrs.no_path = "textures/marbface.xpm";
-	cube->map_prmtrs.so_path = "textures/mountains.xpm";
-	cube->map_prmtrs.we_path = "textures/metal.xpm";
-	cube->map_prmtrs.ea_path = "textures/brick.xpm";
-	cube->map_prmtrs.sprts_path = "textures/skeleton.xpm";
-
-	cube->no_txtr.width = 64;
-	cube->no_txtr.height = 64;
-
-	cube->so_txtr.width = 64;
-	cube->so_txtr.height = 64;
-
-	cube->we_txtr.width = 64;
-	cube->we_txtr.height = 64;
-
-	cube->ea_txtr.width = 64;
-	cube->ea_txtr.height = 64;
-
-	cube->sprts_txtr.width = 64;
-	cube->sprts_txtr.height = 64;
-	///////////////////////////////////////////////////////
-	cube->map_prmtrs.clr_flr = 70;
-	cube->map_prmtrs.clr_clng = BLACK;
-	return (0);
-}
-
 int 	game_window_init(t_game *cube)
 {
 	if ((cube->mlx_ptr = mlx_init()) == NULL)
@@ -213,7 +182,6 @@ int 	game_raycasting_init(t_game *cube)
 	cube->rcstg.step_x = 0;
 	cube->rcstg.step_y = 0;
 	cube->rcstg.hit = 0;
-	cube->rcstg.side = 0;
 	cube->rcstg.side = 0;
 	cube->rcstg.line_height = 0;
 	cube->rcstg.draw_start = 0;

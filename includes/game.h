@@ -32,11 +32,13 @@
 # define SPEED_MOVE 0.2
 # define SPEED_TURN 0.1
 
-# define BLACK 0x00000000
 # define WHITE 0x00FFFFFF
 # define RED 0x00FF0000
 # define GREEN 0x0000FF00
 # define BLUE 0x000000FF
+
+# define BLACK_clr_clng 0x00000000
+# define NAVI_clr_flr 70
 
 # define ERROR -1
 
@@ -153,7 +155,6 @@ typedef struct		s_game
 
 int					game_init(t_game *cube);
 int					game_map_init(t_game *cube);
-int					game_preparsing_init(t_game *cube);
 int					game_window_init(t_game *cube);
 int					game_keys_init(t_game *cube);
 int					game_textures_img_init(t_game *cube);
