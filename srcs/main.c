@@ -14,7 +14,7 @@
 #include "my_errors.h"
 #include "file_parse.h"
 #include "game.h"
-#include "debug_fun.h"
+#include "debug.h"
 
 #include <stdbool.h>
 #include <stdio.h>

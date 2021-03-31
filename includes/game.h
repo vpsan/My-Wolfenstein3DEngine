@@ -95,12 +95,6 @@ typedef struct 		s_player
 
 typedef struct 		s_rcstg
 {
-//	double		pos_x;
-//	double		pos_y;
-//	double		dir_x;
-//	double		dir_y;
-//	double		plane_x;
-//	double		plane_y;
 	double		camera_x;
 	double		ray_dir_x;
 	double		ray_dir_y;
@@ -118,7 +112,7 @@ typedef struct 		s_rcstg
 	int			line_height;
 	int			draw_start;
 	int			draw_end;
-	unsigned int color;//for no textures
+	unsigned int color;// for no textures
 //	double		wall_x;
 //	t_texture	*tex;
 //	int			tex_x;
@@ -172,13 +166,13 @@ int					hook_next_frame(t_game *cube);
 void				rcstng_color_pixel(t_img_frame *nxt_frame, int x, int y,
 						   int color);
 
-int 	move_w(t_game *cube);
-int 	move_s(t_game *cube);
-int 	move_a(t_game *cube);
-int 	move_d(t_game *cube);
-int 	move_right(t_game *cube);
-int 	move_left(t_game *cube);
+int 				move_w(t_game *cube);
+int 				move_s(t_game *cube);
+int 				move_a(t_game *cube);
+int 				move_d(t_game *cube);
+int 				move_right(t_game *cube);
+int 				move_left(t_game *cube);
 
-int 	rcstng(t_game *cube);
+int 				rcstng(t_game *cube);
 
 #endif

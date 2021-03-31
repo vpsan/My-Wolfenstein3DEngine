@@ -2,7 +2,7 @@
 #include "libft.h"
 #include "game.h"
 #include "my_errors.h"
-#include "debug_fun.h"
+#include "debug.h"
 
 int		game_map_init(t_game *cube)
 {

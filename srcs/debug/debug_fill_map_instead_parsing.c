@@ -1,4 +1,4 @@
-#include "debug_fun.h"
+#include "debug.h"
 
 void 	debug_fill_map_instead_parsing(t_game *cube)
 {

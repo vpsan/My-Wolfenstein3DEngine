@@ -122,9 +122,9 @@ GAME		= 	$(GAME_DIR)game_init.c\
 
 # *********************** DEBUG_FUN ******************************************* #
 
-DEBUG_FUN_DIR 	= 	srcs/debug_fun/
-DEBUG_FUN		= 	$(DEBUG_FUN_DIR)debug_fun.c\
-					$(DEBUG_FUN_DIR)debug_fill_map_instead_parsing.c\
+DEBUG_DIR 	= 	srcs/debug/
+DEBUG_FUN	= 	$(DEBUG_DIR)debug_print_check_map.c\
+				$(DEBUG_DIR)debug_fill_map_instead_parsing.c\
 
 # ***************************************************************************** #
 
