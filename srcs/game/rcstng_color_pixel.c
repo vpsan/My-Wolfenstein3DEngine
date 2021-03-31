@@ -1,6 +1,6 @@
 #include "game.h"
 
-void	rcstng_color_pixel(t_img_frame *nxt_frame, int x, int y, int color)
+void	color_pixel_fill(t_img_frame *nxt_frame, int x, int y, int color)
 {
 	char	*new_addr_ptr;
 

@@ -102,8 +102,8 @@ int 	rcstng_3(t_game *cube, int x)
 
 	while (cube->rcstg.draw_start < cube->rcstg.draw_end)
 	{
-		rcstng_color_pixel(&cube->nxt_frame, x, cube->rcstg.draw_start,
-					 cube->rcstg.color);
+		color_pixel_fill(&cube->nxt_frame, x, cube->rcstg.draw_start,
+						 cube->rcstg.color);
 		cube->rcstg.draw_start++;
 	}
 	return (0);

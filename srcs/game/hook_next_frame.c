@@ -11,8 +11,8 @@ int 	pre_rcstng_draw_ceiling(t_game *cube)
 		x = 0;
 		while (x < cube->map_prmtrs.win_width)
 		{
-			rcstng_color_pixel(&cube->nxt_frame, x, y,
-					  cube->map_prmtrs.clr_clng);
+			color_pixel_fill(&cube->nxt_frame, x, y,
+							 cube->map_prmtrs.clr_clng);
 			x++;
 		}
 		y++;
@@ -31,8 +31,8 @@ int 	pre_rcstng_draw_floor(t_game *cube)
 		x = 0;
 		while (x < cube->map_prmtrs.win_width)
 		{
-			rcstng_color_pixel(&cube->nxt_frame, x, y,
-							   cube->map_prmtrs.clr_flr);
+			color_pixel_fill(&cube->nxt_frame, x, y,
+							 cube->map_prmtrs.clr_flr);
 			x++;
 		}
 		y++;
@@ -57,7 +57,7 @@ int 	pre_rcstng_move_player(t_game *cube)
 	return (0);
 }
 
-int 	hook_next_frame(t_game *cube)
+void	loop_hook_next_frame(t_game *cube)
 {
 	pre_rcstng_move_player(cube);
 	pre_rcstng_draw_ceiling(cube);
@@ -65,5 +65,5 @@ int 	hook_next_frame(t_game *cube)
 	rcstng(cube);
 	mlx_put_image_to_window(cube->mlx_ptr, cube->win_ptr,
 						 cube->nxt_frame.img_ptr,0, 0);
-	return (0);
+	return ;
 }

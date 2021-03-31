@@ -154,26 +154,31 @@ typedef struct		s_game
 }					t_game;
 
 int					game_init(t_game *cube);
+
 int					game_map_init(t_game *cube);
+int					game_map_prmtrs_init(t_game *cube);
 int					game_window_init(t_game *cube);
 int					game_keys_init(t_game *cube);
 int					game_textures_img_init(t_game *cube);
 int					game_textures_adr_init(t_game *cube);
-int					game_start(t_game *cube, int argc);
-int					hook_press_on_keys(int keycode, t_game *cube);
-int					hook_press_off_keys(int keycode, t_game *cube);
-int					hook_close_window(t_game *cube);
-int					hook_next_frame(t_game *cube);
-void				rcstng_color_pixel(t_img_frame *nxt_frame, int x, int y,
-						   int color);
 
+void				game_start(t_game *cube, int argc);
+void				hook_press_on_keys(int key_code, t_game *cube);
+void				hook_press_off_keys(int key_code, t_game *cube);
+void				hook_close_window(t_game *cube);
+void				loop_hook_next_frame(t_game *cube);
+
+int 				pre_rcstng_move_player(t_game *cube);
 int 				move_w(t_game *cube);
 int 				move_s(t_game *cube);
 int 				move_a(t_game *cube);
 int 				move_d(t_game *cube);
 int 				move_right(t_game *cube);
 int 				move_left(t_game *cube);
-
+int 				pre_rcstng_draw_ceiling(t_game *cube);
+int 				pre_rcstng_draw_floor(t_game *cube);
 int 				rcstng(t_game *cube);
 
+void				color_pixel_fill(t_img_frame *nxt_frame,
+									 int x, int y, int color);
 #endif

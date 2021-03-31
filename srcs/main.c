@@ -47,6 +47,7 @@ int		main(int argc, char **argv)
 		exit(1);
 	}
 	game_map_init(&cube);
+	game_map_prmtrs_init(&cube);
 	printf("------------------------  Check.0 ------------------------\n");
 	if (prsng_vldtn(argv[1], &cube) == ERROR)
 	{
