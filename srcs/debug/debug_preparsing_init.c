@@ -2,12 +2,12 @@
 
 int		debug_map_prmtrs_init(t_game *cube)
 {
-	cube->map_prmtrs.win_width = 1020;
-	cube->map_prmtrs.win_height = 960;
-	cube->map_prmtrs.no_path = "textures/marbface.xpm";
-	cube->map_prmtrs.so_path = "textures/mountains.xpm";
-	cube->map_prmtrs.we_path = "textures/metal.xpm";
-	cube->map_prmtrs.ea_path = "textures/brick.xpm";
+	cube->map_prmtrs.win_width = 1200;
+	cube->map_prmtrs.win_height = 980;
+	cube->map_prmtrs.no_path = "textures/WALL11.xpm";
+	cube->map_prmtrs.so_path = "textures/WALL12.xpm";
+	cube->map_prmtrs.we_path = "textures/WALL13.xpm";
+	cube->map_prmtrs.ea_path = "textures/WALL14.xpm";
 	cube->map_prmtrs.sprts_path = "textures/skeleton.xpm";
 	cube->no_txtr.width = 64;
 	cube->no_txtr.height = 64;

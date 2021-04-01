@@ -69,6 +69,45 @@ int		rcstng_calculate_wallx(t_game *cube)
 	return (0);
 }
 
+int     rcstng_draw_wall(t_game *cube, int x)
+{
+	int		y;
+	int		pixel_color;
+
+	y = cube->rcstg.draw_start;
+	while(y < cube->rcstg.draw_end)
+	{
+		cube->rcstg.tex_y = (int)(cube->rcstg.tex_pos) & (cube->rcstg.tex
+																  ->height - 1);
+		cube->rcstg.tex_pos += cube->rcstg.tex_step;
+		pixel_color = ((int*)cube->rcstg.tex->addr_ptr)
+		[cube->rcstg.tex_y * cube->rcstg.tex->width + cube->rcstg.tex_x];
+		if (cube->rcstg.side == 1)
+			pixel_color = (pixel_color >> 1) & 0x7F7F7F;
+		color_pixel_fill(&cube->frame, x, y, pixel_color);
+		y++;
+	}
+}
+
+int 	rcstng_get_wall_tex(t_game *cube)
+{
+	if (cube->rcstg.side == 1)
+	{
+		if (cube->rcstg.step_y > 0)
+			cube->rcstg.tex = &cube->no_txtr;
+		if (cube->rcstg.step_y < 0)
+			cube->rcstg.tex = &cube->so_txtr;
+	}
+	if (cube->rcstg.side == 0)
+	{
+		if (cube->rcstg.step_x > 0)
+			cube->rcstg.tex = &cube->we_txtr;
+		if (cube->rcstg.step_x < 0)
+			cube->rcstg.tex = &cube->ea_txtr;
+	}
+	return (0);
+}
+
 int 	rcstng_without_textures(t_game *cube, int x)
 {
 	if (cube->plr.pos_y > cube->rcstg.map_y && cube->rcstg.side)
@@ -101,8 +140,9 @@ int 	rcstng(t_game *cube)
 		rcstng_while_hit_not_zero(cube);
 		rcstng_calculations(cube);
 		rcstng_calculate_wallx(cube);
-
-		rcstng_without_textures(cube, x);
+		rcstng_get_wall_tex(cube);
+		rcstng_draw_wall(cube, x);
+//		rcstng_without_textures(cube, x);
 		x++;
 	}
 	return (0);
