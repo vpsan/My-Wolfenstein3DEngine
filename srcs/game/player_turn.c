@@ -2,36 +2,36 @@
 
 int		turn_right(t_game *cube)
 {
-	double oldDirX;
-	double oldPlaneX;
+	double old_dir_x;
+	double old_plane_x;
 
-	oldDirX = cube->plr.dir_x;
-	oldPlaneX = cube->plr.plane_x;
+	old_dir_x = cube->plr.dir_x;
+	old_plane_x = cube->plr.plane_x;
 	cube->plr.dir_x =
-		cube->plr.dir_x * cos(SPEED_TURN) - cube->plr.dir_y * sin(SPEED_TURN);
+		cube->plr.dir_x * cos(SPEEDTRN) - cube->plr.dir_y * sin(SPEEDTRN);
 	cube->plr.dir_y =
-		oldDirX * sin(SPEED_TURN) + cube->plr.dir_y * cos(SPEED_TURN);
+		old_dir_x * sin(SPEEDTRN) + cube->plr.dir_y * cos(SPEEDTRN);
 	cube->plr.plane_x =
-		cube->plr.plane_x * cos(SPEED_TURN) - cube->plr.plane_y * sin(SPEED_TURN);
+		cube->plr.plane_x * cos(SPEEDTRN) - cube->plr.plane_y * sin(SPEEDTRN);
 	cube->plr.plane_y =
-		oldPlaneX * sin(SPEED_TURN) + cube->plr.plane_y * cos(SPEED_TURN);
+		old_plane_x * sin(SPEEDTRN) + cube->plr.plane_y * cos(SPEEDTRN);
 	return (0);
 }
 
 int		turn_left(t_game *cube)
 {
-	double oldDirX;
-	double oldPlaneX;
+	double old_dir_x;
+	double old_plane_x;
 
-	oldDirX = cube->plr.dir_x;
-	oldPlaneX = cube->plr.plane_x;
+	old_dir_x = cube->plr.dir_x;
+	old_plane_x = cube->plr.plane_x;
 	cube->plr.dir_x =
-		cube->plr.dir_x * cos(-SPEED_TURN) - cube->plr.dir_y * sin(-SPEED_TURN);
+		cube->plr.dir_x * cos(-SPEEDTRN) - cube->plr.dir_y * sin(-SPEEDTRN);
 	cube->plr.dir_y =
-		oldDirX * sin(-SPEED_TURN) + cube->plr.dir_y * cos(-SPEED_TURN);
+		old_dir_x * sin(-SPEEDTRN) + cube->plr.dir_y * cos(-SPEEDTRN);
 	cube->plr.plane_x =
-		cube->plr.plane_x * cos(-SPEED_TURN) - cube->plr.plane_y * sin(-SPEED_TURN);
+		cube->plr.plane_x * cos(-SPEEDTRN) - cube->plr.plane_y * sin(-SPEEDTRN);
 	cube->plr.plane_y =
-		oldPlaneX * sin(-SPEED_TURN) + cube->plr.plane_y * cos(-SPEED_TURN);
+		old_plane_x * sin(-SPEEDTRN) + cube->plr.plane_y * cos(-SPEEDTRN);
 	return (0);
 }

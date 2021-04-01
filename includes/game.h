@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/01 16:46:43 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/01 17:01:52 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@
 # define KEY_D 2
 # define KEY_LEFT 123
 # define KEY_RIGHT 124
-# define SPEED_MOVE 0.2
-# define SPEED_TURN 0.1
+# define SPEEDMOVE 0.2
+# define SPEEDTRN 0.1
 
 # define WHITE 0x00FFFFFF
 # define RED 0x00FF0000
