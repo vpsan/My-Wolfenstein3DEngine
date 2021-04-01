@@ -13,7 +13,7 @@ int		rcstng_init_1(t_game *cube, int x_i)
 	cube->rcstg.delta_dist_x = fabs(1 / cube->rcstg.ray_dir_x);
 	cube->rcstg.delta_dist_y = fabs((1 / cube->rcstg.ray_dir_y));
 	cube->rcstg.hit = 0;
-	cube->rcstg.side = -1;
+	cube->rcstg.side = -1;//0
 	return (0);
 }
 

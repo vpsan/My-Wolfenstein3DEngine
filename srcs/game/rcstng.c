@@ -1,6 +1,6 @@
 #include "game.h"
 
-int 	rcstng_hits(t_game *cube, int x)
+int		rcstng_while_hit_not_zero(t_game *cube)
 {
 	while (cube->rcstg.hit == 0)
 	{
@@ -21,7 +21,12 @@ int 	rcstng_hits(t_game *cube, int x)
 		if (cube->map[cube->rcstg.map_x][cube->rcstg.map_y] > '0')
 			cube->rcstg.hit = 1;
 	}
+	return (0);
+}
 
+int 	rcstng_hits(t_game *cube, int x)
+{
+	rcstng_while_hit_not_zero(cube);
 	if (cube->rcstg.side == 0)
 		cube->rcstg.perp_wall_dist = (cube->rcstg.map_x - cube->plr.pos_x + (1 -
 				cube->rcstg.step_x) / 2) /

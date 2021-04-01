@@ -116,6 +116,7 @@ typedef struct		s_rcstg
 	int				draw_start;
 	int				draw_end;
 	unsigned int	color;// for no textures
+	////////////////////////////////////////
 //	double			wall_x;
 //	t_texture		*tex;
 //	int				tex_x;
