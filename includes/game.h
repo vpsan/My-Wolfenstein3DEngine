@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/01 22:19:07 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/02 01:56:48 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,8 +115,6 @@ typedef struct		s_rcstg
 	int				line_height;
 	int				draw_start;
 	int				draw_end;
-	unsigned int	color;// for no textures
-	////////////////////////////////////////
 	double			wall_x;
 	t_texture		*tex;
 	int				tex_x;
@@ -176,11 +174,18 @@ int					move_a(t_game *cube);
 int					move_d(t_game *cube);
 int					turn_right(t_game *cube);
 int					turn_left(t_game *cube);
+
 int					pre_rcstng_draw_ceiling(t_game *cube);
 int					pre_rcstng_draw_floor(t_game *cube);
+
 int					rcstng(t_game *cube);
 int					rcstng_init_1(t_game *cube, int x_i);
 int					rcstng_init_2(t_game *cube);
+int					rcstng_while_hit_not_zero(t_game *cube);
+int					rcstng_calculate_distance(t_game *cube);
+int					rcstng_calculate_wallx(t_game *cube);
+int					rcstng_get_wall_tex(t_game *cube);
+int					rcstng_draw_wall(t_game *cube, int x);
 
 void				color_pixel_fill(t_frame_prmts *frame,
 													int x, int y, int color);

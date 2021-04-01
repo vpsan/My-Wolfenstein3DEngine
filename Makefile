@@ -131,8 +131,12 @@ GAME		= 	$(GAME_DIR)game_init.c\
 				$(GAME_DIR)player_move.c\
 				$(GAME_DIR)player_turn.c\
 				$(GAME_DIR)rcstng.c\
-				$(GAME_DIR)rcstng_init.c
-
+				$(GAME_DIR)rcstng_init.c\
+				$(GAME_DIR)rcstng_while_hit_not_zero.c\
+				$(GAME_DIR)rcstng_calculate_distance.c\
+				$(GAME_DIR)rcstng_calculate_wallx.c\
+				$(GAME_DIR)rcstng_draw_wall.c\
+				$(GAME_DIR)rcstng_get_wall_tex.c\
 
 # *********************** DEBUG_FUN ******************************************* #
 
