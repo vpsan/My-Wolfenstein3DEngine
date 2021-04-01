@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/01 17:01:52 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/01 22:19:07 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,24 +117,24 @@ typedef struct		s_rcstg
 	int				draw_end;
 	unsigned int	color;// for no textures
 	////////////////////////////////////////
-//	double			wall_x;
-//	t_texture		*tex;
-//	int				tex_x;
-//	int				tex_y;
-//	double			tex_step;
-//	double			tex_pos;
-//	double			sprite_x;
-//	double			sprite_y;
-//	double			inv_det;
-//	double			transform_x;
-//	double			transform_y;
-//	int				sprite_screen_x;
-//	int				sprite_height;
-//	int				sprite_width;
-//	int				draw_start_y;
-//	int				draw_end_y;
-//	int				draw_start_x;
-//	int				draw_end_x;
+	double			wall_x;
+	t_texture		*tex;
+	int				tex_x;
+	int				tex_y;
+	double			tex_step;
+	double			tex_pos;
+	double			sprite_x;
+	double			sprite_y;
+	double			inv_det;
+	double			transform_x;
+	double			transform_y;
+	int				sprite_screen_x;
+	int				sprite_height;
+	int				sprite_width;
+	int				draw_start_y;
+	int				draw_end_y;
+	int				draw_start_x;
+	int				draw_end_x;
 }					t_rcstg;
 
 typedef struct		s_game

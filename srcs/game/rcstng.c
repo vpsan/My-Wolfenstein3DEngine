@@ -48,11 +48,8 @@ int 	rcstng_calculations(t_game *cube)
 		cube->rcstg.draw_end = cube->map_prmtrs.win_height - 1;
 }
 
-int 	rcstng_hits(t_game *cube, int x)
+int 	rcstng_without_textures(t_game *cube, int x)
 {
-	rcstng_while_hit_not_zero(cube);
-	rcstng_calculations(cube);
-
 	if (cube->plr.pos_y > cube->rcstg.map_y && cube->rcstg.side)
 		cube->rcstg.color = RED;
 	else if (cube->plr.pos_y < cube->rcstg.map_y && cube->rcstg.side)
@@ -80,7 +77,9 @@ int 	rcstng(t_game *cube)
 	{
 		rcstng_init_1(cube, x);
 		rcstng_init_2(cube);
-		rcstng_hits(cube, x);
+		rcstng_while_hit_not_zero(cube);
+		rcstng_calculations(cube);
+		rcstng_without_textures(cube, x);
 		x++;
 	}
 	return (0);
