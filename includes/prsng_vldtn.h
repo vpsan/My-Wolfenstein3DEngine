@@ -6,12 +6,12 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:56:31 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/31 16:56:32 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/01 16:37:58 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILE_PARSE_H
-# define FILE_PARSE_H
+#ifndef PRSNG_VLDTN_H
+# define PRSNG_VLDTN_H
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -28,6 +28,6 @@ int		prsng_parse_file(int fd, t_game **cube);
 int		prsng_parse_line(char *line, t_game ***cube);
 int		prsng_fill_game(char *line, char **arr_split_line, t_game ****cube);
 int		prsng_creat_lstmap(char *line, t_game *****cube);
-int 	prsng_creat_map(t_game **cube);
+int		prsng_creat_map(t_game **cube);
 
 #endif

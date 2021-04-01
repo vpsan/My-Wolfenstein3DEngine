@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/04/01 12:37:09 by valery           ###   ########.fr        #
+#    Updated: 2021/04/01 16:18:50 by valery           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -127,9 +127,12 @@ GAME		= 	$(GAME_DIR)game_init.c\
 				$(GAME_DIR)game_raycasting_init.c\
 				$(GAME_DIR)game_start.c\
 				$(GAME_DIR)hook_next_frame.c\
-				$(GAME_DIR)rcstng_color_pixel.c\
-				$(GAME_DIR)move_player.c\
+				$(GAME_DIR)color_pixel_fill.c\
+				$(GAME_DIR)player_move.c\
+				$(GAME_DIR)player_turn.c\
 				$(GAME_DIR)rcstng.c\
+				$(GAME_DIR)rcstng_init.c
+
 
 # *********************** DEBUG_FUN ******************************************* #
 
