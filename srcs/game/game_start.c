@@ -1,6 +1,6 @@
 #include "game.h"
 
-void 	hook_close_window(t_game *cube)
+void	hook_close_window(t_game *cube)
 {
 	mlx_destroy_window(cube->mlx_ptr, cube->win_ptr);
 	ft_free_str_arr(&cube->map);
@@ -47,7 +47,7 @@ void	hook_press_off_keys(int key_code, t_game *cube)
 	return ;
 }
 
-void 	game_start(t_game *cube, int argc)
+void	game_start(t_game *cube, int argc)
 {
 //	if (argc == 3)
 //	{
@@ -61,5 +61,3 @@ void 	game_start(t_game *cube, int argc)
 	mlx_loop(cube->mlx_ptr);
 	return ;
 }
-
-

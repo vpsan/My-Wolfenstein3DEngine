@@ -11,7 +11,7 @@ int 	pre_rcstng_draw_ceiling(t_game *cube)
 		x = 0;
 		while (x < cube->map_prmtrs.win_width)
 		{
-			color_pixel_fill(&cube->nxt_frame, x, y,
+			color_pixel_fill(&cube->frame, x, y,
 							 cube->map_prmtrs.clr_clng);
 			x++;
 		}
@@ -31,7 +31,7 @@ int 	pre_rcstng_draw_floor(t_game *cube)
 		x = 0;
 		while (x < cube->map_prmtrs.win_width)
 		{
-			color_pixel_fill(&cube->nxt_frame, x, y,
+			color_pixel_fill(&cube->frame, x, y,
 							 cube->map_prmtrs.clr_flr);
 			x++;
 		}
@@ -64,6 +64,6 @@ void	loop_hook_next_frame(t_game *cube)
 	pre_rcstng_draw_floor(cube);
 	rcstng(cube);
 	mlx_put_image_to_window(cube->mlx_ptr, cube->win_ptr,
-						 cube->nxt_frame.img_ptr,0, 0);
+							cube->frame.img_ptr, 0, 0);
 	return ;
 }

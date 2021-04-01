@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/03/31 16:56:08 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/01 13:12:17 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <math.h>
 # include "mlx.h"
 # include "libft.h"
+# include "my_errors.h"
 
 # define SCALE 16
 
@@ -49,7 +50,7 @@ typedef struct		s_img_frame
 	int				size_line;
 	int				bits_per_pixel;
 	int				endian;
-}					t_img_frame;
+}					t_frame_prmts;
 
 typedef struct		s_keys
 {
@@ -139,7 +140,7 @@ typedef struct		s_game
 {
 	void			*mlx_ptr;
 	void			*win_ptr;
-	t_img_frame		nxt_frame;
+	t_frame_prmts		frame;
 	t_player		plr;
 	t_keys			keys;
 	t_texture		no_txtr;
@@ -159,8 +160,7 @@ int					game_map_init(t_game *cube);
 int					game_map_prmtrs_init(t_game *cube);
 int					game_window_init(t_game *cube);
 int					game_keys_init(t_game *cube);
-int					game_textures_img_init(t_game *cube);
-int					game_textures_adr_init(t_game *cube);
+int					game_textures_init(t_game *cube);
 
 void				game_start(t_game *cube, int argc);
 void				hook_press_on_keys(int key_code, t_game *cube);
@@ -179,6 +179,6 @@ int 				pre_rcstng_draw_ceiling(t_game *cube);
 int 				pre_rcstng_draw_floor(t_game *cube);
 int 				rcstng(t_game *cube);
 
-void				color_pixel_fill(t_img_frame *nxt_frame,
+void				color_pixel_fill(t_frame_prmts *frame,
 									 int x, int y, int color);
 #endif

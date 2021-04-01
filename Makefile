@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/03/29 01:43:04 by valery           ###   ########.fr        #
+#    Updated: 2021/04/01 12:37:09 by valery           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -117,6 +117,14 @@ PRSNG_VLDTN		=	$(PRSNG_VLDTN_DIR)prsng_vldtn.c\
 
 GAME_DIR 	= 	srcs/game/
 GAME		= 	$(GAME_DIR)game_init.c\
+				$(GAME_DIR)game_map_init.c\
+				$(GAME_DIR)game_map_prmtrs_init.c\
+				$(GAME_DIR)game_window_init.c\
+				$(GAME_DIR)game_frame_init.c\
+				$(GAME_DIR)game_player_init.c\
+				$(GAME_DIR)game_keys_init.c\
+				$(GAME_DIR)game_textures_init.c\
+				$(GAME_DIR)game_raycasting_init.c\
 				$(GAME_DIR)game_start.c\
 				$(GAME_DIR)hook_next_frame.c\
 				$(GAME_DIR)rcstng_color_pixel.c\
