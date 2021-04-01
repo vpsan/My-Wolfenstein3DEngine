@@ -24,16 +24,15 @@ int		rcstng_while_hit_not_zero(t_game *cube)
 	return (0);
 }
 
-int 	rcstng_hits(t_game *cube, int x)
+int 	rcstng_calculations(t_game *cube)
 {
-	rcstng_while_hit_not_zero(cube);
 	if (cube->rcstg.side == 0)
 		cube->rcstg.perp_wall_dist = (cube->rcstg.map_x - cube->plr.pos_x + (1 -
-				cube->rcstg.step_x) / 2) /
-				cube->rcstg.ray_dir_x;
+																			 cube->rcstg.step_x) / 2) /
+									 cube->rcstg.ray_dir_x;
 	else
 		cube->rcstg.perp_wall_dist = (cube->rcstg.map_y - cube->plr.pos_y + (1 -
-				cube->rcstg.step_y) / 2) / cube->rcstg.ray_dir_y;
+																			 cube->rcstg.step_y) / 2) / cube->rcstg.ray_dir_y;
 
 	//Calculate height of line to draw on screen
 	cube->rcstg.line_height = (int)(cube->map_prmtrs.win_height / cube->rcstg
@@ -47,6 +46,12 @@ int 	rcstng_hits(t_game *cube, int x)
 	cube->rcstg.draw_end = cube->rcstg.line_height / 2 + cube->map_prmtrs.win_height / 2;
 	if(cube->rcstg.draw_end >= cube->map_prmtrs.win_height)
 		cube->rcstg.draw_end = cube->map_prmtrs.win_height - 1;
+}
+
+int 	rcstng_hits(t_game *cube, int x)
+{
+	rcstng_while_hit_not_zero(cube);
+	rcstng_calculations(cube);
 
 	if (cube->plr.pos_y > cube->rcstg.map_y && cube->rcstg.side)
 		cube->rcstg.color = RED;
