@@ -40,5 +40,6 @@ int 	rcstng(t_game *cube)
 		rcstng_draw_wall(cube, x);
 		x++;
 	}
+	sprts(cube);
 	return (0);
 }
