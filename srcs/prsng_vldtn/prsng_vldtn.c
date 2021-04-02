@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:02:01 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/02 02:02:03 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/02 13:13:12 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		prsng_vldtn(char *argv_1, t_game *cube)
 
 	if ((fd = open(argv_1, O_RDONLY)) < 0)
 		return (ERROR); // NOT OPENED !!!
-	if (prsng_parse_file(fd, &cube) == ERROR)
+	if (prsng_parse_file(fd, cube) == ERROR)
 		return (ERROR);
 	// prsng_parse_line -> FT_SPLIT malloc ERROR !!!;
 	// GNL malloc ERROR ???;
