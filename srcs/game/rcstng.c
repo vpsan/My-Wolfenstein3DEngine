@@ -12,6 +12,18 @@
 
 #include "game.h"
 
+int		sprts_init(t_game *cube)
+{
+
+	return (0);
+}
+
+int		sprts(t_game *cube)
+{
+	sprts_init(cube);
+	return (0);
+}
+
 int 	rcstng(t_game *cube)
 {
 	int		x;

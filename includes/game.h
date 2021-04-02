@@ -41,6 +41,8 @@
 # define BLACK_CLR_CLNG 0x00000000
 # define NAVI_CLR_FLR 70
 
+# define MAX_SPRTS_NUM 200
+
 # define ERROR -1
 
 typedef struct		s_img_frame
@@ -121,6 +123,24 @@ typedef struct		s_rcstg
 	int				tex_y;
 	double			tex_step;
 	double			tex_pos;
+//	double			sprite_x;
+//	double			sprite_y;
+//	double			inv_det;
+//	double			transform_x;
+//	double			transform_y;
+//	int				sprite_screen_x;
+//	int				sprite_height;
+//	int				sprite_width;
+//	int				draw_start_y;
+//	int				draw_end_y;
+//	int				draw_start_x;
+//	int				draw_end_x;
+}					t_rcstg;
+
+typedef	struct		s_sprts
+{
+	int				sprite_order[MAX_SPRTS_NUM];
+	double			sprite_distance[MAX_SPRTS_NUM];
 	double			sprite_x;
 	double			sprite_y;
 	double			inv_det;
@@ -133,7 +153,7 @@ typedef struct		s_rcstg
 	int				draw_end_y;
 	int				draw_start_x;
 	int				draw_end_x;
-}					t_rcstg;
+}					t_sprts;
 
 typedef struct		s_game
 {
@@ -149,6 +169,7 @@ typedef struct		s_game
 	t_texture		sprts_txtr;
 	t_map_prmtrs	map_prmtrs;
 	t_rcstg			rcstg;
+	t_sprts 		sprts;
 	char			**map;
 	t_list			*head_lstmap;
 }					t_game;
