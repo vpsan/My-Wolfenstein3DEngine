@@ -28,5 +28,7 @@ int		rcstng_get_wall_tex(t_game *cube)
 		if (cube->rcstg.step_x < 0)
 			cube->rcstg.tex = &cube->ea_txtr;
 	}
+//	if (cube->rcstg.tex == NULL)
+//		exit(111);
 	return (0);
 }

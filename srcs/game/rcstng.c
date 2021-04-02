@@ -35,8 +35,8 @@ int 	rcstng(t_game *cube)
 		rcstng_init_2(cube);
 		rcstng_while_hit_not_zero(cube);
 		rcstng_calculate_distance(cube);
-		rcstng_calculate_wallx(cube);
 		rcstng_get_wall_tex(cube);
+		rcstng_calculate_wallx(cube);
 		rcstng_draw_wall(cube, x);
 		x++;
 	}

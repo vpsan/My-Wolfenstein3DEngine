@@ -139,8 +139,8 @@ typedef struct		s_rcstg
 
 typedef	struct		s_sprts
 {
-	int				sprite_order[MAX_SPRTS_NUM];
-	double			sprite_distance[MAX_SPRTS_NUM];
+	int				*sprite_order;
+	double			*sprite_distance;
 	double			sprite_x;
 	double			sprite_y;
 	double			inv_det;
