@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/04/01 16:18:50 by valery           ###   ########.fr        #
+#    Updated: 2021/04/03 16:06:22 by valery           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -111,7 +111,15 @@ MY_ERRORS		= 	$(MY_ERRORS_DIR)my_errors.c
 
 PRSNG_VLDTN_DIR	= 	srcs/prsng_vldtn/
 PRSNG_VLDTN		=	$(PRSNG_VLDTN_DIR)prsng_vldtn.c\
-					$(PRSNG_VLDTN_DIR)prsng.c
+					$(PRSNG_VLDTN_DIR)prsng.c\
+					$(PRSNG_VLDTN_DIR)prsng_resolution.c\
+					$(PRSNG_VLDTN_DIR)prsng_no_txtr.c\
+					$(PRSNG_VLDTN_DIR)prsng_so_txtr.c\
+					$(PRSNG_VLDTN_DIR)prsng_we_txtr.c\
+					$(PRSNG_VLDTN_DIR)prsng_ea_txtr.c\
+					$(PRSNG_VLDTN_DIR)prsng_sprts_txtr.c\
+					$(PRSNG_VLDTN_DIR)prsng_color_clng.c\
+					$(PRSNG_VLDTN_DIR)prsng_color_flr.c\
 
 # *********************** GAME ************************************************ #
 
