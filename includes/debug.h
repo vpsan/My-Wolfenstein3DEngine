@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:43 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/02 13:13:12 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/03 14:48:09 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 int		debug_print_check_map(t_game *cube);
 void	debug_fill_map_instead_parsing(t_game *cube);
 int		debug_map_prmtrs_init(t_game *cube);
+int 	debug_sprts_init(t_game *cube);
 char	*g_new_map[5];
 
 #endif

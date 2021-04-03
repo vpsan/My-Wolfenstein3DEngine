@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/02 13:13:12 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/03 15:02:21 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,9 @@ typedef struct		s_rcstg
 
 typedef	struct		s_sprts
 {
+	double			pos_x[MAX_SPRTS_NUM];
+	double			pos_y[MAX_SPRTS_NUM];
+	int 			num_sprites;
 	int				sprite_order[MAX_SPRTS_NUM];
 	double			sprite_distance[MAX_SPRTS_NUM];
 	double			sprite_x;
@@ -179,14 +182,18 @@ int					game_init(t_game *cube);
 int					game_map_init(t_game *cube);
 int					game_map_prmtrs_init(t_game *cube);
 int					game_window_init(t_game *cube);
+int 				game_frame_init(t_game *cube);
+int 				game_player_init(t_game *cube);
 int					game_keys_init(t_game *cube);
 int					game_textures_init(t_game *cube);
+int 				game_raycasting_init(t_game *cube);
+int 				game_sprites_init(t_game *cube);
 
-void				game_start(t_game *cube, int argc);
-void				hook_press_on_keys(int key_code, t_game *cube);
-void				hook_press_off_keys(int key_code, t_game *cube);
-void				hook_close_window(t_game *cube);
-void				loop_hook_next_frame(t_game *cube);
+int					game_start(t_game *cube, int argc);
+int					hook_press_on_keys(int key_code, t_game *cube);
+int					hook_press_off_keys(int key_code, t_game *cube);
+int					hook_close_window(t_game *cube);
+int					loop_hook_next_frame(t_game *cube);
 
 int					pre_rcstng_move_player(t_game *cube);
 int					move_w(t_game *cube);
@@ -207,6 +214,9 @@ int					rcstng_calculate_distance(t_game *cube);
 int					rcstng_calculate_wallx(t_game *cube);
 int					rcstng_get_wall_tex(t_game *cube);
 int					rcstng_draw_wall(t_game *cube, int x);
+
+int 				sprts(t_game *cube);
+int					sprts_casting(t_game *cube);
 
 void				color_pixel_fill(t_frame_prmts *frame,
 													int x, int y, int color);

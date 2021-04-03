@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:00:38 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/02 02:13:40 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/03 12:14:11 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ int		rcstng_calculate_distance(t_game *cube)
 		cube->rcstg.line_height / 2 + cube->map_prmtrs.win_height / 2;
 	if (cube->rcstg.draw_end >= cube->map_prmtrs.win_height)
 		cube->rcstg.draw_end = cube->map_prmtrs.win_height - 1;
+	return (0);
 }

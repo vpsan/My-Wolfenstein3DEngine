@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:00:00 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/02 13:13:12 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/03 14:53:30 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int		pre_rcstng_move_player(t_game *cube)
 	return (0);
 }
 
-void	loop_hook_next_frame(t_game *cube)
+int		loop_hook_next_frame(t_game *cube)
 {
 	pre_rcstng_move_player(cube);
 	pre_rcstng_draw_ceiling(cube);
@@ -75,5 +75,5 @@ void	loop_hook_next_frame(t_game *cube)
 	rcstng(cube);
 	mlx_put_image_to_window(cube->mlx_ptr, cube->win_ptr,
 							cube->frame.img_ptr, 0, 0);
-	return ;
+	return (0);
 }

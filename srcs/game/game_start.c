@@ -6,13 +6,13 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 01:59:21 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/02 13:13:12 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/03 14:53:03 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-void	hook_close_window(t_game *cube)
+int		hook_close_window(t_game *cube)
 {
 	mlx_destroy_window(cube->mlx_ptr, cube->win_ptr);
 	ft_free_str_arr(&cube->map);
@@ -20,10 +20,10 @@ void	hook_close_window(t_game *cube)
 	//frame_free();
 	//textures_free();
 	exit(0);
-	return ;
+	return (0);
 }
 
-void	hook_press_on_keys(int key_code, t_game *cube)
+int		hook_press_on_keys(int key_code, t_game *cube)
 {
 	if (key_code == KEY_ESC)
 		hook_close_window(cube);
@@ -39,10 +39,10 @@ void	hook_press_on_keys(int key_code, t_game *cube)
 		cube->keys.left = 1;
 	else if (key_code == KEY_RIGHT)
 		cube->keys.right = 1;
-	return ;
+	return (0);
 }
 
-void	hook_press_off_keys(int key_code, t_game *cube)
+int		hook_press_off_keys(int key_code, t_game *cube)
 {
 	if (key_code == KEY_W)
 		cube->keys.w = 0;
@@ -56,10 +56,10 @@ void	hook_press_off_keys(int key_code, t_game *cube)
 		cube->keys.left = 0;
 	else if (key_code == KEY_RIGHT)
 		cube->keys.right = 0;
-	return ;
+	return (0);
 }
 
-void	game_start(t_game *cube, int argc)
+int		game_start(t_game *cube, int argc)
 {
 //	if (argc == 3)
 //	{
@@ -71,5 +71,5 @@ void	game_start(t_game *cube, int argc)
 	mlx_hook(cube->win_ptr, 17, 0, hook_close_window, cube);
 	mlx_loop_hook(cube->mlx_ptr, loop_hook_next_frame, cube);
 	mlx_loop(cube->mlx_ptr);
-	return ;
+	return (0);
 }

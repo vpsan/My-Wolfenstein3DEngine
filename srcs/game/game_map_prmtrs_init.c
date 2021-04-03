@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 01:58:44 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/02 13:13:12 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/03 12:14:10 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ int		game_map_prmtrs_init(t_game *cube)
 	cube->map_prmtrs.clr_flr = 0;
 	cube->map_prmtrs.clr_clng = 0;
 	cube->map_prmtrs.sprts_path = NULL;
+	return (0);
 }

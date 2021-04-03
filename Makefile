@@ -137,13 +137,15 @@ GAME		= 	$(GAME_DIR)game_init.c\
 				$(GAME_DIR)rcstng_calculate_wallx.c\
 				$(GAME_DIR)rcstng_draw_wall.c\
 				$(GAME_DIR)rcstng_get_wall_tex.c\
+				$(GAME_DIR)sprts.c
 
 # *********************** DEBUG_FUN ******************************************* #
 
 DEBUG_DIR 	= 	srcs/debug/
 DEBUG_FUN	= 	$(DEBUG_DIR)debug_print_check_map.c\
 				$(DEBUG_DIR)debug_fill_map_instead_parsing.c\
-				$(DEBUG_DIR)debug_preparsing_init.c
+				$(DEBUG_DIR)debug_preparsing_init.c\
+				$(DEBUG_DIR)debug_sprts_init.c
 
 # ***************************************************************************** #
 

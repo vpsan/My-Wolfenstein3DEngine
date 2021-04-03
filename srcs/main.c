@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/02 13:13:12 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/03 12:14:10 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int		main(int argc, char **argv)
 //	debug_fill_map_instead_parsing(&cube);
 //	screenshot_function
 	debug_map_prmtrs_init(&cube);
+	debug_sprts_init(&cube);
 	debug_print_check_map(&cube);
 	printf("------------------------  Check.1 ------------------------\n");
 	game_init(&cube);
