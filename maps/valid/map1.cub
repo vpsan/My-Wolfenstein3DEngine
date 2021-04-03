@@ -1,9 +1,9 @@
 R 1920 1080
-NO ./path_to_the_north_texture
-SO ./path_to_the_south_texture
-WE ./path_to_the_west_texture
-EA ./path_to_the_east_texture
-S ./path_to_the_sprite_texture
+NO textures/WALL11.xpm
+SO textures/WALL12.xpm
+WE textures/WALL13.xpm
+EA textures/WALL14.xpm
+S  textures/skeleton.xpm
 F 220,100,0
 C 225,30,0
 1111111
