@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:56:31 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/03 16:04:51 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/03 16:05:11 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ int		prsng_fill_game(char *line, char **arr_split_line, t_game *cube);
 int		prsng_creat_lstmap(char *line, t_game *cube);
 int		prsng_creat_map(t_game **cube);
 
-int		prsng_resolution(char **arr_split_line, t_game cube);
-int 	prsng_no_txtr(char **arr_split_line, t_game cube);
-int 	prsng_so_txtr(char **arr_split_line, t_game cube);
-int 	prsng_we_txtr(char **arr_split_line, t_game cube);
-int 	prsng_ea_txtr(char **arr_split_line, t_game cube);
-int 	prsng_sprts_txtr(char **arr_split_line, t_game cube);
-int 	prsng_color_clng(char **arr_split_line, t_game cube);
-int 	prsng_color_flr(char **arr_split_line, t_game cube);
+int		prsng_resolution(char **arr_split_line, t_game *cube);
+int 	prsng_no_txtr(char **arr_split_line, t_game *cube);
+int 	prsng_so_txtr(char **arr_split_line, t_game *cube);
+int 	prsng_we_txtr(char **arr_split_line, t_game *cube);
+int 	prsng_ea_txtr(char **arr_split_line, t_game *cube);
+int 	prsng_sprts_txtr(char **arr_split_line, t_game *cube);
+int 	prsng_color_clng(char **arr_split_line, t_game *cube);
+int 	prsng_color_flr(char **arr_split_line, t_game *cube);
 
 
 
