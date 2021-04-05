@@ -18,6 +18,7 @@
 
 void	my_errors_init(void);
 void	my_errors_call(int number);
+void 	my_exit(int number);
 
 char	*g_error_arr[20];
 

@@ -26,3 +26,10 @@ void	my_errors_call(int number)
 	write(2, g_error_arr[number], ft_strlen(g_error_arr[number]));
 	return ;
 }
+
+void 	my_exit(int number)
+{
+	my_errors_call(number);
+	exit(number);
+	return ;
+}

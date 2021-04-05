@@ -22,6 +22,12 @@
 # include "get_next_line.h"
 # include "game.h"
 
+
+# define MIN_WIN_HIEGHT 10
+# define MIN_WIN_WIDTH 10
+# define MAX_WIN_HIEGHT 1480
+# define MAX_WIN_WIDTH 2560
+
 int		prsng_vldtn(char *argv_1, t_game *cube);
 
 int		prsng_parse_file(int fd, t_game *cube);
@@ -39,8 +45,6 @@ int 	prsng_sprts_txtr(char **arr_split_line, t_game *cube);
 int 	prsng_color_clng(char **arr_split_line, t_game *cube);
 int 	prsng_color_flr(char **arr_split_line, t_game *cube);
 
-
-
-
+int 	vldthn_count_arrsplitline(char **arr_split_line);
 
 #endif

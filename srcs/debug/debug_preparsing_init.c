@@ -14,8 +14,8 @@
 
 int		debug_map_prmtrs_init(t_game *cube)
 {
-	cube->map_prmtrs.win_width = 1200;
-	cube->map_prmtrs.win_height = 980;
+//	cube->map_prmtrs.win_width = 1200;
+//	cube->map_prmtrs.win_height = 980;
 	cube->map_prmtrs.no_path = "textures/WALL11.xpm";
 	cube->map_prmtrs.so_path = "textures/WALL12.xpm";
 	cube->map_prmtrs.we_path = "textures/WALL13.xpm";
