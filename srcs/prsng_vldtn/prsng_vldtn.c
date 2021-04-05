@@ -24,7 +24,8 @@ int		prsng_vldtn(char *argv_1, t_game *cube)
 	// GNL malloc ERROR ???;
 	// prsng_fill_game ERROR ???;
 	prsng_creat_map(&cube);
-	//file_check_map(&cube);
+	vldtn_map(&cube);
+	vldtn_prmtrs_summary(&cube);
 	ft_lstclear(&(cube)->head_lstmap, free);
 	if (close(fd) < 0) // NOT CLOSED !!!
 		return (ERROR);

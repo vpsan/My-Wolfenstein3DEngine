@@ -46,5 +46,7 @@ int 	prsng_color_clng(char **arr_split_line, t_game *cube);
 int 	prsng_color_flr(char **arr_split_line, t_game *cube);
 
 int 	vldthn_count_arrsplitline(char **arr_split_line);
+int		vldtn_map(t_game *cube);
+int		vldtn_prmtrs_summary(t_game *cube);
 
 #endif

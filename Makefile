@@ -121,6 +121,8 @@ PRSNG_VLDTN		=	$(PRSNG_VLDTN_DIR)prsng_vldtn.c\
 					$(PRSNG_VLDTN_DIR)prsng_color_clng.c\
 					$(PRSNG_VLDTN_DIR)prsng_color_flr.c\
 					$(PRSNG_VLDTN_DIR)vldthn_count_split_arr.c\
+					$(PRSNG_VLDTN_DIR)vldtn_map.c\
+					$(PRSNG_VLDTN_DIR)vldtn_prmtrs_summary.c\
 
 # *********************** GAME ************************************************ #
 
