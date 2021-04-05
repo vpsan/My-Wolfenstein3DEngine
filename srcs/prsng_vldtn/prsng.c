@@ -45,13 +45,13 @@ int		prsng_fill_game(char *line, char **arr_split_line, t_game *cube)
 {
 	if (ft_memcmp(arr_split_line[0], "R", 1) == 0)
 		prsng_resolution(arr_split_line, cube);
-	else if (ft_memcmp(arr_split_line[0], "NO", 1) == 0)
+	else if (ft_memcmp(arr_split_line[0], "NO", 2) == 0)
 		prsng_no_txtr(arr_split_line, cube);
-	else if (ft_memcmp(arr_split_line[0], "SO", 1) == 0)
+	else if (ft_memcmp(arr_split_line[0], "SO", 2) == 0)
 		prsng_so_txtr(arr_split_line, cube);
-	else if (ft_memcmp(arr_split_line[0], "WE", 1) == 0)
+	else if (ft_memcmp(arr_split_line[0], "WE", 2) == 0)
 		prsng_we_txtr(arr_split_line, cube);
-	else if (ft_memcmp(arr_split_line[0], "EA", 1) == 0)
+	else if (ft_memcmp(arr_split_line[0], "EA", 2) == 0)
 		prsng_ea_txtr(arr_split_line, cube);
 	else if (ft_memcmp(arr_split_line[0], "S", 1) == 0)
 		prsng_sprts_txtr(arr_split_line, cube);

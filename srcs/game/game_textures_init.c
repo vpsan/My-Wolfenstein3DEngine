@@ -34,6 +34,7 @@ int		game_textures_img_init(t_game *cube)
 		mlx_xpm_file_to_image(cube->mlx_ptr, cube->map_prmtrs.sprts_path,
 											&cube->sprts_txtr.width,
 											&cube->sprts_txtr.height);
+	//sprts
 	return (0);
 }
 
@@ -59,16 +60,29 @@ int		game_textures_adr_init(t_game *cube)
 											&cube->sprts_txtr.bits_per_pixel,
 											&cube->sprts_txtr.size_line,
 											&cube->sprts_txtr.endian);
+	//sprts
 	return (0);
 }
 
 int		check_img_ptr(t_game *cube)
 {
+	if (cube->no_txtr.img_ptr == NULL ||
+			cube->so_txtr.img_ptr == NULL ||
+			cube->ea_txtr.img_ptr == NULL ||
+			cube->we_txtr.img_ptr == NULL)
+		//sprts
+		my_exit(4);
 	return (0);
 }
 
 int		check_addr_ptr(t_game *cube)
 {
+	if (cube->no_txtr.addr_ptr == NULL ||
+		cube->so_txtr.addr_ptr == NULL ||
+		cube->ea_txtr.addr_ptr == NULL ||
+		cube->we_txtr.addr_ptr == NULL)
+		//sprts
+		my_exit(4);
 	return (0);
 }
 

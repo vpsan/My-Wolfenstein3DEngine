@@ -30,6 +30,6 @@ int 	rcstng(t_game *cube)
 		zbuffer[x] = cube->rcstg.perp_wall_dist;
 		x++;
 	}
-	sprts(cube);
+//	sprts(cube);
 	return (0);
 }

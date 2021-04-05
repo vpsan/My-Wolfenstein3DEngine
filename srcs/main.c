@@ -54,6 +54,11 @@ int		main(int argc, char **argv)
 		my_errors_call(2);
 		exit(1);
 	}
+	printf("no = %s \n", cube.map_prmtrs.no_path);
+	printf("so = %s \n", cube.map_prmtrs.so_path);
+	printf("ea = %s \n", cube.map_prmtrs.ea_path);
+	printf("we = %s \n", cube.map_prmtrs.we_path);
+	printf("s = %s \n", cube.map_prmtrs.sprts_path);
 //	debug_fill_map_instead_parsing(&cube);
 //	screenshot_function
 	debug_map_prmtrs_init(&cube);

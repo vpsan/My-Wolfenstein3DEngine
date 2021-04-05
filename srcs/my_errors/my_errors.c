@@ -18,6 +18,7 @@ void	my_errors_init(void)
 	g_error_arr[1] = "Error\n Invalid argc or argv.\n";
 	g_error_arr[2] = "Error\n Parsing file error.\n";
 	g_error_arr[3] = "Error\n game_window_init error.\n";
+	g_error_arr[4] = "Error\n game_textures_init error.\n";
 	return ;
 }
 
