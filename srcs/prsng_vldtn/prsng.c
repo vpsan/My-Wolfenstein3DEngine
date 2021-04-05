@@ -44,24 +44,23 @@ int		prsng_creat_lstmap(char *line, t_game *cube)
 int		prsng_fill_game(char *line, char **arr_split_line, t_game *cube)
 {
 	if (ft_memcmp(arr_split_line[0], "\n", 1) == 0)
-		prsng_resolution(arr_split_line, cube);
-//		printf("\n");   // fun__
+		printf("space line found\n");
 	else if (ft_memcmp(arr_split_line[0], "R", 1) == 0)
-		printf("R\n");  // fun_R
+		prsng_resolution(arr_split_line, cube);
 	else if (ft_memcmp(arr_split_line[0], "NO", 1) == 0)
-		printf("NO\n"); // fun_NO
+		prsng_no_txtr(arr_split_line, cube);
 	else if (ft_memcmp(arr_split_line[0], "SO", 1) == 0)
-		printf("SO\n"); // fun_SO
+		prsng_so_txtr(arr_split_line, cube);
 	else if (ft_memcmp(arr_split_line[0], "WE", 1) == 0)
-		printf("WE\n"); // fun_WE
+		prsng_we_txtr(arr_split_line, cube);
 	else if (ft_memcmp(arr_split_line[0], "EA", 1) == 0)
-		printf("EA\n"); // fun_EA
+		prsng_ea_txtr(arr_split_line, cube);
 	else if (ft_memcmp(arr_split_line[0], "S", 1) == 0)
-		printf("S\n");  // fun_S
+		prsng_sprts_txtr(arr_split_line, cube);
 	else if (ft_memcmp(arr_split_line[0], "F", 1) == 0)
-		printf("F\n");  // fun_F
+		prsng_color_clng(arr_split_line, cube);
 	else if (ft_memcmp(arr_split_line[0], "C", 1) == 0)
-		printf("C\n");  // fun_C
+		prsng_color_flr(arr_split_line, cube);
 	else
 		prsng_creat_lstmap(line, cube);
 	return (0);
