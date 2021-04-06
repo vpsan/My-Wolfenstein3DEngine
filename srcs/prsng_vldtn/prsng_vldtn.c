@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:02:01 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/03 12:14:10 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/06 12:44:23 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int		prsng_vldtn(char *argv_1, t_game *cube)
 	// GNL malloc ERROR ???;
 	// prsng_fill_game ERROR ???;
 	prsng_creat_map(&cube);
-	vldtn_map(&cube);
-	vldtn_prmtrs_summary(&cube);
+	vldtn_map(cube);
+	vldtn_prmtrs_summary(cube);
 	ft_lstclear(&(cube)->head_lstmap, free);
 	if (close(fd) < 0) // NOT CLOSED !!!
 		return (ERROR);

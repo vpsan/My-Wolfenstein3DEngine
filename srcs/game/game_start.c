@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 01:59:21 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/03 14:53:03 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/06 15:03:46 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@ int		hook_close_window(t_game *cube)
 {
 	mlx_destroy_window(cube->mlx_ptr, cube->win_ptr);
 	ft_free_str_arr(&cube->map);
-//	ft_free_str(&cube->map_prmtrs.no_path);//
-//	ft_free_str(&cube->map_prmtrs.so_path);//
-//	ft_free_str(&cube->map_prmtrs.we_path);//
-//	ft_free_str(&cube->map_prmtrs.ea_path);//
+	ft_free_str(&cube->map_prmtrs.no_path);//
+	ft_free_str(&cube->map_prmtrs.so_path);//
+	ft_free_str(&cube->map_prmtrs.we_path);//
+	ft_free_str(&cube->map_prmtrs.ea_path);//
+	ft_free_str(&cube->map_prmtrs.sprts_path);//
+	//textures_free();
 	//sprites_free();
 	//frame_free();
-	//textures_free();
 	exit(0);
 	return (0);
 }

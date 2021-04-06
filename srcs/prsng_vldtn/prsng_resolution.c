@@ -1,25 +1,51 @@
 #include "prsng_vldtn.h"
 #include "my_errors.h"
 
-int 	vldthn_resolution_prmtrs(t_game *cube)
+int		vldthn_resolution_maxmin(t_game *cube)
 {
 	if (cube->map_prmtrs.win_height < MIN_WIN_HIEGHT ||
 	cube->map_prmtrs.win_width < MIN_WIN_WIDTH ||
 	cube->map_prmtrs.win_height > MAX_WIN_HIEGHT ||
 	cube->map_prmtrs.win_width > MAX_WIN_WIDTH)
 	{
-		my_exit(2);
+		cube->map_prmtrs.win_width = 980;
+		cube->map_prmtrs.win_height = 720;
 	}
 	return (0);
 }
 
-int 	prsng_resolution(char **arr_split_line, t_game *cube)
+int		vldthn_resolution_digits(char **arr_split_line)
+{
+	int		j;
+	int		exit_flag;
+
+	j = 0;
+	exit_flag = 0;
+	while (arr_split_line[1][j] != '\0')
+	{
+		if (ft_isdigit(arr_split_line[1][j]) == false)
+			exit_flag = 1;
+		j++;
+	}
+	j = 0;
+	while (arr_split_line[2][j] != '\0')
+	{
+		if (ft_isdigit(*arr_split_line[2]) == false)
+			exit_flag = 1;
+		j++;
+	}
+	if (exit_flag == 1)
+		my_exit(2);
+	return (0);
+}
+
+int		prsng_resolution(char **arr_split_line, t_game *cube)
 {
 	if (vldthn_count_arrsplitline(arr_split_line) != 3)
 		my_exit(2);
-//	if (arr_split_line[1,2] != '0123456789')
+	vldthn_resolution_digits(arr_split_line);
 	cube->map_prmtrs.win_width = ft_atoi(arr_split_line[1]);
 	cube->map_prmtrs.win_height = ft_atoi(arr_split_line[2]);
-	vldthn_resolution_prmtrs(cube);
+	vldthn_resolution_maxmin(cube);
 	return (0);
 }
