@@ -31,7 +31,7 @@ int		debug_map_prmtrs_init(t_game *cube)
 //	cube->ea_txtr.height = 64;
 //	cube->sprts_txtr.width = 64;
 //	cube->sprts_txtr.height = 64;
-	cube->map_prmtrs.clr_flr = NAVI_CLR_FLR;
-	cube->map_prmtrs.clr_clng = BLACK_CLR_CLNG;
+//	cube->map_prmtrs.clr_flr = NAVI_CLR_FLR;
+//	cube->map_prmtrs.clr_clng = BLACK_CLR_CLNG;
 	return (0);
 }

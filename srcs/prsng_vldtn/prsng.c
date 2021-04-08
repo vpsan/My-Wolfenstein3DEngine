@@ -56,9 +56,9 @@ int		prsng_fill_game(char *line, char **arr_split_line, t_game *cube)
 	else if (ft_memcmp(arr_split_line[0], "S", 1) == 0)
 		prsng_sprts_txtr(arr_split_line, cube);
 	else if (ft_memcmp(arr_split_line[0], "F", 1) == 0)
-		prsng_color_clng(arr_split_line, cube);
-	else if (ft_memcmp(arr_split_line[0], "C", 1) == 0)
 		prsng_color_flr(arr_split_line, cube);
+	else if (ft_memcmp(arr_split_line[0], "C", 1) == 0)
+		prsng_color_clng(arr_split_line, cube);
 	else
 		prsng_creat_lstmap(line, cube);
 	return (0);

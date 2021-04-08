@@ -16,26 +16,8 @@ int		vldthn_resolution_maxmin(t_game *cube)
 
 int		vldthn_resolution_digits(char **arr_split_line)
 {
-	int		j;
-	int		exit_flag;
-
-	j = 0;
-	exit_flag = 0;
-	while (arr_split_line[1][j] != '\0')
-	{
-		if (ft_isdigit(arr_split_line[1][j]) == false)
-			exit_flag = 1;
-		j++;
-	}
-	j = 0;
-	while (arr_split_line[2][j] != '\0')
-	{
-		if (ft_isdigit(*arr_split_line[2]) == false)
-			exit_flag = 1;
-		j++;
-	}
-	if (exit_flag == 1)
-		my_exit(2);
+	vldthn_chech_str_is_digits(arr_split_line[1]);
+	vldthn_chech_str_is_digits(arr_split_line[2]);
 	return (0);
 }
 
