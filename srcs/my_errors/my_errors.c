@@ -17,8 +17,23 @@ void	my_errors_init(void)
 	g_error_arr[0] = "Error\n Error without name.\n";
 	g_error_arr[1] = "Error\n Invalid argc or argv.\n";
 	g_error_arr[2] = "Error\n Parsing file error.\n";
-	g_error_arr[3] = "Error\n game_window_init error.\n";
-	g_error_arr[4] = "Error\n game_textures_init error.\n";
+
+//	g_error_arr[3] = "Error\n game_window_init error.\n";
+//	g_error_arr[4] = "Error\n game_textures_init error.\n";
+
+	g_error_arr[3] = "Error\n Parsing file error. Resolution.\n";
+	g_error_arr[4] = "Error\n Parsing file error. No_txtr.\n";
+	g_error_arr[5] = "Error\n Parsing file error. So_txtr.\n";
+	g_error_arr[6] = "Error\n Parsing file error. We_txtr.\n";
+	g_error_arr[7] = "Error\n Parsing file error. Ea_txtr.\n";
+	g_error_arr[8] = "Error\n Parsing file error. Sprite_txtr.\n";
+	g_error_arr[9] = "Error\n Parsing file error. Color_flr.\n";
+	g_error_arr[10] = "Error\n Parsing file error. Color_clng.\n";
+	g_error_arr[11] = "Error\n Parsing file error. Map validathion.\n";
+	g_error_arr[12] = "Error\n Parsing file error. Sprites validathion.\n";
+
+	g_error_arr[13] = "Error\n game_window_init error.\n";
+	g_error_arr[14] = "Error\n game_textures_init error.\n";
 	return ;
 }
 
