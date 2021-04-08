@@ -31,7 +31,7 @@ int 	prsng_color_clng(char **arr_split_line, t_game *cube)
 	color_arr = ft_split(arr_split_line[1], ',');
 	if (vldthn_count_arrsplitline(color_arr) != 3)
 		my_exit(10);
-	vldthn_color_clng_digits(color_arr, 14);
+	vldthn_color_clng_digits(color_arr, 10);
 	red = ft_atoi(color_arr[0]);
 	green = ft_atoi(color_arr[1]);
 	blue = ft_atoi(color_arr[2]);
