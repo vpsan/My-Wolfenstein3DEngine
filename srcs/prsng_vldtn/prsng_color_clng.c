@@ -36,5 +36,6 @@ int 	prsng_color_clng(char **arr_split_line, t_game *cube)
 	green = ft_atoi(color_arr[1]);
 	blue = ft_atoi(color_arr[2]);
 	vldthn_make_rgb(&cube->map_prmtrs.clr_clng, red, green, blue);
+	ft_free_str_arr(&color_arr);
 	return (0);
 }
