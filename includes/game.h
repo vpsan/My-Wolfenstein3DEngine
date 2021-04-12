@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/06 12:44:30 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/12 19:00:38 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,6 +178,8 @@ typedef struct		s_game
 }					t_game;
 
 int					game_init(t_game *cube);
+
+int					screenshot(t_game *cube);
 
 int					game_map_init(t_game *cube);
 int					game_map_prmtrs_init(t_game *cube);

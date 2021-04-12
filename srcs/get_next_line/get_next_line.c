@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 12:12:10 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/06 12:44:23 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/12 19:13:01 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ int		gnl_read_line(int fd, char **buf, char **line)
 {
 	long long	bytes_rd;
 
-	if ((*line = ft_leftjoin_sep(*line, buf[fd], '\n')) == NULL)
+	*line = ft_leftjoin_sep(*line, buf[fd], '\n');
+	if (*line == NULL)
 		return (ft_free_str(&(buf[fd])) - 1);
 	while (ft_strchr(buf[fd], '\n') == NULL)
 	{
@@ -64,10 +65,12 @@ int		gnl_read_line(int fd, char **buf, char **line)
 			return ((int)bytes_rd);
 		}
 		buf[fd][bytes_rd] = '\0';
-		if ((*line = ft_leftjoin_sep(*line, buf[fd], '\n')) == NULL)
+		*line = ft_leftjoin_sep(*line, buf[fd], '\n');
+		if (*line == NULL)
 			return (ft_free_str(&(buf[fd])) - 1);
 	}
-	if ((buf[fd] = ft_rewrite_str(buf[fd], '\n')) == NULL)
+	buf[fd] = ft_rewrite_str(buf[fd], '\n');
+	if (buf[fd] == NULL)
 		return (ft_free_str(&(buf[fd])) - 1);
 	return (1);
 }
