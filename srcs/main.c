@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/12 22:41:09 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/12 22:46:24 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ int		main(int argc, char **argv)
 //	debug_sprts_init(&cube);
 //	debug_print_check_map(&cube);
 	printf("------------------------  Check.1 ------------------------\n");
-	game_init(&cube);
 	if (check_screenshot_flag(argc, argv) == true)
 		screenshot(&cube);
+	game_init(&cube);
 	game_start(&cube, argc);
 	printf("------------------------  Check.2 ------------------------\n");
 	return (0);
