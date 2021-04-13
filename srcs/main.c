@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/12 23:00:33 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/12 23:05:06 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int		main(int argc, char **argv)
 	printf("------------------------  Check.0 ------------------------\n");
 	if (prsng_vldtn(argv[1], &cube) == ERROR)
 		my_exit(2);
-//	debug_print_check_map(&cube);
+	debug_print_check_map(&cube);
 	printf("------------------------  Check.1 ------------------------\n");
 	if (check_screenshot_flag(argc, argv) == true)
 		screenshot(&cube);
