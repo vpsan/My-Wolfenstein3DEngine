@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/12 23:05:06 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/14 20:11:02 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int		main(int argc, char **argv)
 	debug_print_check_map(&cube);
 	printf("------------------------  Check.1 ------------------------\n");
 	if (check_screenshot_flag(argc, argv) == true)
+//		do_screenshot(&cube);
 		screenshot(&cube);
 	game_init(&cube);
 	game_start(&cube, argc);
