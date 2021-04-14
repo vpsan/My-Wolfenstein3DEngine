@@ -73,7 +73,6 @@ int		main(int argc, char **argv)
 	debug_print_check_map(&cube);
 	printf("------------------------  Check.1 ------------------------\n");
 	if (check_screenshot_flag(argc, argv) == true)
-//		do_screenshot(&cube);
 		screenshot(&cube);
 	game_init(&cube);
 	game_start(&cube, argc);
