@@ -1,8 +1,8 @@
 #include "game.h"
 
-int screenshot_creat_bmp(unsigned char *bmp_54arr, t_game *cube, int size)
+int	screenshot_creat_bmp(unsigned char *bmp_54arr, t_game *cube, int size)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < 54)
@@ -21,14 +21,14 @@ int screenshot_creat_bmp(unsigned char *bmp_54arr, t_game *cube, int size)
 	bmp_54arr[21] = (unsigned char)(cube->map_prmtrs.win_width >> 24);
 	bmp_54arr[22] = (unsigned char)cube->map_prmtrs.win_height;
 	bmp_54arr[23] = (unsigned char)(cube->map_prmtrs.win_height >> 8);
-	bmp_54arr[24] = (unsigned char)(cube->map_prmtrs.win_height  >> 16);
-	bmp_54arr[25] = (unsigned char)(cube->map_prmtrs.win_height  >> 24);
+	bmp_54arr[24] = (unsigned char)(cube->map_prmtrs.win_height >> 16);
+	bmp_54arr[25] = (unsigned char)(cube->map_prmtrs.win_height >> 24);
 	bmp_54arr[26] = (unsigned char)1;
 	bmp_54arr[28] = (unsigned char)24;
 	return (0);
 }
 
-int screenshot_write_pixels_to_fd(int fd, t_game *cube)
+int	screenshot_write_pixels_to_fd(int fd, t_game *cube)
 {
 	int				x;
 	int				y;
@@ -38,10 +38,10 @@ int screenshot_write_pixels_to_fd(int fd, t_game *cube)
 	while (y >= 0)
 	{
 		x = 0;
-		while(x < cube->map_prmtrs.win_width)
+		while (x < cube->map_prmtrs.win_width)
 		{
 			color = *(int *)(cube->frame.addr_ptr + (y * cube->frame.size_line
-					+ x * cube->frame.bits_per_pixel / 8));
+						+ x * cube->frame.bits_per_pixel / 8));
 			write(fd, &color, 3);
 			x++;
 		}
@@ -50,27 +50,27 @@ int screenshot_write_pixels_to_fd(int fd, t_game *cube)
 	return (0);
 }
 
-int screenshot(t_game *cube)
+int	screenshot_make_size(t_game *cube)
+{
+	if (cube->map_prmtrs.win_width % 4)
+		cube->map_prmtrs.win_width = cube->map_prmtrs.win_width
+			- (cube->map_prmtrs.win_width % 4);
+	return (cube->map_prmtrs.win_width * cube->map_prmtrs.win_height + 54);
+}
+
+int	screenshot(t_game *cube)
 {
 	int				fd;
 	unsigned char	bmp_54arr[54];
-	int 			size;
 
-	printf("START screenshot\n");
 	fd = open("screenshot.bmp", O_CREAT | O_WRONLY | O_TRUNC, S_IRWXU);
 	if (fd < 0)
 		my_exit(19);
 	game_init(cube);
 	loop_hook_next_frame(cube);
-	if (cube->map_prmtrs.win_width % 4)
-		cube->map_prmtrs.win_width = cube->map_prmtrs.win_width
-				- (cube->map_prmtrs.win_width % 4);
-	size = cube->map_prmtrs.win_width * cube->map_prmtrs.win_height + 54;
-	screenshot_creat_bmp(bmp_54arr, cube, size);
+	screenshot_creat_bmp(bmp_54arr, cube, screenshot_make_size(cube));
 	write(fd, bmp_54arr, 54);
 	screenshot_write_pixels_to_fd(fd, cube);
-	printf("END screenshot\n");
 	exit(0);
 	return (0);
 }
-
