@@ -69,6 +69,23 @@ int 	sprts_prmtrs_init(t_game *cube, int i)
 	return (0);
 }
 
+int 	sprts_calculate(t_game *cube)
+{
+	cube->sprts.sprite_height = abs((int)(cube->map_prmtrs.win_height / cube->sprts.transform_y));
+	cube->sprts.sprite_width = abs((int)(cube->map_prmtrs.win_height / cube->sprts.transform_y));
+	cube->sprts.draw_start_y = -cube->sprts.sprite_height / 2 + cube->map_prmtrs.win_height / 2;
+	if (cube->sprts.draw_start_y < 0)
+		cube->sprts.draw_start_y = 0;
+	cube->sprts.draw_end_y = cube->sprts.sprite_height / 2 + cube->map_prmtrs.win_height / 2;
+	if (cube->sprts.draw_end_y >= cube->map_prmtrs.win_height)
+		cube->sprts.draw_end_y = cube->map_prmtrs.win_height - 1;
+	cube->sprts.draw_start_x = -cube->sprts.sprite_width / 2 + cube->sprts.sprite_screen_x;
+	if (cube->sprts.draw_start_x < 0)
+		cube->sprts.draw_start_x = 0;
+	cube->sprts.draw_end_x = cube->sprts.sprite_width / 2 + cube->sprts.sprite_screen_x;
+	return (0);
+}
+
 int		sprts(t_game *cube)
 {
 	int i;
@@ -78,6 +95,7 @@ int		sprts(t_game *cube)
 	while (i < cube->sprts.num_sprites)
 	{
 		sprts_prmtrs_init(cube, i);
+		sprts_calculate(cube);
 		i++;
 	}
 	return (0);
