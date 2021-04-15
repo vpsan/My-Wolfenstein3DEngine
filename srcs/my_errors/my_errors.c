@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:01:38 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/12 23:00:33 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/15 12:58:34 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	my_errors_init(void)
 	g_error_arr[12] = "Error\n Parsing file error. Sprites validathion.\n";
 
 	g_error_arr[13] = "Error\n game_window_init error.\n";
-	g_error_arr[14] = "Error\n game_textures_init error.\n";
+	g_error_arr[14] = "Error\n game_textures_init error. Or *.cub is empty.\n";
 
 	g_error_arr[19] = "Error\n screenshot() error.\n";
 	return ;

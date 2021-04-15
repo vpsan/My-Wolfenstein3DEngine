@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 01:58:56 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/12 23:00:33 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/15 12:58:34 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ int		game_player_init(t_game *cube)
 			if (cube->map[i][j] == 'N' || cube->map[i][j] == 'S' ||
 				cube->map[i][j] == 'E' || cube->map[i][j] == 'W')
 			{
-				cube->plr.pos_x = i;
-				cube->plr.pos_y = j;
+				cube->plr.pos_x = i + 0.5;
+				cube->plr.pos_y = j + 0.5;
 				set_player_prmtrs(cube, cube->map[i][j]);
 				cube->map[i][j] = '0';
 				return (0);

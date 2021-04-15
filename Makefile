@@ -158,7 +158,6 @@ DEBUG_DIR 	= 	srcs/debug/
 DEBUG_FUN	= 	$(DEBUG_DIR)debug_print_check_map.c\
 				$(DEBUG_DIR)debug_fill_map_instead_parsing.c\
 				$(DEBUG_DIR)debug_preparsing_init.c\
-				$(DEBUG_DIR)debug_sprts_init.c
 
 # ***************************************************************************** #
 

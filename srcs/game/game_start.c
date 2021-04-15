@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 01:59:21 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/12 23:00:33 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/15 12:58:34 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,6 @@ int		hook_press_off_keys(int key_code, t_game *cube)
 
 int		game_start(t_game *cube, int argc)
 {
-//	if (argc == 3)
-//	{
-//		screenshot_function
-//	}
-	printf("AAAA");
-	printf("a = %f\n", cube->plr.pos_x);
-	printf("a = %f\n", cube->plr.pos_y);
 	mlx_do_key_autorepeatoff(cube->mlx_ptr);
 	mlx_hook(cube->win_ptr, 2, 0, hook_press_on_keys, cube);
 	mlx_hook(cube->win_ptr, 3, 0, hook_press_off_keys, cube);
