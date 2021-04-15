@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/04/03 16:06:22 by valery           ###   ########.fr        #
+#    Updated: 2021/04/15 13:04:56 by valery           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -137,6 +137,7 @@ GAME		= 	$(GAME_DIR)game_init.c\
 				$(GAME_DIR)game_keys_init.c\
 				$(GAME_DIR)game_textures_init.c\
 				$(GAME_DIR)game_raycasting_init.c\
+				$(GAME_DIR)game_sprites_init.c\
 				$(GAME_DIR)game_start.c\
 				$(GAME_DIR)hook_next_frame.c\
 				$(GAME_DIR)color_pixel_fill.c\

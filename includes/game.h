@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/15 12:57:28 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/15 12:58:34 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@
 # define BLACK_CLR_CLNG 0x00000000
 # define NAVI_CLR_FLR 70
 
-# define MAX_SPRTS_NUM 200
+# define MAX_SPRTS_NUM 1000
 
 # define ERROR -1
 
