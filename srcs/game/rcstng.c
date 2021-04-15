@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:00:24 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/15 12:57:28 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/15 15:57:00 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ int 	rcstng(t_game *cube)
 		zbuffer[x] = cube->rcstg.perp_wall_dist;
 		x++;
 	}
-	sprts(cube);
+	sprts(cube, zbuffer);
 	return (0);
 }

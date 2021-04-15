@@ -86,7 +86,44 @@ int 	sprts_calculate(t_game *cube)
 	return (0);
 }
 
-int		sprts(t_game *cube)
+int		init_color(t_game *cube)
+{
+	cube->sprts.d = (cube->sprts.y) * 256 - cube->map_prmtrs.win_height * 128 +
+					cube->sprts.sprite_height * 128;
+	cube->sprts.tex_y = ((cube->sprts.d * cube->sprts_txtr.height) /
+					cube->sprts.sprite_height) / 256;
+	cube->sprts.color = ((int*)cube->sprts_txtr.img_ptr)
+	[cube->sprts_txtr.width * cube->sprts.tex_y + cube->sprts.tex_x];
+	return (0);
+}
+
+int 	sprts_stripe_calculate(t_game *cube, double *zbuffer)
+{
+	cube->sprts.stripe = cube->sprts.draw_start_x;
+	while (cube->sprts.stripe < cube->sprts.draw_end_x)
+	{
+		cube->sprts.tex_x = (int)(256 * (cube->sprts.stripe -
+									 (-cube->sprts.sprite_width / 2 + cube->sprts.sprite_screen_x)) *
+				cube->sprts_txtr.width / cube->sprts.sprite_width) / 256;
+		if (cube->sprts.transform_y > 0 && cube->sprts.stripe > 0 &&
+				cube->sprts.stripe < cube->map_prmtrs.win_width &&
+				cube->sprts.transform_y < zbuffer[cube->sprts.stripe] )
+		{
+			cube->sprts.y = cube->sprts.draw_start_y;
+			while (cube->sprts.y < cube->sprts.draw_end_y)
+			{
+				init_color(cube);
+				if ((cube->sprts.color & 0x00FFFFFF) != 9961608)
+					color_pixel_fill(&cube->frame.img_ptr, cube->sprts.stripe,
+									 cube->sprts.y, cube->sprts.color);
+				cube->sprts.y++;
+			}
+		}
+		cube->sprts.stripe++;
+	}
+}
+
+int		sprts(t_game *cube, double *zbuffer)
 {
 	int i;
 
@@ -96,6 +133,7 @@ int		sprts(t_game *cube)
 	{
 		sprts_prmtrs_init(cube, i);
 		sprts_calculate(cube);
+		sprts_stripe_calculate(cube, zbuffer);
 		i++;
 	}
 	return (0);

@@ -28,7 +28,7 @@ int		rcstng_while_hit_not_zero(t_game *cube)
 			cube->rcstg.map_y += cube->rcstg.step_y;
 			cube->rcstg.side = 1;
 		}
-		if (cube->map[cube->rcstg.map_x][cube->rcstg.map_y] > '0')
+		if (cube->map[cube->rcstg.map_x][cube->rcstg.map_y] == '1')
 			cube->rcstg.hit = 1;
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/15 12:58:34 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/15 20:25:15 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,9 +140,10 @@ typedef struct		s_rcstg
 
 typedef	struct		s_sprts
 {
+	int 			num_sprites;
+
 	double			pos_x[MAX_SPRTS_NUM];
 	double			pos_y[MAX_SPRTS_NUM];
-	int 			num_sprites;
 	int				sprite_order[MAX_SPRTS_NUM];
 	double			sprite_distance[MAX_SPRTS_NUM];
 	double			sprite_x;
@@ -157,6 +158,13 @@ typedef	struct		s_sprts
 	int				draw_end_y;
 	int				draw_start_x;
 	int				draw_end_x;
+	int 			stripe;
+	int 			tex_x;
+	int 			tex_y;
+	int				img_y;
+	int				y;
+	int				d;
+	uint32_t		color;
 }					t_sprts;
 
 typedef struct		s_game
@@ -219,7 +227,7 @@ int					rcstng_calculate_wallx(t_game *cube);
 int					rcstng_get_wall_tex(t_game *cube);
 int					rcstng_draw_wall(t_game *cube, int x);
 
-int 				sprts(t_game *cube);
+int 				sprts(t_game *cube, double *zbuffer);
 int					sprts_casting(t_game *cube);
 
 void				color_pixel_fill(t_frame_prmts *frame,
