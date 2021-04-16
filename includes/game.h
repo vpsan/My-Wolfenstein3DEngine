@@ -34,19 +34,11 @@
 # define SPEEDMOVE 0.2
 # define SPEEDTRN 0.1
 
-# define WHITE 0x00FFFFFF
-# define RED 0x00FF0000
-# define GREEN 0x0000FF00
-# define BLUE 0x000000FF
-
-# define BLACK_CLR_CLNG 0x00000000
-# define NAVI_CLR_FLR 70
-
 # define MAX_SPRTS_NUM 1000
 
 # define ERROR -1
 
-typedef struct		s_img_frame
+typedef struct		s_frame_prmtrs
 {
 	void			*img_ptr;
 	char			*addr_ptr;
@@ -129,7 +121,6 @@ typedef struct		s_rcstg
 typedef	struct		s_sprts
 {
 	int 			num_sprites;
-
 	double			pos_x[MAX_SPRTS_NUM];
 	double			pos_y[MAX_SPRTS_NUM];
 	int				sprite_order[MAX_SPRTS_NUM];
@@ -152,7 +143,7 @@ typedef	struct		s_sprts
 	int				img_y;
 	int				y;
 	int				d;
-	uint32_t		color;
+	int				color;
 }					t_sprts;
 
 typedef struct		s_game
