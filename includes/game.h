@@ -38,6 +38,8 @@
 
 # define ERROR -1
 
+# define FORBIDDEN_COLOR 0
+
 typedef struct		s_frame_prmtrs
 {
 	void			*img_ptr;
@@ -208,9 +210,9 @@ int 				sprts(t_game *cube, double *zbuffer);
 int					sprts_casting(t_game *cube);
 int					sprts_bubble_sort(t_game *cube);
 int					sprts_prmtrs_init(t_game *cube, int i);
-int					sprts_calculate(t_game *cube);
-int					init_color(t_game *cube);
-int					sprts_stripe_calculate(t_game *cube, double *zbuffer);
+int					sprts_draw_prmtrs_calculate(t_game *cube);
+int					sprts_stripes_draw(t_game *cube);
+int					sprts_stripes(t_game *cube, double *zbuffer);
 
 void				color_pixel_fill(t_frame_prmts *frame,
 									 int x, int y, int color);

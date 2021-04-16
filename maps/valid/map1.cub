@@ -3,9 +3,9 @@ NO textures/WALL11.xpm
 SO textures/WALL12.xpm
 WE textures/WALL13.xpm
 EA textures/WALL14.xpm
-S  textures/skeleton.xpm
-F 220,100,0
-C 225,30,0
+S  textures/sprite_pillar.xpm
+F 0,0,60
+C 100,150,200
 1111111
 1000001
 100N001

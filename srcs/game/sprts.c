@@ -10,8 +10,8 @@ int		sprts(t_game *cube, double *zbuffer)
 	while (i < cube->sprts.num_sprites)
 	{
 		sprts_prmtrs_init(cube, i);
-		sprts_calculate(cube);
-		sprts_stripe_calculate(cube, zbuffer);
+		sprts_draw_prmtrs_calculate(cube);
+		sprts_stripes(cube, zbuffer);
 		i++;
 	}
 	return (0);
