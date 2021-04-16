@@ -3,6 +3,7 @@
 int		sprts(t_game *cube, double *zbuffer)
 {
 	int i;
+	int j;
 
 	sprts_casting(cube);
 	i = 0;

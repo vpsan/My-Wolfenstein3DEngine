@@ -51,7 +51,7 @@ int		sprts_casting(t_game *cube)
 int 	sprts_prmtrs_init(t_game *cube, int i)
 {
 	cube->sprts.sprite_x = cube->sprts.pos_x[cube->sprts.sprite_order[i]] -
-						   cube->plr.pos_x;
+						   cube->plr.pos_x;//
 	cube->sprts.sprite_y = cube->sprts.pos_y[cube->sprts.sprite_order[i]] -
 						   cube->plr.pos_y;
 	cube->sprts.inv_det = 1.0 /
@@ -83,6 +83,7 @@ int 	sprts_calculate(t_game *cube)
 	if (cube->sprts.draw_start_x < 0)
 		cube->sprts.draw_start_x = 0;
 	cube->sprts.draw_end_x = cube->sprts.sprite_width / 2 + cube->sprts.sprite_screen_x;
+	// if
 	return (0);
 }
 
@@ -112,10 +113,13 @@ int 	sprts_stripe_calculate(t_game *cube, double *zbuffer)
 			cube->sprts.y = cube->sprts.draw_start_y;
 			while (cube->sprts.y < cube->sprts.draw_end_y)
 			{
+				/////////////////////////////////////////
 				init_color(cube);
-				if ((cube->sprts.color & 0x00FFFFFF) != 9961608)
+//				if ((cube->sprts.color /*& 0x00FFFFFF*/) != 0x980088/*9961608*/)
+				if ((cube->sprts.color & 0x00FFFFFF) != 0)
 					color_pixel_fill(&cube->frame, cube->sprts.stripe,
 									 cube->sprts.y, cube->sprts.color);
+
 				cube->sprts.y++;
 			}
 		}
