@@ -151,6 +151,7 @@ GAME		= 	$(GAME_DIR)game_init.c\
 				$(GAME_DIR)rcstng_draw_wall.c\
 				$(GAME_DIR)rcstng_get_wall_tex.c\
 				$(GAME_DIR)sprts.c\
+				$(GAME_DIR)sprts_utils.c\
 				$(GAME_DIR)screenshot.c\
 
 # *********************** DEBUG_FUN ******************************************* #

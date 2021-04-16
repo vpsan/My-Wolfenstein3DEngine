@@ -124,18 +124,6 @@ typedef struct		s_rcstg
 	int				tex_y;
 	double			tex_step;
 	double			tex_pos;
-//	double			sprite_x;
-//	double			sprite_y;
-//	double			inv_det;
-//	double			transform_x;
-//	double			transform_y;
-//	int				sprite_screen_x;
-//	int				sprite_height;
-//	int				sprite_width;
-//	int				draw_start_y;
-//	int				draw_end_y;
-//	int				draw_start_x;
-//	int				draw_end_x;
 }					t_rcstg;
 
 typedef	struct		s_sprts
@@ -188,9 +176,6 @@ typedef struct		s_game
 
 int					game_init(t_game *cube);
 
-int					screenshot(t_game *cube);
-void			do_screenshot(t_game *game);
-
 int					game_map_init(t_game *cube);
 int					game_map_prmtrs_init(t_game *cube);
 int					game_window_init(t_game *cube);
@@ -202,6 +187,7 @@ int 				game_raycasting_init(t_game *cube);
 int 				game_sprites_init(t_game *cube);
 
 int					game_start(t_game *cube, int argc);
+
 int					hook_press_on_keys(int key_code, t_game *cube);
 int					hook_press_off_keys(int key_code, t_game *cube);
 int					hook_close_window(t_game *cube);
@@ -229,7 +215,15 @@ int					rcstng_draw_wall(t_game *cube, int x);
 
 int 				sprts(t_game *cube, double *zbuffer);
 int					sprts_casting(t_game *cube);
+int					sprts_bubble_sort(t_game *cube);
+int					sprts_prmtrs_init(t_game *cube, int i);
+int					sprts_calculate(t_game *cube);
+int					init_color(t_game *cube);
+int					sprts_stripe_calculate(t_game *cube, double *zbuffer);
 
 void				color_pixel_fill(t_frame_prmts *frame,
-													int x, int y, int color);
+									 int x, int y, int color);
+
+int					screenshot(t_game *cube);
+
 #endif
