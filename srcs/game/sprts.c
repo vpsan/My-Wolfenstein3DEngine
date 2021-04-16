@@ -13,7 +13,7 @@ int 	sprts_bubble_sort(t_game *cube)
 		while (j > i)
 		{
 			if (cube->sprts.sprite_distance[j - 1]
-				> cube->sprts.sprite_distance[j])
+				< cube->sprts.sprite_distance[j])
 			{
 				temp = cube->sprts.sprite_distance[j - 1];
 				cube->sprts.sprite_distance[j - 1] = cube->sprts.sprite_distance[j];
@@ -92,7 +92,7 @@ int		init_color(t_game *cube)
 					cube->sprts.sprite_height * 128;
 	cube->sprts.tex_y = ((cube->sprts.d * cube->sprts_txtr.height) /
 					cube->sprts.sprite_height) / 256;
-	cube->sprts.color = ((int*)cube->sprts_txtr.img_ptr)
+	cube->sprts.color = ((int*)cube->sprts_txtr.addr_ptr)
 	[cube->sprts_txtr.width * cube->sprts.tex_y + cube->sprts.tex_x];
 	return (0);
 }
@@ -114,7 +114,7 @@ int 	sprts_stripe_calculate(t_game *cube, double *zbuffer)
 			{
 				init_color(cube);
 				if ((cube->sprts.color & 0x00FFFFFF) != 9961608)
-					color_pixel_fill(&cube->frame.img_ptr, cube->sprts.stripe,
+					color_pixel_fill(&cube->frame, cube->sprts.stripe,
 									 cube->sprts.y, cube->sprts.color);
 				cube->sprts.y++;
 			}
