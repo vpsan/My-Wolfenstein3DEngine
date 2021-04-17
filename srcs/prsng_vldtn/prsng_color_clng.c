@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:48:02 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/16 21:48:03 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/17 14:03:43 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "prsng_vldtn.h"
+#include "prsng_vldtn.h"
 
-int		vldthn_color_clng_digits(char **arr_split_line, int exit_number)
+int	vldthn_color_clng_digits(char **arr_split_line, int exit_number)
 {
 	vldthn_chech_str_is_digits(arr_split_line[0], exit_number);
 	vldthn_chech_str_is_digits(arr_split_line[1], exit_number);
@@ -20,9 +20,9 @@ int		vldthn_color_clng_digits(char **arr_split_line, int exit_number)
 	return (0);
 }
 
-int     vldthn_make_rgb(int *cube_map_prmtrs_color, int r, int g, int b)
+int	vldthn_make_rgb(int *cube_map_prmtrs_color, int r, int g, int b)
 {
-	int result_rgb_color;
+	int	result_rgb_color;
 
 	if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255)
 		my_exit(10);
@@ -31,11 +31,11 @@ int     vldthn_make_rgb(int *cube_map_prmtrs_color, int r, int g, int b)
 	return (0);
 }
 
-int 	prsng_color_clng(char **arr_split_line, t_game *cube)
+int	prsng_color_clng(char **arr_split_line, t_game *cube)
 {
 	int		red;
-	int 	green;
-	int 	blue;
+	int		green;
+	int		blue;
 	char	**color_arr;
 
 	if (vldthn_count_arrsplitline(arr_split_line) != 2)

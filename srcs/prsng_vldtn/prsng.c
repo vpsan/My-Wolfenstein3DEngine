@@ -6,18 +6,19 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:01:51 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/16 21:48:25 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/17 13:57:43 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "prsng_vldtn.h"
+#include "prsng_vldtn.h"
 
-int 	prsng_creat_map(t_game **cube)
+int	prsng_creat_map(t_game **cube)
 {
 	int		i;
 	t_list	*tmp;
 
-	(*cube)->map = ft_calloc(ft_lstsize((*cube)->head_lstmap) + 1, sizeof(char *));
+	(*cube)->map = ft_calloc(ft_lstsize((*cube)->head_lstmap) + 1,
+			sizeof(char *));
 	i = -1;
 	tmp = (*cube)->head_lstmap;
 	while (tmp)
@@ -28,9 +29,9 @@ int 	prsng_creat_map(t_game **cube)
 	return (0);
 }
 
-int		prsng_creat_lstmap(char *line, t_game *cube)
+int	prsng_creat_lstmap(char *line, t_game *cube)
 {
-	char *new_line;
+	char	*new_line;
 
 //	if (file_check_map_prmtrs(cube) == false)
 //		return (ERROR); // prmtrs are not correct
@@ -41,7 +42,7 @@ int		prsng_creat_lstmap(char *line, t_game *cube)
 	return (true);
 }
 
-int		prsng_fill_game(char *line, char **arr_split_line, t_game *cube)
+int	prsng_fill_game(char *line, char **arr_split_line, t_game *cube)
 {
 	if (ft_memcmp(arr_split_line[0], "R", 1) == 0)
 		prsng_resolution(arr_split_line, cube);
@@ -64,11 +65,12 @@ int		prsng_fill_game(char *line, char **arr_split_line, t_game *cube)
 	return (0);
 }
 
-int		prsng_parse_line(char *line, t_game *cube)
+int	prsng_parse_line(char *line, t_game *cube)
 {
 	char	**splited_line;
 
-	if ((splited_line = ft_split(line, ' ')) == NULL)
+	splited_line = ft_split(line, ' ');
+	if (splited_line == NULL)
 		return (ERROR);// ERROR ???
 	if (prsng_fill_game(line, splited_line, cube) == ERROR)
 		return (ERROR);
@@ -77,9 +79,9 @@ int		prsng_parse_line(char *line, t_game *cube)
 	return (0);
 }
 
-int		prsng_parse_file(int fd, t_game *cube)
+int	prsng_parse_file(int fd, t_game *cube)
 {
-	char 	*line;
+	char	*line;
 
 	line = NULL;
 	while (get_next_line(fd, &line) == 1)

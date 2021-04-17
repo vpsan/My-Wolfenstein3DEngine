@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:01:38 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/16 21:47:59 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/17 13:42:57 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,9 @@ void	my_errors_init(void)
 	g_error_arr[10] = "Error\n Parsing file error. Color_clng.\n";
 	g_error_arr[11] = "Error\n Parsing file error. Map validathion.\n";
 	g_error_arr[12] = "Error\n Parsing file error. Sprites validathion.\n";
-
 	g_error_arr[13] = "Error\n game_window_init error.\n";
 	g_error_arr[14] = "Error\n game_textures_init/rcstng_get_wall_tex error.\n";
-
 	g_error_arr[15] = "Error\n Too many sprites in map.cub.\n";
-
 	g_error_arr[19] = "Error\n screenshot() error.\n";
 	return ;
 }
