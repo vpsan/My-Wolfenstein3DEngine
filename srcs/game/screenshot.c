@@ -89,8 +89,8 @@ int	screenshot(t_game *cube)
 	screenshot_creat_bmp_2(bmp_54arr, cube);
 	write(fd, bmp_54arr, 54);
 	screenshot_write_pixels_to_fd(fd, cube);
-	hook_close_window(cube);
 	close(fd);
+	hook_close_window(cube);
 	exit(0);
 	return (0);
 }
