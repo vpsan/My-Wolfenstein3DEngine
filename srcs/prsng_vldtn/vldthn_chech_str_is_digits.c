@@ -6,16 +6,16 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:48:26 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/16 21:48:28 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/17 14:12:24 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "prsng_vldtn.h"
+#include "prsng_vldtn.h"
 
-int		vldthn_chech_str_is_digits(char *str, int exit_number)
+int	vldthn_chech_str_is_digits(char *str, int exit_number)
 {
-	int		j;
-	int		exit_flag;
+	int	j;
+	int	exit_flag;
 
 	j = 0;
 	exit_flag = 0;

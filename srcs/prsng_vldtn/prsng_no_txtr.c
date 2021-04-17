@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:48:10 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/16 21:48:11 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/17 14:07:22 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "prsng_vldtn.h"
+#include "prsng_vldtn.h"
 
-int 	prsng_no_txtr(char **arr_split_line, t_game *cube)
+int	prsng_no_txtr(char **arr_split_line, t_game *cube)
 {
 	if (vldthn_count_arrsplitline(arr_split_line) != 2)
 		my_exit(4);

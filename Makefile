@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/04/15 13:04:56 by valery           ###   ########.fr        #
+#    Updated: 2021/04/17 14:15:46 by valery           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -122,8 +122,7 @@ PRSNG_VLDTN		=	$(PRSNG_VLDTN_DIR)prsng_vldtn.c\
 					$(PRSNG_VLDTN_DIR)prsng_color_flr.c\
 					$(PRSNG_VLDTN_DIR)vldthn_count_split_arr.c\
 					$(PRSNG_VLDTN_DIR)vldthn_chech_str_is_digits.c\
-					$(PRSNG_VLDTN_DIR)vldtn_map.c\
-					$(PRSNG_VLDTN_DIR)vldtn_prmtrs_summary.c\
+					$(PRSNG_VLDTN_DIR)vldthn_map.c\
 
 # *********************** GAME ************************************************ #
 

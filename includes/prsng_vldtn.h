@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:56:31 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/15 12:57:28 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/17 14:16:22 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int 	prsng_color_flr(char **arr_split_line, t_game *cube);
 int 	vldthn_count_arrsplitline(char **arr_split_line);
 int		vldthn_chech_str_is_digits(char *str, int exit_number);
 int     vldthn_check_make_rgb(int *cube_map_prmtrs_color, int r, int g, int b);
-int		vldtn_map(t_game *cube);
-int		vldtn_prmtrs_summary(t_game *cube);
+int		vldthn_map(t_game *cube);
 
 #endif
