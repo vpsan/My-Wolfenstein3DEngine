@@ -33,10 +33,6 @@ int	prsng_creat_lstmap(char *line, t_game *cube)
 {
 	char	*new_line;
 
-//	if (file_check_map_prmtrs(cube) == false)
-//		return (ERROR); // prmtrs are not correct
-//	if (file_check_free_line(line) == false)
-//		return (true);	// everything ok, just skeep this line
 	new_line = ft_strdup(line);
 	ft_lstadd_back(&cube->head_lstmap, ft_lstnew(new_line));
 	return (true);
@@ -71,7 +67,7 @@ int	prsng_parse_line(char *line, t_game *cube)
 
 	splited_line = ft_split(line, ' ');
 	if (splited_line == NULL)
-		return (ERROR);// ERROR ???
+		return (ERROR);
 	if (prsng_fill_game(line, splited_line, cube) == ERROR)
 		return (ERROR);
 	ft_free_str_arr(&splited_line);
@@ -94,5 +90,7 @@ int	prsng_parse_file(int fd, t_game *cube)
 		if (prsng_parse_line(line, cube) == ERROR)
 			return (ERROR);
 	}
+	else
+		free(line);
 	return (0);
 }
