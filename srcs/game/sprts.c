@@ -12,7 +12,7 @@
 
 #include "game.h"
 
-int	sprts(t_game *cube, double *zbuffer)
+int	sprts(t_game *cube)
 {
 	int	i;
 	int	j;
@@ -23,7 +23,7 @@ int	sprts(t_game *cube, double *zbuffer)
 	{
 		sprts_prmtrs_init(cube, i);
 		sprts_draw_prmtrs_calculate(cube);
-		sprts_stripes(cube, zbuffer);
+		sprts_stripes(cube);
 		i++;
 	}
 	return (0);

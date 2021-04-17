@@ -40,7 +40,7 @@
 
 # define FORBIDDEN_COLOR 0
 
-typedef struct		s_frame_prmtrs
+typedef struct s_frame_prmtrs
 {
 	void			*img_ptr;
 	char			*addr_ptr;
@@ -49,7 +49,7 @@ typedef struct		s_frame_prmtrs
 	int				endian;
 }					t_frame_prmts;
 
-typedef struct		s_keys
+typedef struct s_keys
 {
 	int				w;
 	int				a;
@@ -59,7 +59,7 @@ typedef struct		s_keys
 	int				right;
 }					t_keys;
 
-typedef struct		s_texture
+typedef struct s_texture
 {
 	void			*img_ptr;
 	char			*addr_ptr;
@@ -70,7 +70,7 @@ typedef struct		s_texture
 	int				height;
 }					t_texture;
 
-typedef struct		s_map_prmtrs
+typedef struct s_map_prmtrs
 {
 	int				win_width;
 	int				win_height;
@@ -91,7 +91,7 @@ typedef struct		s_map_prmtrs
 	int				color_clng_flag;
 }					t_map_prmtrs;
 
-typedef struct		s_player
+typedef struct s_player
 {
 	double			pos_x;
 	double			pos_y;
@@ -101,7 +101,7 @@ typedef struct		s_player
 	double			plane_y;
 }					t_player;
 
-typedef struct		s_rcstg
+typedef struct s_rcstg
 {
 	double			camera_x;
 	double			ray_dir_x;
@@ -128,7 +128,7 @@ typedef struct		s_rcstg
 	double			tex_pos;
 }					t_rcstg;
 
-typedef	struct		s_sprts
+typedef struct s_sprts
 {
 	int				num_sprites;
 	double			pos_x[MAX_SPRTS_NUM];
@@ -155,7 +155,7 @@ typedef	struct		s_sprts
 	int				color;
 }					t_sprts;
 
-typedef struct		s_game
+typedef struct s_game
 {
 	void			*mlx_ptr;
 	void			*win_ptr;
@@ -170,6 +170,7 @@ typedef struct		s_game
 	t_map_prmtrs	map_prmtrs;
 	t_rcstg			rcstg;
 	t_sprts			sprts;
+	double			*rcstng_sprts_zbuffer;
 	char			**map;
 	t_list			*head_lstmap;
 }					t_game;
@@ -213,13 +214,13 @@ int					rcstng_calculate_wallx(t_game *cube);
 int					rcstng_get_wall_tex(t_game *cube);
 int					rcstng_draw_wall(t_game *cube, int x);
 
-int					sprts(t_game *cube, double *zbuffer);
+int					sprts(t_game *cube);
 int					sprts_casting(t_game *cube);
 int					sprts_bubble_sort(t_game *cube);
 int					sprts_prmtrs_init(t_game *cube, int i);
 int					sprts_draw_prmtrs_calculate(t_game *cube);
 int					sprts_stripes_draw(t_game *cube);
-int					sprts_stripes(t_game *cube, double *zbuffer);
+int					sprts_stripes(t_game *cube);
 
 void				color_pixel_fill(t_frame_prmts *frame,
 						int x, int y, int color);

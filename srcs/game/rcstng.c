@@ -15,7 +15,7 @@
 int 	rcstng(t_game *cube)
 {
 	int		x;
-	double	zbuffer[cube->map_prmtrs.win_width];
+//	double	rcstng_sprts_zbuffer[cube->map_prmtrs.win_width];
 
 	x = 0;
 	while (x < cube->map_prmtrs.win_width)
@@ -27,9 +27,8 @@ int 	rcstng(t_game *cube)
 		rcstng_get_wall_tex(cube);
 		rcstng_calculate_wallx(cube);
 		rcstng_draw_wall(cube, x);
-		zbuffer[x] = cube->rcstg.perp_wall_dist;
+		cube->rcstng_sprts_zbuffer[x] = cube->rcstg.perp_wall_dist;
 		x++;
 	}
-	sprts(cube, zbuffer);
 	return (0);
 }

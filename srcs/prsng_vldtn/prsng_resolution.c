@@ -20,8 +20,8 @@ int	vldthn_resolution_maxmin(t_game *cube)
 		|| cube->map_prmtrs.win_height > MAX_WIN_HIEGHT
 		|| cube->map_prmtrs.win_width > MAX_WIN_WIDTH)
 	{
-		cube->map_prmtrs.win_width = 980;
-		cube->map_prmtrs.win_height = 720;
+		cube->map_prmtrs.win_width = MAX_WIN_WIDTH;
+		cube->map_prmtrs.win_height = MAX_WIN_HIEGHT;
 	}
 	return (0);
 }

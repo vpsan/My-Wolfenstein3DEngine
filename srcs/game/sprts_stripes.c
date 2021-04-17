@@ -26,7 +26,7 @@ int	sprts_stripes_draw(t_game *cube)
 	return (0);
 }
 
-int	sprts_stripes(t_game *cube, double *zbuffer)
+int	sprts_stripes(t_game *cube)
 {
 	cube->sprts.stripe = cube->sprts.draw_start_x;
 	while (cube->sprts.stripe < cube->sprts.draw_end_x)
@@ -36,7 +36,7 @@ int	sprts_stripes(t_game *cube, double *zbuffer)
 				* cube->sprts_txtr.width / cube->sprts.sprite_width) / 256;
 		if (cube->sprts.transform_y > 0 && cube->sprts.stripe > 0
 			&& cube->sprts.stripe < cube->map_prmtrs.win_width
-			&& cube->sprts.transform_y < zbuffer[cube->sprts.stripe])
+			&& cube->sprts.transform_y < cube->rcstng_sprts_zbuffer[cube->sprts.stripe])
 		{
 			cube->sprts.y = cube->sprts.draw_start_y;
 			while (cube->sprts.y < cube->sprts.draw_end_y)

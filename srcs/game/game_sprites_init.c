@@ -80,5 +80,6 @@ int	game_sprites_init(t_game *cube)
 	cube->sprts.draw_end_y = -1;
 	cube->sprts.draw_start_x = -1;
 	cube->sprts.draw_end_x = -1;
+	cube->rcstng_sprts_zbuffer = NULL;
 	return (0);
 }
