@@ -12,7 +12,7 @@
 
 #include "game.h"
 
-int		game_raycasting_init(t_game *cube)
+int	game_raycasting_init(t_game *cube)
 {
 	cube->rcstg.camera_x = 0;
 	cube->rcstg.ray_dir_x = 0;

@@ -12,7 +12,7 @@
 
 #include "game.h"
 
-int		hook_close_window(t_game *cube)
+int	hook_close_window(t_game *cube)
 {
 	mlx_destroy_window(cube->mlx_ptr, cube->win_ptr);
 	ft_free_str_arr(&cube->map);
@@ -28,7 +28,7 @@ int		hook_close_window(t_game *cube)
 	return (0);
 }
 
-int		hook_press_on_keys(int key_code, t_game *cube)
+int	hook_press_on_keys(int key_code, t_game *cube)
 {
 	if (key_code == KEY_ESC)
 		hook_close_window(cube);
@@ -47,7 +47,7 @@ int		hook_press_on_keys(int key_code, t_game *cube)
 	return (0);
 }
 
-int		hook_press_off_keys(int key_code, t_game *cube)
+int	hook_press_off_keys(int key_code, t_game *cube)
 {
 	if (key_code == KEY_W)
 		cube->keys.w = 0;
@@ -64,7 +64,7 @@ int		hook_press_off_keys(int key_code, t_game *cube)
 	return (0);
 }
 
-int		game_start(t_game *cube, int argc)
+int	game_start(t_game *cube, int argc)
 {
 	mlx_do_key_autorepeatoff(cube->mlx_ptr);
 	mlx_hook(cube->win_ptr, 2, 0, hook_press_on_keys, cube);

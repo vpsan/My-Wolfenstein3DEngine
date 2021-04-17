@@ -12,21 +12,21 @@
 
 #include "game.h"
 
-int		set_dirx_diry(t_game *cube, double dirx, double diry)
+int	set_dirx_diry(t_game *cube, double dirx, double diry)
 {
 	cube->plr.dir_x = dirx;
 	cube->plr.dir_y = diry;
 	return (0);
 }
 
-int		set_planex_planey(t_game *cube, double planex, double planey)
+int	set_planex_planey(t_game *cube, double planex, double planey)
 {
 	cube->plr.plane_x = planex;
 	cube->plr.plane_y = planey;
 	return (0);
 }
 
-int		set_player_prmtrs(t_game *cube, char plr_dir)
+int	set_player_prmtrs(t_game *cube, char plr_dir)
 {
 	if (plr_dir == 'N')
 	{
@@ -51,7 +51,7 @@ int		set_player_prmtrs(t_game *cube, char plr_dir)
 	return (0);
 }
 
-int		game_player_init(t_game *cube)
+int	game_player_init(t_game *cube)
 {
 	int		i;
 	int		j;

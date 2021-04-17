@@ -12,7 +12,7 @@
 
 #include "game.h"
 
-int		rcstng_while_hit_not_zero(t_game *cube)
+int	rcstng_while_hit_not_zero(t_game *cube)
 {
 	while (cube->rcstg.hit == 0)
 	{

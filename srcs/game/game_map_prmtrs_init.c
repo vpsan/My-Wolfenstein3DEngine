@@ -12,7 +12,7 @@
 
 #include "game.h"
 
-int		game_map_prmtrs_init(t_game *cube)
+int	game_map_prmtrs_init(t_game *cube)
 {
 	cube->map_prmtrs.win_width = 0;
 	cube->map_prmtrs.win_height = 0;

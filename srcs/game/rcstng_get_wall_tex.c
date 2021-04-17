@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:01:04 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/16 21:47:22 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/17 13:01:51 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int		rcstng_get_wall_tex(t_game *cube)
+int	rcstng_get_wall_tex(t_game *cube)
 {
 	if (cube->rcstg.side == 1)
 	{
@@ -28,7 +28,7 @@ int		rcstng_get_wall_tex(t_game *cube)
 		if (cube->rcstg.step_x < 0)
 			cube->rcstg.tex = &cube->ea_txtr;
 	}
-//	if (cube->rcstg.tex == NULL)
-//		exit(111);
+	if (cube->rcstg.tex == NULL)
+		my_exit(14);
 	return (0);
 }

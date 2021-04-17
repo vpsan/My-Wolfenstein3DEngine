@@ -6,16 +6,16 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:00:10 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/16 21:47:10 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/17 12:48:43 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int		move_w(t_game *cube)
+int	move_w(t_game *cube)
 {
-	double new_pos_x;
-	double new_pos_y;
+	double	new_pos_x;
+	double	new_pos_y;
 
 	new_pos_x = cube->plr.pos_x + cube->plr.dir_x * SPEEDMOVE;
 	new_pos_y = cube->plr.pos_y + cube->plr.dir_y * SPEEDMOVE;
@@ -26,10 +26,10 @@ int		move_w(t_game *cube)
 	return (0);
 }
 
-int		move_s(t_game *cube)
+int	move_s(t_game *cube)
 {
-	double new_pos_x;
-	double new_pos_y;
+	double	new_pos_x;
+	double	new_pos_y;
 
 	new_pos_x = cube->plr.pos_x - cube->plr.dir_x * SPEEDMOVE;
 	new_pos_y = cube->plr.pos_y - cube->plr.dir_y * SPEEDMOVE;
@@ -40,10 +40,10 @@ int		move_s(t_game *cube)
 	return (0);
 }
 
-int		move_d(t_game *cube)
+int	move_d(t_game *cube)
 {
-	double new_pos_x;
-	double new_pos_y;
+	double	new_pos_x;
+	double	new_pos_y;
 
 	new_pos_x = cube->plr.pos_x - cube->plr.dir_y * SPEEDMOVE;
 	new_pos_y = cube->plr.pos_y + cube->plr.dir_x * SPEEDMOVE;
@@ -54,10 +54,10 @@ int		move_d(t_game *cube)
 	return (0);
 }
 
-int		move_a(t_game *cube)
+int	move_a(t_game *cube)
 {
-	double new_pos_x;
-	double new_pos_y;
+	double	new_pos_x;
+	double	new_pos_y;
 
 	new_pos_x = cube->plr.pos_x + cube->plr.dir_y * SPEEDMOVE;
 	new_pos_y = cube->plr.pos_y - cube->plr.dir_x * SPEEDMOVE;

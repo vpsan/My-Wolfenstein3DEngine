@@ -12,7 +12,7 @@
 
 #include "game.h"
 
-int		game_keys_init(t_game *cube)
+int	game_keys_init(t_game *cube)
 {
 	cube->keys.w = 0;
 	cube->keys.a = 0;

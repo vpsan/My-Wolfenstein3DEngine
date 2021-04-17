@@ -139,7 +139,7 @@ GAME		= 	$(GAME_DIR)game_init.c\
 				$(GAME_DIR)game_raycasting_init.c\
 				$(GAME_DIR)game_sprites_init.c\
 				$(GAME_DIR)game_start.c\
-				$(GAME_DIR)hook_next_frame.c\
+				$(GAME_DIR)loop_hook_next_frame.c\
 				$(GAME_DIR)color_pixel_fill.c\
 				$(GAME_DIR)player_move.c\
 				$(GAME_DIR)player_turn.c\

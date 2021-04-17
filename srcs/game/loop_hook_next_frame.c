@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hook_next_frame.c                                  :+:      :+:    :+:   */
+/*   loop_hook_next_frame.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:00:00 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/16 21:47:07 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/17 12:46:16 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int		pre_rcstng_draw_ceiling(t_game *cube)
+int	pre_rcstng_draw_ceiling(t_game *cube)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	y = 0;
 	while (y < cube->map_prmtrs.win_height / 2)
@@ -31,10 +31,10 @@ int		pre_rcstng_draw_ceiling(t_game *cube)
 	return (0);
 }
 
-int		pre_rcstng_draw_floor(t_game *cube)
+int	pre_rcstng_draw_floor(t_game *cube)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	y = cube->map_prmtrs.win_height / 2;
 	while (y < cube->map_prmtrs.win_height)
@@ -50,7 +50,7 @@ int		pre_rcstng_draw_floor(t_game *cube)
 	return (0);
 }
 
-int		pre_rcstng_move_player(t_game *cube)
+int	pre_rcstng_move_player(t_game *cube)
 {
 	if (cube->keys.w == 1)
 		move_w(cube);
@@ -67,13 +67,13 @@ int		pre_rcstng_move_player(t_game *cube)
 	return (0);
 }
 
-int		loop_hook_next_frame(t_game *cube)
+int	loop_hook_next_frame(t_game *cube)
 {
 	pre_rcstng_move_player(cube);
 	pre_rcstng_draw_ceiling(cube);
 	pre_rcstng_draw_floor(cube);
 	rcstng(cube);
 	mlx_put_image_to_window(cube->mlx_ptr, cube->win_ptr,
-							cube->frame.img_ptr, 0, 0);
+		cube->frame.img_ptr, 0, 0);
 	return (0);
 }

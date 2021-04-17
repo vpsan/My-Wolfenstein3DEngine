@@ -20,7 +20,7 @@ int		sprts_casting(t_game *cube)
 	while (i < cube->sprts.num_sprites)
 	{
 		cube->sprts.sprite_order[i] = i;
-		cube->sprts.sprite_distance[i] =
+		cube->sprts.sprite_dstnc[i] =
 				((cube->plr.pos_x - cube->sprts.pos_x[i])
 				 * (cube->plr.pos_x - cube->sprts.pos_x[i]) +
 				 (cube->plr.pos_y - cube->sprts.pos_y[i])
