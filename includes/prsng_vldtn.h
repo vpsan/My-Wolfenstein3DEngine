@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:56:31 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/17 14:16:22 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/17 15:10:42 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # include "get_next_line.h"
 # include "game.h"
 
-
 # define MIN_WIN_HIEGHT 10
 # define MIN_WIN_WIDTH 10
 # define MAX_WIN_HIEGHT 1480
@@ -37,17 +36,17 @@ int		prsng_creat_lstmap(char *line, t_game *cube);
 int		prsng_creat_map(t_game **cube);
 
 int		prsng_resolution(char **arr_split_line, t_game *cube);
-int 	prsng_no_txtr(char **arr_split_line, t_game *cube);
-int 	prsng_so_txtr(char **arr_split_line, t_game *cube);
-int 	prsng_we_txtr(char **arr_split_line, t_game *cube);
-int 	prsng_ea_txtr(char **arr_split_line, t_game *cube);
-int 	prsng_sprts_txtr(char **arr_split_line, t_game *cube);
-int 	prsng_color_clng(char **arr_split_line, t_game *cube);
-int 	prsng_color_flr(char **arr_split_line, t_game *cube);
+int		prsng_no_txtr(char **arr_split_line, t_game *cube);
+int		prsng_so_txtr(char **arr_split_line, t_game *cube);
+int		prsng_we_txtr(char **arr_split_line, t_game *cube);
+int		prsng_ea_txtr(char **arr_split_line, t_game *cube);
+int		prsng_sprts_txtr(char **arr_split_line, t_game *cube);
+int		prsng_color_clng(char **arr_split_line, t_game *cube);
+int		prsng_color_flr(char **arr_split_line, t_game *cube);
 
-int 	vldthn_count_arrsplitline(char **arr_split_line);
+int		vldthn_count_arrsplitline(char **arr_split_line);
 int		vldthn_chech_str_is_digits(char *str, int exit_number);
-int     vldthn_check_make_rgb(int *cube_map_prmtrs_color, int r, int g, int b);
+int		vldthn_check_make_rgb(int *cube_map_prmtrs_color, int r, int g, int b);
 int		vldthn_map(t_game *cube);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 01:58:44 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/16 21:46:49 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/17 14:44:34 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,16 @@ int	game_map_prmtrs_init(t_game *cube)
 	cube->map_prmtrs.so_path = NULL;
 	cube->map_prmtrs.we_path = NULL;
 	cube->map_prmtrs.ea_path = NULL;
+	cube->map_prmtrs.sprts_path = NULL;
 	cube->map_prmtrs.clr_flr = 0;
 	cube->map_prmtrs.clr_clng = 0;
-	cube->map_prmtrs.sprts_path = NULL;
+	cube->map_prmtrs.resolution_flag = 0;
+	cube->map_prmtrs.no_txtr_flag = 0;
+	cube->map_prmtrs.so_txtr_flag = 0;
+	cube->map_prmtrs.we_txtr_flag = 0;
+	cube->map_prmtrs.ea_txtr_flag = 0;
+	cube->map_prmtrs.sprts_txtr_flag = 0;
+	cube->map_prmtrs.color_flr_flag = 0;
+	cube->map_prmtrs.color_clng_flag = 0;
 	return (0);
 }

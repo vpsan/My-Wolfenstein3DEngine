@@ -20,7 +20,7 @@ void				*ft_memset(void *dst, int value, size_t size);
 void				ft_bzero(void *dst, size_t size);
 void				*ft_memcpy(void *dst, const void *src, size_t size);
 void				*ft_memccpy(void *dst, const void *src,
-								int value, size_t size);
+						int value, size_t size);
 void				*ft_memmove(void *dst, const void *src, size_t size);
 void				*ft_memchr(const void *src, int value, size_t size);
 int					ft_memcmp(const void *arr1, const void *arr2, size_t size);
@@ -30,7 +30,7 @@ size_t				ft_strlcat(char *dst, const char *src, size_t dst_len);
 char				*ft_strchr(const char *str, int value);
 char				*ft_strrchr(const char *str, int value);
 char				*ft_strnstr(const char *haystack,
-								const char *needle, size_t size);
+						const char *needle, size_t size);
 int					ft_strncmp(const char *str1, const char *str2, size_t size);
 int					ft_atoi(const char *str);
 int					ft_isalpha(int value);
@@ -69,7 +69,7 @@ void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
-											void (*del)(void *));
+						void (*del)(void *));
 
 size_t				ft_strlen_sep(const char *str, int value);
 int					ft_free_str(char **s);

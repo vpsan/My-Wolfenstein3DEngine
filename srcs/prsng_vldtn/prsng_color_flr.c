@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:48:04 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/17 14:06:57 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/17 14:49:04 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ int	prsng_color_flr(char **arr_split_line, t_game *cube)
 	int		blue;
 	char	**color_arr;
 
+	if (cube->map_prmtrs.color_flr_flag == 1)
+		my_exit(9);
+	cube->map_prmtrs.color_flr_flag = 1;
 	if (vldthn_count_arrsplitline(arr_split_line) != 2)
 		my_exit(9);
 	color_arr = ft_split(arr_split_line[1], ',');

@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/15 20:25:15 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/17 15:06:16 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,17 @@ typedef struct		s_map_prmtrs
 	char			*so_path;
 	char			*we_path;
 	char			*ea_path;
+	char			*sprts_path;
 	int				clr_flr;
 	int				clr_clng;
-	char			*sprts_path;
+	int				resolution_flag;
+	int				no_txtr_flag;
+	int				so_txtr_flag;
+	int				we_txtr_flag;
+	int				ea_txtr_flag;
+	int				sprts_txtr_flag;
+	int				color_flr_flag;
+	int				color_clng_flag;
 }					t_map_prmtrs;
 
 typedef struct		s_player
@@ -122,7 +130,7 @@ typedef struct		s_rcstg
 
 typedef	struct		s_sprts
 {
-	int 			num_sprites;
+	int				num_sprites;
 	double			pos_x[MAX_SPRTS_NUM];
 	double			pos_y[MAX_SPRTS_NUM];
 	int				sprite_order[MAX_SPRTS_NUM];
@@ -139,10 +147,9 @@ typedef	struct		s_sprts
 	int				draw_end_y;
 	int				draw_start_x;
 	int				draw_end_x;
-	int 			stripe;
-	int 			tex_x;
-	int 			tex_y;
-	int				img_y;
+	int				stripe;
+	int				tex_x;
+	int				tex_y;
 	int				y;
 	int				d;
 	int				color;
@@ -162,7 +169,7 @@ typedef struct		s_game
 	t_texture		sprts_txtr;
 	t_map_prmtrs	map_prmtrs;
 	t_rcstg			rcstg;
-	t_sprts 		sprts;
+	t_sprts			sprts;
 	char			**map;
 	t_list			*head_lstmap;
 }					t_game;
@@ -172,12 +179,12 @@ int					game_init(t_game *cube);
 int					game_map_init(t_game *cube);
 int					game_map_prmtrs_init(t_game *cube);
 int					game_window_init(t_game *cube);
-int 				game_frame_init(t_game *cube);
-int 				game_player_init(t_game *cube);
+int					game_frame_init(t_game *cube);
+int					game_player_init(t_game *cube);
 int					game_keys_init(t_game *cube);
 int					game_textures_init(t_game *cube);
-int 				game_raycasting_init(t_game *cube);
-int 				game_sprites_init(t_game *cube);
+int					game_raycasting_init(t_game *cube);
+int					game_sprites_init(t_game *cube);
 
 int					game_start(t_game *cube, int argc);
 
@@ -206,7 +213,7 @@ int					rcstng_calculate_wallx(t_game *cube);
 int					rcstng_get_wall_tex(t_game *cube);
 int					rcstng_draw_wall(t_game *cube, int x);
 
-int 				sprts(t_game *cube, double *zbuffer);
+int					sprts(t_game *cube, double *zbuffer);
 int					sprts_casting(t_game *cube);
 int					sprts_bubble_sort(t_game *cube);
 int					sprts_prmtrs_init(t_game *cube, int i);
@@ -215,7 +222,7 @@ int					sprts_stripes_draw(t_game *cube);
 int					sprts_stripes(t_game *cube, double *zbuffer);
 
 void				color_pixel_fill(t_frame_prmts *frame,
-									 int x, int y, int color);
+						int x, int y, int color);
 
 int					screenshot(t_game *cube);
 

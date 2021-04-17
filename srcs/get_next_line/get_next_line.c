@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 12:12:10 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/15 12:57:28 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/17 15:11:46 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 **	-1 : An ERROR happend
 */
 
-int		get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	static char		*buf[1024];
 
@@ -35,11 +35,11 @@ int		get_next_line(int fd, char **line)
 	return (gnl_read_line(fd, buf, line));
 }
 
-int		gnl_check_or_creat_buf(int fd, char **buf)
+int	gnl_check_or_creat_buf(int fd, char **buf)
 {
 	if (buf[fd] == NULL)
 	{
-		buf[fd] = (char*)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+		buf[fd] = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 		if (buf[fd] == NULL)
 		{
 			return (ERROR);
@@ -49,7 +49,7 @@ int		gnl_check_or_creat_buf(int fd, char **buf)
 	return (TRUE);
 }
 
-int		gnl_read_line(int fd, char **buf, char **line)
+int	gnl_read_line(int fd, char **buf, char **line)
 {
 	long long	bytes_rd;
 

@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:48:12 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/17 14:10:17 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/17 14:45:53 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ int	vldthn_resolution_digits(char **arr_split_line, int exit_number)
 
 int	prsng_resolution(char **arr_split_line, t_game *cube)
 {
+	if (cube->map_prmtrs.resolution_flag == 1)
+		my_exit(3);
+	cube->map_prmtrs.resolution_flag = 1;
 	if (vldthn_count_arrsplitline(arr_split_line) != 3)
 		my_exit(3);
 	vldthn_resolution_digits(arr_split_line, 3);

@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/04/17 14:15:46 by valery           ###   ########.fr        #
+#    Updated: 2021/04/17 14:15:49 by valery           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -156,13 +156,6 @@ GAME		= 	$(GAME_DIR)game_init.c\
 				$(GAME_DIR)sprts_draw_prmtrs_calculate.c\
 				$(GAME_DIR)sprts_stripes.c\
 				$(GAME_DIR)screenshot.c\
-
-# *********************** DEBUG_FUN ******************************************* #
-
-DEBUG_DIR 	= 	srcs/debug/
-DEBUG_FUN	= 	$(DEBUG_DIR)debug_print_check_map.c\
-				$(DEBUG_DIR)debug_fill_map_instead_parsing.c\
-				$(DEBUG_DIR)debug_preparsing_init.c\
 
 # ***************************************************************************** #
 

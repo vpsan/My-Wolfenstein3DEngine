@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/16 21:48:39 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/17 14:58:26 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "my_errors.h"
 #include "prsng_vldtn.h"
 #include "game.h"
-#include "debug.h"
 
 int		check_argcount_argv1_extension(int argc, char **argv)
 {
@@ -58,6 +57,19 @@ int 	check_screenshot_flag(int argc, char **argv)
 	return (true);
 }
 
+int		debug_print_check_map(t_game *cube)
+{
+	int i;
+
+	i = 0;
+	while (cube->map[i] != NULL)
+	{
+		printf("%s\n", cube->map[i]);
+		i++;
+	}
+	return (0);
+}
+
 int		main(int argc, char **argv)
 {
 	t_game	cube;
@@ -67,15 +79,12 @@ int		main(int argc, char **argv)
 		my_exit(1);
 	game_map_init(&cube);
 	game_map_prmtrs_init(&cube);
-	printf("------------------------  Check.0 ------------------------\n");
 	if (prsng_vldtn(argv[1], &cube) == ERROR)
 		my_exit(2);
 	debug_print_check_map(&cube);
-	printf("------------------------  Check.1 ------------------------\n");
 	if (check_screenshot_flag(argc, argv) == true)
 		screenshot(&cube);
 	game_init(&cube);
 	game_start(&cube, argc);
-	printf("------------------------  Check.2 ------------------------\n");
 	return (0);
 }
