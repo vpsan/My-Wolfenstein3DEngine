@@ -31,5 +31,6 @@ int	game_map_prmtrs_init(t_game *cube)
 	cube->map_prmtrs.sprts_txtr_flag = 0;
 	cube->map_prmtrs.color_flr_flag = 0;
 	cube->map_prmtrs.color_clng_flag = 0;
+	cube->map_prmtrs.num_player = 0;
 	return (0);
 }

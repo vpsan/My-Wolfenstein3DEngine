@@ -12,8 +12,33 @@
 
 #include "prsng_vldtn.h"
 
+int	vldthn_map_coordinates(t_game *cube, int i, int j)
+{
+	if (ft_memchr(" 120SNWE", cube->map[i][j], 9) == 0)
+		my_exit(11);
+	if (ft_memchr("NSWE", cube->map[i][j], 5) != 0)
+		cube->map_prmtrs.num_player++;
+	if (cube->map_prmtrs.num_player > 1)
+		my_exit(11);
+
+	return (0);
+}
+
 int	vldthn_map(t_game *cube)
 {
+	int	i;
+	int	j;
 
+	i = 0;
+	while (cube->map[i] != NULL)
+	{
+		j = 0;
+		while (cube->map[i][j] != '\0')
+		{
+			vldthn_map_coordinates(cube, i, j);
+			j++;
+		}
+		i++;
+	}
 	return (0);
 }

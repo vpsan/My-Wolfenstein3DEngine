@@ -89,6 +89,7 @@ typedef struct s_map_prmtrs
 	int				sprts_txtr_flag;
 	int				color_flr_flag;
 	int				color_clng_flag;
+	int				num_player;
 }					t_map_prmtrs;
 
 typedef struct s_player
