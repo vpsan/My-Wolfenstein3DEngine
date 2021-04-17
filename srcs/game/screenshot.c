@@ -12,7 +12,7 @@
 
 #include "game.h"
 
-int	screenshot_creat_bmp(unsigned char *bmp_54arr, t_game *cube, int size)
+int	screenshot_creat_bmp_1(unsigned char *bmp_54arr, t_game *cube, int size)
 {
 	int	i;
 
@@ -25,6 +25,11 @@ int	screenshot_creat_bmp(unsigned char *bmp_54arr, t_game *cube, int size)
 	bmp_54arr[3] = (unsigned char)(size >> 8);
 	bmp_54arr[4] = (unsigned char)(size >> 16);
 	bmp_54arr[5] = (unsigned char)(size >> 24);
+	return (0);
+}
+
+int	screenshot_creat_bmp_2(unsigned char *bmp_54arr, t_game *cube)
+{
 	bmp_54arr[10] = (unsigned char)54;
 	bmp_54arr[14] = (unsigned char)40;
 	bmp_54arr[18] = (unsigned char)cube->map_prmtrs.win_width;
@@ -80,7 +85,8 @@ int	screenshot(t_game *cube)
 		my_exit(19);
 	game_init(cube);
 	loop_hook_next_frame(cube);
-	screenshot_creat_bmp(bmp_54arr, cube, screenshot_make_size(cube));
+	screenshot_creat_bmp_1(bmp_54arr, cube, screenshot_make_size(cube));
+	screenshot_creat_bmp_2(bmp_54arr, cube);
 	write(fd, bmp_54arr, 54);
 	screenshot_write_pixels_to_fd(fd, cube);
 	hook_close_window(cube);
