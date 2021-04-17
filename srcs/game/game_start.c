@@ -12,17 +12,26 @@
 
 #include "game.h"
 
+int	ft_free_double_ptr(double **ptr)
+{
+	if (*ptr != NULL)
+	{
+		free(*ptr);
+	}
+	*ptr = NULL;
+	return (0);
+}
+
 int	hook_close_window(t_game *cube)
 {
 	mlx_destroy_window(cube->mlx_ptr, cube->win_ptr);
 	ft_free_str_arr(&cube->map);
-	ft_free_str(&cube->map_prmtrs.no_path);//
-	ft_free_str(&cube->map_prmtrs.so_path);//
-	ft_free_str(&cube->map_prmtrs.we_path);//
-	ft_free_str(&cube->map_prmtrs.ea_path);//
-	ft_free_str(&cube->map_prmtrs.sprts_path);//
-	//textures_free();
-	//sprites_free();
+	ft_free_str(&cube->map_prmtrs.no_path);
+	ft_free_str(&cube->map_prmtrs.so_path);
+	ft_free_str(&cube->map_prmtrs.we_path);
+	ft_free_str(&cube->map_prmtrs.ea_path);
+	ft_free_str(&cube->map_prmtrs.sprts_path);
+	ft_free_double_ptr(&cube->rcstng_sprts_zbuffer);
 	//frame_free();
 	exit(0);
 	return (0);
