@@ -22,6 +22,6 @@ int	vldthn_summary_prsng_flags(t_game *cube)
 		|| cube->map_prmtrs.sprts_txtr_flag != 1
 		|| cube->map_prmtrs.color_clng_flag != 1
 		|| cube->map_prmtrs.color_flr_flag != 1)
-		my_exit(2);
-	return (0);
+		return (false);
+	return (true);
 }

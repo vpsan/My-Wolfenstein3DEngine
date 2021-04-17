@@ -38,9 +38,22 @@ int	prsng_creat_lstmap(char *line, t_game *cube)
 	return (true);
 }
 
+int	vldthn_free_line(t_game *cube)
+{
+	if (cube->head_lstmap == NULL)
+		return (false);
+	else
+		return (true);
+}
+
 int	prsng_fill_game(char *line, char **arr_split_line, t_game *cube)
 {
-	if (ft_memcmp(arr_split_line[0], "R", 1) == 0)
+	if (arr_split_line[0] == NULL)
+	{
+		if (vldthn_free_line(cube) != false)
+			my_exit(2);
+	}
+	else if (ft_memcmp(arr_split_line[0], "R", 1) == 0)
 		prsng_resolution(arr_split_line, cube);
 	else if (ft_memcmp(arr_split_line[0], "NO", 2) == 0)
 		prsng_no_txtr(arr_split_line, cube);

@@ -21,7 +21,10 @@ int	prsng_vldtn(char *argv_1, t_game *cube)
 		return (ERROR);
 	if (prsng_parse_file(fd, cube) == ERROR)
 		return (ERROR);
-	vldthn_summary_prsng_flags(cube);
+	if (vldthn_summary_prsng_flags(cube) == false)
+		my_exit(2);
+	if (cube->head_lstmap == NULL)
+		my_exit(2);
 	prsng_creat_map(&cube);
 	vldthn_map(cube);
 	ft_lstclear(&(cube)->head_lstmap, free);
