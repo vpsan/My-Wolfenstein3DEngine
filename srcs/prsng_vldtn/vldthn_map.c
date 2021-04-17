@@ -14,5 +14,6 @@
 
 int	vldthn_map(t_game *cube)
 {
+
 	return (0);
 }

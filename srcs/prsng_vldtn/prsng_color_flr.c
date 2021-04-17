@@ -31,6 +31,20 @@ int	vldthn1_make_rgb(int *cube_map_prmtrs_color, int r, int g, int b)
 	return (0);
 }
 
+int	vldthn1_count_points(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (*str != '\0')
+	{
+		if (*str == ',')
+			i++;
+		str++;
+	}
+	return (i);
+}
+
 int	prsng_color_flr(char **arr_split_line, t_game *cube)
 {
 	int		red;
@@ -45,6 +59,8 @@ int	prsng_color_flr(char **arr_split_line, t_game *cube)
 		my_exit(9);
 	color_arr = ft_split(arr_split_line[1], ',');
 	if (vldthn_count_arrsplitline(color_arr) != 3)
+		my_exit(9);
+	if (vldthn1_count_points(arr_split_line[1]) != 2)
 		my_exit(9);
 	vldthn_color_flr_digits(color_arr, 9);
 	red = ft_atoi(color_arr[0]);
