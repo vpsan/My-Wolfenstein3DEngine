@@ -46,7 +46,8 @@ int		prsng_color_flr(char **arr_split_line, t_game *cube);
 
 int		vldthn_count_arrsplitline(char **arr_split_line);
 int		vldthn_chech_str_is_digits(char *str, int exit_number);
-int		vldthn_check_make_rgb(int *cube_map_prmtrs_color, int r, int g, int b);
+int		vldthn_make_rgb(int *cube_map_prmtrs_color, int r, int g, int b);
+int 	vldthn_count_points(char *str);
 int		vldthn_summary_prsng_flags(t_game *cube);
 int		vldthn_map(t_game *cube);
 

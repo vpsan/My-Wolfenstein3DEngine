@@ -20,31 +20,6 @@ int	vldthn_color_clng_digits(char **arr_split_line, int exit_number)
 	return (0);
 }
 
-int	vldthn_make_rgb(int *cube_map_prmtrs_color, int r, int g, int b)
-{
-	int	result_rgb_color;
-
-	if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255)
-		my_exit(10);
-	result_rgb_color = (r << 16 | g << 8 | b);
-	*cube_map_prmtrs_color = result_rgb_color;
-	return (0);
-}
-
-int	vldthn_count_points(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (*str != '\0')
-	{
-		if (*str == ',')
-			i++;
-		str++;
-	}
-	return (i);
-}
-
 int	prsng_color_clng(char **arr_split_line, t_game *cube)
 {
 	int		red;
