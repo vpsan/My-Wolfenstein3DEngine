@@ -29,7 +29,8 @@ int		check_argcount_argv1_extension(int argc, char **argv)
 		if (argv[1][argv1_len] == '.')
 		{
 			if (ft_strncmp(argv[1] + argv1_len, ".cub", 4) == 0)
-				return (true);
+				if (ft_strlen(argv[1] +argv1_len) == 4)
+					return (true);
 		}
 	}
 	return (false);
