@@ -50,10 +50,8 @@ int	vldthn_map_coordinates(t_game *cube, int i, int j)
 {
 	if (ft_memchr(" 120NSWE", cube->map[i][j], 9) == NULL)
 		my_exit(11);
-	if (ft_memchr("NSWE", cube->map[i][j], 5) != 0)
+	if (ft_memchr("NSWE", cube->map[i][j], 5) != NULL)
 		cube->map_prmtrs.num_player++;
-	if (cube->map_prmtrs.num_player > 1)
-		my_exit(11);
 	if (cube->map[i][j] == '0' || cube->map[i][j] == '2'
 		|| cube->map[i][j] == 'N' || cube->map[i][j] == 'S'
 		|| cube->map[i][j] == 'W' || cube->map[i][j] == 'E')
@@ -79,5 +77,7 @@ int	vldthn_map(t_game *cube)
 		}
 		i++;
 	}
+	if (cube->map_prmtrs.num_player != 1)
+		my_exit(11);
 	return (0);
 }
