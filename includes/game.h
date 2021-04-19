@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 12:26:44 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 16:25:59 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 # include "mlx.h"
 # include "libft.h"
 # include "my_errors.h"
-
-# define SCALE 16
 
 # define KEY_ESC 53
 # define KEY_W 13
@@ -188,7 +186,7 @@ int					game_textures_init(t_cube3D *cube);
 int					game_raycasting_init(t_cube3D *cube);
 int					game_sprites_init(t_cube3D *cube);
 
-int					game_start(t_cube3D *cube, int argc);
+int					game_start(t_cube3D *cube);
 
 int					hook_press_on_keys(int key_code, t_cube3D *cube);
 int					hook_press_off_keys(int key_code, t_cube3D *cube);

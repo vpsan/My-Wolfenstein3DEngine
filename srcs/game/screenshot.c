@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:47:31 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 12:26:29 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 16:28:02 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	screenshot_creat_bmp_1(unsigned char *bmp_54arr, t_cube3D *cube, int size)
+int	screenshot_creat_bmp_1(unsigned char *bmp_54arr, int size)
 {
 	int	i;
 
@@ -85,7 +85,7 @@ int	screenshot(t_cube3D *cube)
 		my_exit(19);
 	game_init(cube);
 	loop_hook_next_frame(cube);
-	screenshot_creat_bmp_1(bmp_54arr, cube, screenshot_make_size(cube));
+	screenshot_creat_bmp_1(bmp_54arr, screenshot_make_size(cube));
 	screenshot_creat_bmp_2(bmp_54arr, cube);
 	write(fd, bmp_54arr, 54);
 	screenshot_write_pixels_to_fd(fd, cube);

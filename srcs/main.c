@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 12:26:29 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 16:28:40 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,6 @@ int	main(int argc, char **argv)
 	if (check_screenshot_flag(argc, argv) == true)
 		screenshot(&cube);
 	game_init(&cube);
-	game_start(&cube, argc);
+	game_start(&cube);
 	return (0);
 }

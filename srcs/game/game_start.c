@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 01:59:21 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 12:26:44 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 16:27:30 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	hook_press_off_keys(int key_code, t_cube3D *cube)
 	return (0);
 }
 
-int	game_start(t_cube3D *cube, int argc)
+int	game_start(t_cube3D *cube)
 {
 	mlx_do_key_autorepeatoff(cube->mlx_ptr);
 	mlx_hook(cube->win_ptr, 2, 0, hook_press_on_keys, cube);
