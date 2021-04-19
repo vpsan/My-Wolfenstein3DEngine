@@ -82,7 +82,6 @@ int	main(int argc, char **argv)
 	game_map_prmtrs_init(&cube);
 	if (prsng_vldtn(argv[1], &cube) == ERROR)
 		my_exit(2);
-	debug_print_check_map(&cube);
 	if (check_screenshot_flag(argc, argv) == true)
 		screenshot(&cube);
 	game_init(&cube);

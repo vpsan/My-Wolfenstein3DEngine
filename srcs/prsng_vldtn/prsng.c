@@ -33,6 +33,8 @@ int	prsng_creat_lstmap(char *line, t_cube3D *cube)
 {
 	char	*new_line;
 
+	if (vldthn_summary_prsng_flags(cube) == false)
+		my_exit(2);
 	new_line = ft_strdup(line);
 	ft_lstadd_back(&cube->head_lstmap, ft_lstnew(new_line));
 	return (true);
@@ -40,21 +42,21 @@ int	prsng_creat_lstmap(char *line, t_cube3D *cube)
 
 int	prsng_fill_game(char *line, char **arr_split_line, t_cube3D *cube)
 {
-	if (ft_memcmp(arr_split_line[0], "R", 1) == 0)
+	if (ft_memcmp(arr_split_line[0], "R", 2) == 0)
 		prsng_resolution(arr_split_line, cube);
-	else if (ft_memcmp(arr_split_line[0], "NO", 2) == 0)
+	else if (ft_memcmp(arr_split_line[0], "NO", 3) == 0)
 		prsng_no_txtr(arr_split_line, cube);
-	else if (ft_memcmp(arr_split_line[0], "SO", 2) == 0)
+	else if (ft_memcmp(arr_split_line[0], "SO", 3) == 0)
 		prsng_so_txtr(arr_split_line, cube);
-	else if (ft_memcmp(arr_split_line[0], "WE", 2) == 0)
+	else if (ft_memcmp(arr_split_line[0], "WE", 3) == 0)
 		prsng_we_txtr(arr_split_line, cube);
-	else if (ft_memcmp(arr_split_line[0], "EA", 2) == 0)
+	else if (ft_memcmp(arr_split_line[0], "EA", 3) == 0)
 		prsng_ea_txtr(arr_split_line, cube);
-	else if (ft_memcmp(arr_split_line[0], "S", 1) == 0)
+	else if (ft_memcmp(arr_split_line[0], "S", 2) == 0)
 		prsng_sprts_txtr(arr_split_line, cube);
-	else if (ft_memcmp(arr_split_line[0], "F", 1) == 0)
+	else if (ft_memcmp(arr_split_line[0], "F", 2) == 0)
 		prsng_color_flr(arr_split_line, cube);
-	else if (ft_memcmp(arr_split_line[0], "C", 1) == 0)
+	else if (ft_memcmp(arr_split_line[0], "C", 2) == 0)
 		prsng_color_clng(arr_split_line, cube);
 	else
 		prsng_creat_lstmap(line, cube);
