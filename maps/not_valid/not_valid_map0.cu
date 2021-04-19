@@ -1,0 +1,13 @@
+R 980 720
+NO textures/WALL11.xpm
+		SO textures/WALL12.xpm
+		WE textures/WALL13.xpm
+		EA textures/WALL14.xpm
+		S  textures/sprite_guard.xpm
+		F 0,0,60
+C 100,150,200
+1111111111
+1000002001
+1000020201
+100N000001
+1111111111
