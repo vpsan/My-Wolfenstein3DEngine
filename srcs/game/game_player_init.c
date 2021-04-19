@@ -28,22 +28,22 @@ int	set_planex_planey(t_cube3D *cube, double planex, double planey)
 
 int	set_player_prmtrs(t_cube3D *cube, char plr_dir)
 {
-	if (plr_dir == 'N')
+	if (plr_dir == 'W')
 	{
 		set_dirx_diry(cube, 0, -1);
 		set_planex_planey(cube, -0.66, 0);
 	}
-	if (plr_dir == 'S')
+	if (plr_dir == 'E')
 	{
 		set_dirx_diry(cube, 0, 1);
 		set_planex_planey(cube, 0.66, 0);
 	}
-	if (plr_dir == 'E')
+	if (plr_dir == 'S')
 	{
 		set_dirx_diry(cube, 1, 0);
 		set_planex_planey(cube, 0, -0.66);
 	}
-	if (plr_dir == 'W')
+	if (plr_dir == 'N')
 	{
 		set_dirx_diry(cube, -1, 0);
 		set_planex_planey(cube, 0, 0.66);
