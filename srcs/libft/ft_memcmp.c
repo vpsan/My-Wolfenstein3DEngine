@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 16:35:39 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/15 12:57:28 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int		ft_memcmp(const void *arr1, const void *arr2, size_t size)
 
 	ptr_arr1 = (unsigned char*)arr1;
 	ptr_arr2 = (unsigned char*)arr2;
+	if (ptr_arr1 == NULL || ptr_arr2 == NULL)
+		return (-1);
 	while (size--)
 	{
 		if (*ptr_arr1 != *ptr_arr2)
