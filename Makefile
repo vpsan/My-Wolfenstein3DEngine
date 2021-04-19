@@ -12,13 +12,12 @@
 
 NAME = cub3D
 
-SRCS	=	$(MAIN) \
-			$(LIBFT_SRCS) \
-			$(GET_NEXT_LINE) \
-			$(MY_ERRORS) \
-			$(PRSNG_VLDTN) \
-			$(GAME) \
-			$(DEBUG_FUN)
+SRCS	=	$(MAIN)\
+			$(LIBFT_SRCS)\
+			$(GET_NEXT_LINE)\
+			$(MY_ERRORS)\
+			$(PRSNG_VLDTN)\
+			$(GAME)\
 
 # *********************** MAIN ************************************************ #
 
@@ -28,12 +27,12 @@ MAIN		= 	$(MAIN_DIR)main.c
 # *********************** HDRS ************************************************ #
 
 INCLD 	= 	includes/
-HDRS	=	$(INCLD)mlx.h \
-			$(INCLD)libft.h \
-			$(INCLD)get_next_line.h \
-			$(INCLD)my_errors.h \
+HDRS	=	$(INCLD)mlx.h\
+			$(INCLD)libft.h\
+			$(INCLD)get_next_line.h\
+			$(INCLD)my_errors.h\
 			$(INCLD)prsng_vldtn.h\
-			$(INCLD)game.h
+			$(INCLD)game.h\
 
 # *********************** LIBFT *********************************************** #	
 
@@ -74,7 +73,7 @@ LIBFT_SRCS	= $(LIBFT_DIR)ft_memset.c\
 		  $(LIBFT_DIR)ft_strmapi.c\
 		  $(LIBFT_DIR)ft_split.c \
 		  $(BON) \
-		  $(MyNew)
+		  $(MyNew)\
 
 BON		= $(LIBFT_DIR)ft_lstnew.c\
 		  $(LIBFT_DIR)ft_lstadd_front.c\
@@ -84,18 +83,18 @@ BON		= $(LIBFT_DIR)ft_lstnew.c\
 		  $(LIBFT_DIR)ft_lstadd_back.c\
 		  $(LIBFT_DIR)ft_lstclear.c\
 		  $(LIBFT_DIR)ft_lstiter.c\
-	      $(LIBFT_DIR)ft_lstmap.c
+	      $(LIBFT_DIR)ft_lstmap.c\
 
 MyNew	= $(LIBFT_DIR)ft_strlen_sep.c \
 		  $(LIBFT_DIR)ft_free_str.c \
-		  $(LIBFT_DIR)ft_free_str_arr.c
+		  $(LIBFT_DIR)ft_free_str_arr.c\
 
 
 # *********************** GET_NEXT_LINE *************************************** #
 
 GET_NEXT_LINE_DIR 	= 	srcs/get_next_line/
 GET_NEXT_LINE		= 	$(GET_NEXT_LINE_DIR)get_next_line.c\
-						$(GET_NEXT_LINE_DIR)get_next_line_utils.c
+						$(GET_NEXT_LINE_DIR)get_next_line_utils.c\
 
 # *********************** MLX ************************************************* #	
 
