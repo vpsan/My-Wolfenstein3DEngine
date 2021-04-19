@@ -12,7 +12,7 @@
 
 #include "game.h"
 
-int	screenshot_creat_bmp_1(unsigned char *bmp_54arr, int size)
+int	screenshot_creat_bmp_fileheader(unsigned char *bmp_54arr, int filesize)
 {
 	int	i;
 
@@ -21,17 +21,17 @@ int	screenshot_creat_bmp_1(unsigned char *bmp_54arr, int size)
 		bmp_54arr[i++] = (unsigned char)0;
 	bmp_54arr[0] = 'B';
 	bmp_54arr[1] = 'M';
-	bmp_54arr[2] = (unsigned char)(size);
-	bmp_54arr[3] = (unsigned char)(size >> 8);
-	bmp_54arr[4] = (unsigned char)(size >> 16);
-	bmp_54arr[5] = (unsigned char)(size >> 24);
+	bmp_54arr[2] = (unsigned char)(filesize);
+	bmp_54arr[3] = (unsigned char)(filesize >> 8);
+	bmp_54arr[4] = (unsigned char)(filesize >> 16);
+	bmp_54arr[5] = (unsigned char)(filesize >> 24);
+	bmp_54arr[10] = (unsigned char)54;
+	bmp_54arr[14] = (unsigned char)40;
 	return (0);
 }
 
-int	screenshot_creat_bmp_2(unsigned char *bmp_54arr, t_cube3D *cube)
+int	screenshot_creat_bmp_infoheader(unsigned char *bmp_54arr, t_cube3D *cube)
 {
-	bmp_54arr[10] = (unsigned char)54;
-	bmp_54arr[14] = (unsigned char)40;
 	bmp_54arr[18] = (unsigned char)cube->map_prmtrs.win_width;
 	bmp_54arr[19] = (unsigned char)(cube->map_prmtrs.win_width >> 8);
 	bmp_54arr[20] = (unsigned char)(cube->map_prmtrs.win_width >> 16);
@@ -67,7 +67,7 @@ int	screenshot_write_pixels_to_fd(int fd, t_cube3D *cube)
 	return (0);
 }
 
-int	screenshot_make_size(t_cube3D *cube)
+int	screenshot_make_filesize(t_cube3D *cube)
 {
 	if (cube->map_prmtrs.win_width % 4)
 		cube->map_prmtrs.win_width = cube->map_prmtrs.win_width
@@ -85,8 +85,8 @@ int	screenshot(t_cube3D *cube)
 		my_exit(19);
 	game_init(cube);
 	loop_hook_next_frame(cube);
-	screenshot_creat_bmp_1(bmp_54arr, screenshot_make_size(cube));
-	screenshot_creat_bmp_2(bmp_54arr, cube);
+	screenshot_creat_bmp_fileheader(bmp_54arr, screenshot_make_filesize(cube));
+	screenshot_creat_bmp_infoheader(bmp_54arr, cube);
 	write(fd, bmp_54arr, 54);
 	screenshot_write_pixels_to_fd(fd, cube);
 	close(fd);
