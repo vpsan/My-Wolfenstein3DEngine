@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 21:41:47 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 13:57:15 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		i--;
 	}
-	if (!(s = ft_substr(s1, start_index, i - start_index + 1)))
+	s = ft_substr(s1, start_index, i - start_index + 1);
+	if (s == NULL)
 		return (NULL);
 	return (s);
 }

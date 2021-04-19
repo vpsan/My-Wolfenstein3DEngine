@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 19:18:57 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 13:46:34 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	*ft_memccpy(void *dst, const void *src, int value, size_t size)
 	{
 		return (NULL);
 	}
-	ptr_dst = (unsigned char*)dst;
-	ptr_src = (const unsigned char*)src;
+	ptr_dst = (unsigned char *)dst;
+	ptr_src = (const unsigned char *)src;
 	copy_value = (unsigned char)value;
 	while (size--)
 	{

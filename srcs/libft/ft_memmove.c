@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 13:24:08 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 13:47:11 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	*ft_memmove(void *dst, const void *src, size_t size)
 	{
 		return (NULL);
 	}
-	ptr_dst = (unsigned char*)dst;
-	ptr_src = (unsigned char*)src;
+	ptr_dst = (unsigned char *)dst;
+	ptr_src = (unsigned char *)src;
 	if (ptr_dst < ptr_src)
 	{
 		while (size--)

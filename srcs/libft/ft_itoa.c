@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 10:43:16 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 13:44:45 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	ft_nbrlen(int n)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (n / 10 != 0)
@@ -25,15 +25,18 @@ static size_t	ft_nbrlen(int n)
 	return (i);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char		*s;
 	size_t		len;
 	long int	ln;
 
 	ln = n;
-	len = (n >= 0) ? (ft_nbrlen(n)) : (ft_nbrlen(n) + 1);
-	s = (char*)ft_calloc(len + 1, sizeof(char));
+	if (n >= 0)
+		len = ft_nbrlen(n);
+	else
+		len = ft_nbrlen(n) + 1;
+	s = (char *)ft_calloc(len + 1, sizeof(char));
 	if (s == NULL)
 		return (NULL);
 	s[len] = '\0';

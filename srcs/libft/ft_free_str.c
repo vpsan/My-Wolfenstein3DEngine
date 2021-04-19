@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 17:56:34 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 13:36:12 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 **	ft_free_str() returns 0.
 */
 
-int			ft_free_str(char **s)
+int	ft_free_str(char **s)
 {
 	if (*s != NULL)
 	{

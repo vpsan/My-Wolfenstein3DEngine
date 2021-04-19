@@ -6,26 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 17:12:55 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 14:06:55 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//static size_t	ft_strlen_sep(const char *str, char sep)
-//{
-//	size_t i;
-//
-//	i = 0;
-//	while (*str != sep && *str != '\0')
-//	{
-//		i = i + 1;
-//		str++;
-//	}
-//	return (i);
-//}
-
-static int		ft_count_words(char const *s, char c)
+static int	ft_count_words(char const *s, char c)
 {
 	int		i;
 	int		count;
@@ -49,41 +36,35 @@ static int		ft_count_words(char const *s, char c)
 	return (count);
 }
 
-//static void		*ft_free_str_arr(char **arr)
-//{
-//	char	**begin;
-//	int		i;
-//
-//	i = 0;
-//	begin = arr;
-//	while (arr[i] != NULL)
-//	{
-//		free(arr[i]);
-//		i++;
-//	}
-//	free(begin);
-//	return (NULL);
-//}
+static char	**malloc_arr(char const *s, char c, int *n_words)
+{
+	char	**arr;
 
-char			**ft_split(char const *s, char c)
+	if (s == NULL)
+		return (NULL);
+	*n_words = ft_count_words(s, c);
+	arr = (char **)malloc(sizeof(char *) * (*n_words + 1));
+	if (arr == NULL)
+		return (NULL);
+	return (arr);
+}
+
+char	**ft_split(char const *s, char c)
 {
 	int		n_words;
 	char	**arr;
 	char	**begin;
 	int		i;
 
-//	if (s == NULL)
-//		return (NULL);
-	n_words = ft_count_words(s, c);
-	if (!(arr = (char**)malloc(sizeof(char*) * (n_words + 1))))
-		return (NULL);
+	arr = malloc_arr(s, c, &n_words);
 	arr[n_words] = NULL;
 	begin = arr;
 	while (n_words--)
 	{
 		while (*s == c && *s != '\0')
 			s++;
-		if (!(*arr = (char*)malloc(sizeof(char) * (ft_strlen_sep(s, c) + 1))))
+		*arr = (char *)malloc(sizeof(char) * (ft_strlen_sep(s, c) + 1));
+		if (*arr == NULL)
 			return (ft_free_str_arr(&begin));
 		i = 0;
 		while (*s != c && *s != '\0')

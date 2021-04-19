@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_str_arr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 18:35:25 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 13:36:05 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 void	*ft_free_str_arr(char ***arr)
 {
-	int 	i;
+	int	i;
 
 	if (arr == NULL || *arr == NULL)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 16:24:32 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 13:46:49 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memchr(const void *arr, int value, size_t size)
 {
 	unsigned char	*ptr_arr;
 
-	ptr_arr = (unsigned char*)arr;
+	ptr_arr = (unsigned char *)arr;
 	while (size--)
 	{
 		if (*ptr_arr != (unsigned char)value)

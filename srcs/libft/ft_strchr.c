@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 18:42:38 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 13:48:27 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ char	*ft_strchr(const char *str, int value)
 	{
 		if (*str == (char)value)
 		{
-			return ((char*)str);
+			return ((char *)str);
 		}
 		str++;
 	}
 	if ((char)value == '\0')
 	{
-		return ((char*)str);
+		return ((char *)str);
 	}
 	return (NULL);
 }
