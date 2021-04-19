@@ -6,14 +6,14 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:48:12 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:29 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "prsng_vldtn.h"
 #include "my_errors.h"
 
-int	vldthn_resolution_maxmin(t_game *cube)
+int	vldthn_resolution_maxmin(t_cube3D *cube)
 {
 	if (cube->map_prmtrs.win_height < MIN_WIN_HIEGHT
 		|| cube->map_prmtrs.win_width < MIN_WIN_WIDTH
@@ -33,7 +33,7 @@ int	vldthn_resolution_digits(char **arr_split_line, int exit_number)
 	return (0);
 }
 
-int	prsng_resolution(char **arr_split_line, t_game *cube)
+int	prsng_resolution(char **arr_split_line, t_cube3D *cube)
 {
 	if (cube->map_prmtrs.resolution_flag == 1)
 		my_exit(3);

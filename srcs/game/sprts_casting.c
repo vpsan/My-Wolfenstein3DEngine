@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:47:36 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:49 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:30 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	sprts_casting(t_game *cube)
+int	sprts_casting(t_cube3D *cube)
 {
 	int	i;
 

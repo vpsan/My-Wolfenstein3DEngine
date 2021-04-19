@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:00:45 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:30 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	rcstng_calculate_wallx(t_game *cube)
+int	rcstng_calculate_wallx(t_cube3D *cube)
 {
 	if (cube->rcstg.side == 0)
 		cube->rcstg.wall_x = cube->plr.pos_y + cube->rcstg.perp_wall_dist

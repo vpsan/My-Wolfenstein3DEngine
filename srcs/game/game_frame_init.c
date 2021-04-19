@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 01:58:01 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:49 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:30 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	game_frame_init(t_game *cube)
+int	game_frame_init(t_cube3D *cube)
 {
 	cube->frame.img_ptr = mlx_new_image(cube->mlx_ptr,
 			cube->map_prmtrs.win_width, cube->map_prmtrs.win_height);

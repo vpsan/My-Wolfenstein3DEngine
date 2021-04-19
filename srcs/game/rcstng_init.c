@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:01:13 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:49 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:30 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	rcstng_init_1(t_game *cube, int x_i)
+int	rcstng_init_1(t_cube3D *cube, int x_i)
 {
 	cube->rcstg.camera_x = 2 * (cube->map_prmtrs.win_width - x_i)
 		/ (double)(cube->map_prmtrs.win_width) - 1;
@@ -29,7 +29,7 @@ int	rcstng_init_1(t_game *cube, int x_i)
 	return (0);
 }
 
-int	rcstng_init_2(t_game *cube)
+int	rcstng_init_2(t_cube3D *cube)
 {
 	if (cube->rcstg.ray_dir_x < 0)
 	{

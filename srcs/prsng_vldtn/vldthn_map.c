@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:48:32 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:44 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "prsng_vldtn.h"
 
-int	vldthn_map_coordinates_space(t_game *cube, int i, int j)
+int	vldthn_map_coordinates_space(t_cube3D *cube, int i, int j)
 {
 	if (i != 0 && j != 0 && j != ft_strlen(cube->map[i])
 		&& cube->map[i + 1] != NULL)
@@ -25,13 +25,13 @@ int	vldthn_map_coordinates_space(t_game *cube, int i, int j)
 	return (0);
 }
 
-int	vldthn_map_coordinates_02NSWE(t_game *cube, int i, int j)
+int	vldthn_map_coordinates_02NSWE(t_cube3D *cube, int i, int j)
 {
 	if (i != 0 && j != 0 && j != (ft_strlen(cube->map[i]) - 1)
 		&& cube->map[i + 1] != NULL)
 	{
-		if (ft_strlen(cube->map[i + 1]) < j ||
-		ft_strlen(cube->map[i - 1]) < j)
+		if (ft_strlen(cube->map[i + 1]) < j
+			|| ft_strlen(cube->map[i - 1]) < j)
 			my_exit(11);
 		if (cube->map[i + 1][j] != ' ' && cube->map[i][j + 1] != ' '
 		&& cube->map[i][j + 1] != '\0')
@@ -46,7 +46,7 @@ int	vldthn_map_coordinates_02NSWE(t_game *cube, int i, int j)
 	return (0);
 }
 
-int	vldthn_map_coordinates(t_game *cube, int i, int j)
+int	vldthn_map_coordinates(t_cube3D *cube, int i, int j)
 {
 	if (ft_memchr(" 120NSWE", cube->map[i][j], 9) == NULL)
 		my_exit(11);
@@ -61,7 +61,7 @@ int	vldthn_map_coordinates(t_game *cube, int i, int j)
 	return (0);
 }
 
-int	vldthn_map(t_game *cube)
+int	vldthn_map(t_cube3D *cube)
 {
 	int	i;
 	int	j;

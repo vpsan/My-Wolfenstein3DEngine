@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 01:58:44 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:30 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	game_map_prmtrs_init(t_game *cube)
+int	game_map_prmtrs_init(t_cube3D *cube)
 {
 	cube->map_prmtrs.win_width = 0;
 	cube->map_prmtrs.win_height = 0;

@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:01:22 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:30 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	rcstng_while_hit_not_zero(t_game *cube)
+int	rcstng_while_hit_not_zero(t_cube3D *cube)
 {
 	while (cube->rcstg.hit == 0)
 	{

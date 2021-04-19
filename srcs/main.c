@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:49 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:29 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 #include "prsng_vldtn.h"
 #include "game.h"
 
-int		check_argcount_argv1_extension(int argc, char **argv)
+int	check_argcount_argv1_extension(int argc, char **argv)
 {
-	int argv1_len;
+	int	argv1_len;
 
 	if (argc < 2 || argc > 3)
 		return (false);
@@ -36,9 +36,9 @@ int		check_argcount_argv1_extension(int argc, char **argv)
 	return (false);
 }
 
-int 	check_argv2_extension(char *argv2)
+int	check_argv2_extension(char *argv2)
 {
-	int argv2_len;
+	int	argv2_len;
 
 	argv2_len = ft_strlen(argv2);
 	if (ft_strncmp(argv2, "--save", 6) == 0)
@@ -49,7 +49,7 @@ int 	check_argv2_extension(char *argv2)
 	return (false);
 }
 
-int 	check_screenshot_flag(int argc, char **argv)
+int	check_screenshot_flag(int argc, char **argv)
 {
 	if (argc != 3)
 		return (false);
@@ -58,9 +58,9 @@ int 	check_screenshot_flag(int argc, char **argv)
 	return (true);
 }
 
-int		debug_print_check_map(t_game *cube)
+int	debug_print_check_map(t_cube3D *cube)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (cube->map[i] != NULL)
@@ -71,9 +71,9 @@ int		debug_print_check_map(t_game *cube)
 	return (0);
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_game	cube;
+	t_cube3D	cube;
 
 	my_errors_init();
 	if (check_argcount_argv1_extension(argc, argv) == false)

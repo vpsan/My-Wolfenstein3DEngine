@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 01:58:08 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:49 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:30 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	game_init(t_game *cube)
+int	game_init(t_cube3D *cube)
 {
 	game_window_init(cube);
 	game_frame_init(cube);

@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:47:31 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:49 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:29 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	screenshot_creat_bmp_1(unsigned char *bmp_54arr, t_game *cube, int size)
+int	screenshot_creat_bmp_1(unsigned char *bmp_54arr, t_cube3D *cube, int size)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ int	screenshot_creat_bmp_1(unsigned char *bmp_54arr, t_game *cube, int size)
 	return (0);
 }
 
-int	screenshot_creat_bmp_2(unsigned char *bmp_54arr, t_game *cube)
+int	screenshot_creat_bmp_2(unsigned char *bmp_54arr, t_cube3D *cube)
 {
 	bmp_54arr[10] = (unsigned char)54;
 	bmp_54arr[14] = (unsigned char)40;
@@ -45,7 +45,7 @@ int	screenshot_creat_bmp_2(unsigned char *bmp_54arr, t_game *cube)
 	return (0);
 }
 
-int	screenshot_write_pixels_to_fd(int fd, t_game *cube)
+int	screenshot_write_pixels_to_fd(int fd, t_cube3D *cube)
 {
 	int				x;
 	int				y;
@@ -67,7 +67,7 @@ int	screenshot_write_pixels_to_fd(int fd, t_game *cube)
 	return (0);
 }
 
-int	screenshot_make_size(t_game *cube)
+int	screenshot_make_size(t_cube3D *cube)
 {
 	if (cube->map_prmtrs.win_width % 4)
 		cube->map_prmtrs.win_width = cube->map_prmtrs.win_width
@@ -75,7 +75,7 @@ int	screenshot_make_size(t_game *cube)
 	return (cube->map_prmtrs.win_width * cube->map_prmtrs.win_height + 54);
 }
 
-int	screenshot(t_game *cube)
+int	screenshot(t_cube3D *cube)
 {
 	int				fd;
 	unsigned char	bmp_54arr[54];

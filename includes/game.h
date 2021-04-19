@@ -6,7 +6,7 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:49 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:44 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,7 +156,7 @@ typedef struct s_sprts
 	int				color;
 }					t_sprts;
 
-typedef struct s_game
+typedef struct s_cube3D
 {
 	void			*mlx_ptr;
 	void			*win_ptr;
@@ -174,58 +174,58 @@ typedef struct s_game
 	double			*rcstng_sprts_zbuffer;
 	char			**map;
 	t_list			*head_lstmap;
-}					t_game;
+}					t_cube3D;
 
-int					game_init(t_game *cube);
+int					game_init(t_cube3D *cube);
 
-int					game_map_init(t_game *cube);
-int					game_map_prmtrs_init(t_game *cube);
-int					game_window_init(t_game *cube);
-int					game_frame_init(t_game *cube);
-int					game_player_init(t_game *cube);
-int					game_keys_init(t_game *cube);
-int					game_textures_init(t_game *cube);
-int					game_raycasting_init(t_game *cube);
-int					game_sprites_init(t_game *cube);
+int					game_map_init(t_cube3D *cube);
+int					game_map_prmtrs_init(t_cube3D *cube);
+int					game_window_init(t_cube3D *cube);
+int					game_frame_init(t_cube3D *cube);
+int					game_player_init(t_cube3D *cube);
+int					game_keys_init(t_cube3D *cube);
+int					game_textures_init(t_cube3D *cube);
+int					game_raycasting_init(t_cube3D *cube);
+int					game_sprites_init(t_cube3D *cube);
 
-int					game_start(t_game *cube, int argc);
+int					game_start(t_cube3D *cube, int argc);
 
-int					hook_press_on_keys(int key_code, t_game *cube);
-int					hook_press_off_keys(int key_code, t_game *cube);
-int					hook_close_window(t_game *cube);
-int					loop_hook_next_frame(t_game *cube);
+int					hook_press_on_keys(int key_code, t_cube3D *cube);
+int					hook_press_off_keys(int key_code, t_cube3D *cube);
+int					hook_close_window(t_cube3D *cube);
+int					loop_hook_next_frame(t_cube3D *cube);
 
-int					pre_rcstng_move_player(t_game *cube);
-int					move_w(t_game *cube);
-int					move_s(t_game *cube);
-int					move_a(t_game *cube);
-int					move_d(t_game *cube);
-int					turn_right(t_game *cube);
-int					turn_left(t_game *cube);
+int					pre_rcstng_move_player(t_cube3D *cube);
+int					move_w(t_cube3D *cube);
+int					move_s(t_cube3D *cube);
+int					move_a(t_cube3D *cube);
+int					move_d(t_cube3D *cube);
+int					turn_right(t_cube3D *cube);
+int					turn_left(t_cube3D *cube);
 
-int					pre_rcstng_draw_ceiling(t_game *cube);
-int					pre_rcstng_draw_floor(t_game *cube);
+int					pre_rcstng_draw_ceiling(t_cube3D *cube);
+int					pre_rcstng_draw_floor(t_cube3D *cube);
 
-int					rcstng(t_game *cube);
-int					rcstng_init_1(t_game *cube, int x_i);
-int					rcstng_init_2(t_game *cube);
-int					rcstng_while_hit_not_zero(t_game *cube);
-int					rcstng_calculate_distance(t_game *cube);
-int					rcstng_calculate_wallx(t_game *cube);
-int					rcstng_get_wall_tex(t_game *cube);
-int					rcstng_draw_wall(t_game *cube, int x);
+int					rcstng(t_cube3D *cube);
+int					rcstng_init_1(t_cube3D *cube, int x_i);
+int					rcstng_init_2(t_cube3D *cube);
+int					rcstng_while_hit_not_zero(t_cube3D *cube);
+int					rcstng_calculate_distance(t_cube3D *cube);
+int					rcstng_calculate_wallx(t_cube3D *cube);
+int					rcstng_get_wall_tex(t_cube3D *cube);
+int					rcstng_draw_wall(t_cube3D *cube, int x);
 
-int					sprts(t_game *cube);
-int					sprts_casting(t_game *cube);
-int					sprts_bubble_sort(t_game *cube);
-int					sprts_prmtrs_init(t_game *cube, int i);
-int					sprts_draw_prmtrs_calculate(t_game *cube);
-int					sprts_stripes_draw(t_game *cube);
-int					sprts_stripes(t_game *cube);
+int					sprts(t_cube3D *cube);
+int					sprts_casting(t_cube3D *cube);
+int					sprts_bubble_sort(t_cube3D *cube);
+int					sprts_prmtrs_init(t_cube3D *cube, int i);
+int					sprts_draw_prmtrs_calculate(t_cube3D *cube);
+int					sprts_stripes_draw(t_cube3D *cube);
+int					sprts_stripes(t_cube3D *cube);
 
 void				color_pixel_fill(t_frame_prmts *frame,
 						int x, int y, int color);
 
-int					screenshot(t_game *cube);
+int					screenshot(t_cube3D *cube);
 
 #endif

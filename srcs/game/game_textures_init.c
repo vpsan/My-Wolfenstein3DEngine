@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 01:59:33 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:30 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	game_textures_img_init(t_game *cube)
+int	game_textures_img_init(t_cube3D *cube)
 {
 	cube->no_txtr.img_ptr = mlx_xpm_file_to_image(cube->mlx_ptr,
 			cube->map_prmtrs.no_path, &(cube->no_txtr.width),
@@ -32,7 +32,7 @@ int	game_textures_img_init(t_game *cube)
 	return (0);
 }
 
-int	game_textures_adr_init(t_game *cube)
+int	game_textures_adr_init(t_cube3D *cube)
 {
 	cube->no_txtr.addr_ptr = mlx_get_data_addr(cube->no_txtr.img_ptr,
 			&cube->no_txtr.bits_per_pixel, &cube->no_txtr.size_line,
@@ -52,7 +52,7 @@ int	game_textures_adr_init(t_game *cube)
 	return (0);
 }
 
-int	check_img_ptr(t_game *cube)
+int	check_img_ptr(t_cube3D *cube)
 {
 	if (cube->no_txtr.img_ptr == NULL
 		|| cube->so_txtr.img_ptr == NULL
@@ -63,7 +63,7 @@ int	check_img_ptr(t_game *cube)
 	return (0);
 }
 
-int	check_addr_ptr(t_game *cube)
+int	check_addr_ptr(t_cube3D *cube)
 {
 	if (cube->no_txtr.addr_ptr == NULL
 		|| cube->so_txtr.addr_ptr == NULL
@@ -74,7 +74,7 @@ int	check_addr_ptr(t_game *cube)
 	return (0);
 }
 
-int	game_textures_init(t_game *cube)
+int	game_textures_init(t_cube3D *cube)
 {
 	game_textures_img_init(cube);
 	check_img_ptr(cube);

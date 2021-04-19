@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:47:43 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:49 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:30 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	sprts_stripes_draw(t_game *cube)
+int	sprts_stripes_draw(t_cube3D *cube)
 {
 	cube->sprts.d = (cube->sprts.y) * 256 - cube->map_prmtrs.win_height * 128
 		+ cube->sprts.sprite_height * 128;
@@ -26,7 +26,7 @@ int	sprts_stripes_draw(t_game *cube)
 	return (0);
 }
 
-int	sprts_stripes(t_game *cube)
+int	sprts_stripes(t_cube3D *cube)
 {
 	cube->sprts.stripe = cube->sprts.draw_start_x;
 	while (cube->sprts.stripe < cube->sprts.draw_end_x)
@@ -36,7 +36,8 @@ int	sprts_stripes(t_game *cube)
 				* cube->sprts_txtr.width / cube->sprts.sprite_width) / 256;
 		if (cube->sprts.transform_y > 0 && cube->sprts.stripe > 0
 			&& cube->sprts.stripe < cube->map_prmtrs.win_width
-			&& cube->sprts.transform_y < cube->rcstng_sprts_zbuffer[cube->sprts.stripe])
+			&& cube->sprts.transform_y
+			        < cube->rcstng_sprts_zbuffer[cube->sprts.stripe])
 		{
 			cube->sprts.y = cube->sprts.draw_start_y;
 			while (cube->sprts.y < cube->sprts.draw_end_y)

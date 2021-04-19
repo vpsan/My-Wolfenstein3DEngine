@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:48:17 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:30 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "prsng_vldtn.h"
 
-int 	prsng_sprts_txtr(char **arr_split_line, t_game *cube)
+int 	prsng_sprts_txtr(char **arr_split_line, t_cube3D *cube)
 {
 	if (cube->map_prmtrs.sprts_txtr_flag == 1)
 		my_exit(8);

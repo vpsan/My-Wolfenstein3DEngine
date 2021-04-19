@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:48:02 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:30 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	vldthn_color_clng_digits(char **arr_split_line, int exit_number)
 	return (0);
 }
 
-int	prsng_color_clng(char **arr_split_line, t_game *cube)
+int	prsng_color_clng(char **arr_split_line, t_cube3D *cube)
 {
 	int		red;
 	int		green;

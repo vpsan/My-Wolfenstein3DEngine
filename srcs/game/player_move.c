@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:00:10 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:49 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:29 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	move_w(t_game *cube)
+int	move_w(t_cube3D *cube)
 {
 	double	new_pos_x;
 	double	new_pos_y;
@@ -26,7 +26,7 @@ int	move_w(t_game *cube)
 	return (0);
 }
 
-int	move_s(t_game *cube)
+int	move_s(t_cube3D *cube)
 {
 	double	new_pos_x;
 	double	new_pos_y;
@@ -40,7 +40,7 @@ int	move_s(t_game *cube)
 	return (0);
 }
 
-int	move_d(t_game *cube)
+int	move_d(t_cube3D *cube)
 {
 	double	new_pos_x;
 	double	new_pos_y;
@@ -54,7 +54,7 @@ int	move_d(t_game *cube)
 	return (0);
 }
 
-int	move_a(t_game *cube)
+int	move_a(t_cube3D *cube)
 {
 	double	new_pos_x;
 	double	new_pos_y;

@@ -6,13 +6,13 @@
 /*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 18:05:42 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:30 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "prsng_vldtn.h"
 
-int	vldthn_summary_prsng_flags(t_game *cube)
+int	vldthn_summary_prsng_flags(t_cube3D *cube)
 {
 	if (cube->map_prmtrs.resolution_flag != 1
 		|| cube->map_prmtrs.no_txtr_flag != 1

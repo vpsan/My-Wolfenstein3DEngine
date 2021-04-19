@@ -6,16 +6,16 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:47:40 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:29 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	sprts_prmtrs_init(t_game *cube, int i)
+int	sprts_prmtrs_init(t_cube3D *cube, int i)
 {
 	cube->sprts.sprite_x = cube->sprts.pos_x[cube->sprts.sprite_order[i]]
-		- cube->plr.pos_x;//
+		- cube->plr.pos_x;
 	cube->sprts.sprite_y = cube->sprts.pos_y[cube->sprts.sprite_order[i]]
 		- cube->plr.pos_y;
 	cube->sprts.inv_det = 1.0 / (cube->plr.plane_x * cube->plr.dir_y

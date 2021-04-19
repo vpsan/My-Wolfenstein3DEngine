@@ -6,16 +6,15 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:00:24 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:49 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:35:07 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int 	rcstng(t_game *cube)
+int 	rcstng(t_cube3D *cube)
 {
 	int		x;
-//	double	rcstng_sprts_zbuffer[cube->map_prmtrs.win_width];
 
 	x = 0;
 	while (x < cube->map_prmtrs.win_width)

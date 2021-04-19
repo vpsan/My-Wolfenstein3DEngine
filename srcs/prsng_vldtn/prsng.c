@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:01:51 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:22:44 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:30 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "prsng_vldtn.h"
 
-int	prsng_creat_map(t_game **cube)
+int	prsng_creat_map(t_cube3D **cube)
 {
 	int		i;
 	t_list	*tmp;
@@ -29,7 +29,7 @@ int	prsng_creat_map(t_game **cube)
 	return (0);
 }
 
-int	prsng_creat_lstmap(char *line, t_game *cube)
+int	prsng_creat_lstmap(char *line, t_cube3D *cube)
 {
 	char	*new_line;
 
@@ -38,7 +38,7 @@ int	prsng_creat_lstmap(char *line, t_game *cube)
 	return (true);
 }
 
-int	prsng_fill_game(char *line, char **arr_split_line, t_game *cube)
+int	prsng_fill_game(char *line, char **arr_split_line, t_cube3D *cube)
 {
 	if (ft_memcmp(arr_split_line[0], "R", 1) == 0)
 		prsng_resolution(arr_split_line, cube);
@@ -61,7 +61,7 @@ int	prsng_fill_game(char *line, char **arr_split_line, t_game *cube)
 	return (0);
 }
 
-int	prsng_parse_line(char *line, t_game *cube)
+int	prsng_parse_line(char *line, t_cube3D *cube)
 {
 	char	**splited_line;
 
@@ -75,7 +75,7 @@ int	prsng_parse_line(char *line, t_game *cube)
 	return (0);
 }
 
-int	prsng_parse_file(int fd, t_game *cube)
+int	prsng_parse_file(int fd, t_cube3D *cube)
 {
 	char	*line;
 

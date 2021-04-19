@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:46:55 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:30 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	set_sprites_num(t_game *cube)
+int	set_sprites_num(t_cube3D *cube)
 {
 	int		num_sprites;
 	int		i;
@@ -38,7 +38,7 @@ int	set_sprites_num(t_game *cube)
 	return (num_sprites);
 }
 
-int	set_sprites_pos(t_game *cube)
+int	set_sprites_pos(t_cube3D *cube)
 {
 	int		i;
 	int		j;
@@ -64,7 +64,7 @@ int	set_sprites_pos(t_game *cube)
 	return (0);
 }
 
-int	game_sprites_init(t_game *cube)
+int	game_sprites_init(t_cube3D *cube)
 {
 	cube->sprts.num_sprites = set_sprites_num(cube);
 	set_sprites_pos(cube);

@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 01:59:21 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:49 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:26:44 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_free_double_ptr(double **ptr)
 	return (0);
 }
 
-int	hook_close_window(t_game *cube)
+int	hook_close_window(t_cube3D *cube)
 {
 	mlx_destroy_window(cube->mlx_ptr, cube->win_ptr);
 	ft_free_str_arr(&cube->map);
@@ -32,12 +32,11 @@ int	hook_close_window(t_game *cube)
 	ft_free_str(&cube->map_prmtrs.ea_path);
 	ft_free_str(&cube->map_prmtrs.sprts_path);
 	ft_free_double_ptr(&cube->rcstng_sprts_zbuffer);
-	//frame_free();
 	exit(0);
 	return (0);
 }
 
-int	hook_press_on_keys(int key_code, t_game *cube)
+int	hook_press_on_keys(int key_code, t_cube3D *cube)
 {
 	if (key_code == KEY_ESC)
 		hook_close_window(cube);
@@ -56,7 +55,7 @@ int	hook_press_on_keys(int key_code, t_game *cube)
 	return (0);
 }
 
-int	hook_press_off_keys(int key_code, t_game *cube)
+int	hook_press_off_keys(int key_code, t_cube3D *cube)
 {
 	if (key_code == KEY_W)
 		cube->keys.w = 0;
@@ -73,7 +72,7 @@ int	hook_press_off_keys(int key_code, t_game *cube)
 	return (0);
 }
 
-int	game_start(t_game *cube, int argc)
+int	game_start(t_cube3D *cube, int argc)
 {
 	mlx_do_key_autorepeatoff(cube->mlx_ptr);
 	mlx_hook(cube->win_ptr, 2, 0, hook_press_on_keys, cube);

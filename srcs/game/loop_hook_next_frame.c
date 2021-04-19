@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:00:00 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/19 12:34:52 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	pre_rcstng_move_player(t_game *cube)
+int	pre_rcstng_move_player(t_cube3D *cube)
 {
 	if (cube->keys.w == 1)
 		move_w(cube);
@@ -29,7 +29,7 @@ int	pre_rcstng_move_player(t_game *cube)
 	return (0);
 }
 
-int	pre_rcstng_draw_ceiling(t_game *cube)
+int	pre_rcstng_draw_ceiling(t_cube3D *cube)
 {
 	int	x;
 	int	y;
@@ -48,7 +48,7 @@ int	pre_rcstng_draw_ceiling(t_game *cube)
 	return (0);
 }
 
-int	pre_rcstng_draw_floor(t_game *cube)
+int	pre_rcstng_draw_floor(t_cube3D *cube)
 {
 	int	x;
 	int	y;
@@ -67,17 +67,17 @@ int	pre_rcstng_draw_floor(t_game *cube)
 	return (0);
 }
 
-int	pre_rcstng_malloc_zbuffer(t_game *cube)
+int	pre_rcstng_malloc_zbuffer(t_cube3D *cube)
 {
 	if (cube->rcstng_sprts_zbuffer == NULL)
 	{
 		cube->rcstng_sprts_zbuffer = (double *)
-				malloc(cube->map_prmtrs.win_width * sizeof(double));
+			malloc(cube->map_prmtrs.win_width * sizeof(double));
 	}
 	return (0);
 }
 
-int	loop_hook_next_frame(t_game *cube)
+int	loop_hook_next_frame(t_cube3D *cube)
 {
 	pre_rcstng_move_player(cube);
 	pre_rcstng_draw_ceiling(cube);
