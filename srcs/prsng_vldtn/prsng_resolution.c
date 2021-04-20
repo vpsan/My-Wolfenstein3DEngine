@@ -6,12 +6,11 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:48:12 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 16:28:52 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/20 16:23:11 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "prsng_vldtn.h"
-#include "my_errors.h"
 
 int	vldthn_resolution_maxmin(t_cube3D *cube)
 {

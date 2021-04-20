@@ -72,6 +72,7 @@ PRSNG_VLDTN		=	$(PRSNG_VLDTN_DIR)prsng_vldtn.c\
 					$(PRSNG_VLDTN_DIR)vldthn_make_rgb.c\
 					$(PRSNG_VLDTN_DIR)vldthn_count_points.c\
 					$(PRSNG_VLDTN_DIR)vldthn_summary_prsng_flags.c\
+					$(PRSNG_VLDTN_DIR)vldthn_empty_line.c\
 					$(PRSNG_VLDTN_DIR)vldthn_map.c\
 
 # *********************** GAME ************************************************ #

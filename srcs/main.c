@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 16:28:40 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/20 16:22:39 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ int	main(int argc, char **argv)
 	game_map_prmtrs_init(&cube);
 	if (prsng_vldtn(argv[1], &cube) == ERROR)
 		my_exit(2);
+	debug_print_check_map(&cube);
 	if (check_screenshot_flag(argc, argv) == true)
 		screenshot(&cube);
 	game_init(&cube);

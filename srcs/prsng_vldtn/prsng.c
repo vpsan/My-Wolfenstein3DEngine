@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:01:51 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 16:29:03 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/20 16:32:11 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,12 @@ int	prsng_creat_lstmap(char *line, t_cube3D *cube)
 {
 	char	*new_line;
 
-	if (vldthn_summary_prsng_flags(cube) == false)
-		my_exit(2);
 	new_line = ft_strdup(line);
 	ft_lstadd_back(&cube->head_lstmap, ft_lstnew(new_line));
 	return (true);
 }
 
-int	prsng_fill_game(char *line, char **arr_split_line, t_cube3D *cube)
+int	prsng_fill_map_prmtrs(char *line, char **arr_split_line, t_cube3D *cube)
 {
 	if (ft_memcmp(arr_split_line[0], "R", 2) == 0)
 		prsng_resolution(arr_split_line, cube);
@@ -58,6 +56,9 @@ int	prsng_fill_game(char *line, char **arr_split_line, t_cube3D *cube)
 		prsng_color_flr(arr_split_line, cube);
 	else if (ft_memcmp(arr_split_line[0], "C", 2) == 0)
 		prsng_color_clng(arr_split_line, cube);
+	else if (vldthn_summary_prsng_flags(cube) == false
+		&& vldthn_empty_line(line) != 0)
+		my_exit(2);
 	else
 		prsng_creat_lstmap(line, cube);
 	return (0);
@@ -70,7 +71,7 @@ int	prsng_parse_line(char *line, t_cube3D *cube)
 	splited_line = ft_split(line, ' ');
 	if (splited_line == NULL)
 		return (ERROR);
-	if (prsng_fill_game(line, splited_line, cube) == ERROR)
+	if (prsng_fill_map_prmtrs(line, splited_line, cube) == ERROR)
 		return (ERROR);
 	ft_free_str_arr(&splited_line);
 	ft_free_str(&line);

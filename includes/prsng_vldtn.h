@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:56:31 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 16:26:14 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/20 16:25:21 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include "libft.h"
 # include "get_next_line.h"
 # include "game.h"
+# include "my_errors.h"
 
 # define MIN_WIN_HIEGHT 10
 # define MIN_WIN_WIDTH 10
@@ -31,7 +32,8 @@ int		prsng_vldtn(char *argv_1, t_cube3D *cube);
 
 int		prsng_parse_file(int fd, t_cube3D *cube);
 int		prsng_parse_line(char *line, t_cube3D *cube);
-int		prsng_fill_game(char *line, char **arr_split_line, t_cube3D *cube);
+int		prsng_fill_map_prmtrs(char *line, char **arr_split_line,
+			t_cube3D *cube);
 int		prsng_creat_lstmap(char *line, t_cube3D *cube);
 int		prsng_creat_map(t_cube3D **cube);
 
@@ -50,5 +52,6 @@ int		vldthn_make_rgb(int *cube_map_prmtrs_color, int r, int g, int b);
 int		vldthn_count_points(char *str);
 int		vldthn_summary_prsng_flags(t_cube3D *cube);
 int		vldthn_map(t_cube3D *cube);
+int		vldthn_empty_line(char *line);
 
 #endif

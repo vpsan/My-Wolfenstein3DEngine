@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sprts.c                                            :+:      :+:    :+:   */
+/*   vldthn_empty_line.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/16 21:47:46 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/20 16:21:26 by bhatches         ###   ########.fr       */
+/*   Created: 2021/04/20 16:22:15 by bhatches          #+#    #+#             */
+/*   Updated: 2021/04/20 16:31:28 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game.h"
+#include "prsng_vldtn.h"
 
-int	sprts(t_cube3D *cube)
+int	vldthn_empty_line(char *line)
 {
 	int	i;
 
-	sprts_casting(cube);
 	i = 0;
-	while (i < cube->sprts.num_sprites)
+	if (line == NULL)
+		return (0);
+	if (*line == '\0')
+		return (0);
+	while (line[i] != '\0')
 	{
-		sprts_prmtrs_init(cube, i);
-		sprts_draw_prmtrs_calculate(cube);
-		sprts_stripes(cube);
+		if (line[i] != ' ')
+			return (1);
 		i++;
 	}
 	return (0);
