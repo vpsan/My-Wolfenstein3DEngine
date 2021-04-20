@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:48:12 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/20 16:23:11 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/20 18:29:22 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	prsng_resolution(char **arr_split_line, t_cube3D *cube)
 	vldthn_resolution_digits(arr_split_line, 3);
 	cube->map_prmtrs.win_width = ft_atoi(arr_split_line[1]);
 	cube->map_prmtrs.win_height = ft_atoi(arr_split_line[2]);
+	if (cube->map_prmtrs.win_width == 0 || cube->map_prmtrs.win_height == 0)
+		my_exit(3);
 	vldthn_resolution_maxmin(cube);
 	return (0);
 }

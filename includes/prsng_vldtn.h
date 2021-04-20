@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:56:31 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/20 16:25:21 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/20 18:44:36 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@
 # include "game.h"
 # include "my_errors.h"
 
-# define MIN_WIN_HIEGHT 10
-# define MIN_WIN_WIDTH 10
-# define MAX_WIN_HIEGHT 1480
-# define MAX_WIN_WIDTH 2560
+# define MIN_WIN_HIEGHT 1
+# define MIN_WIN_WIDTH 1
+# define MAX_WIN_HIEGHT 860
+# define MAX_WIN_WIDTH 1440
 
 int		prsng_vldtn(char *argv_1, t_cube3D *cube);
 
