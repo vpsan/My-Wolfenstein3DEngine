@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:00:00 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/20 18:29:22 by valery           ###   ########.fr       */
+/*   Updated: 2021/04/22 19:47:48 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ int	pre_rcstng_malloc_zbuffer(t_cube3D *cube)
 	{
 		cube->rcstng_sprts_zbuffer = (double *)
 			malloc(cube->map_prmtrs.win_width * sizeof(double));
+		if (cube->rcstng_sprts_zbuffer == NULL)
+			my_exit(0);
 	}
 	return (0);
 }
