@@ -105,14 +105,14 @@ To find the first wall that a ray encounters on its way, you have to let it star
 
 This image shows a top down overview of two such rays (red) that start at the player (green dot) and hit blue walls:
 
-![img_1.png](img_1.png)
+<img width="365" alt="image" src="https://user-images.githubusercontent.com/75123248/196048724-7fbf017a-4f9e-4b3b-8f02-f518cedb0062.png">
 
 ------------------------------------------------
 
 The algorithm is used in this project is based on DDA or "Digital Differential Analysis". DDA is a fast algorithm typically used on square grids to find which squares a line hits.
 It helps to find which squares of the map our ray hits, and stop the algorithm once a square that is a wall is hit.
 
-![img_2.png](img_2.png)
+<img width="361" alt="image" src="https://user-images.githubusercontent.com/75123248/196048738-523c2ba0-94e1-4837-94bc-4eb001336a06.png">
 
 ------------------------------------------------
 
@@ -124,11 +124,11 @@ First of all, we need to define:
 The camera plane should always be perpendicular on the direction vector. The camera plane represents the surface of the computer screen, while the direction vector is perpendicular on it and points inside the screen.
 The position of the player, which is a single point, is a point in front of the camera plane.
 
-![img_3.png](img_3.png)
+<img width="453" alt="image" src="https://user-images.githubusercontent.com/75123248/196048756-86a242ea-a4e2-4cee-be62-fe5529e50030.png">
 
 When the player rotates, the camera has to rotate, so both the direction vector and the plane vector have to be rotated. 
 
-![img_4.png](img_4.png)
+<img width="380" alt="image" src="https://user-images.githubusercontent.com/75123248/196048761-8f796443-fbc6-4019-acf3-74677f635e87.png">
 
 
 To rotate a vector, multiply it with the rotation matrix, like rotation matrix around the OZ:
@@ -170,27 +170,27 @@ The camera plane should always be perpendicular on the direction vector. Thats w
 ```C
 int	set_player_prmtrs(t_cube3D *cube, char plr_dir)
 {
-if (plr_dir == 'W')
-{
-set_dirx_diry(cube, 0, -1);
-set_planex_planey(cube, -0.66, 0);
-}
-if (plr_dir == 'E')
-{
-set_dirx_diry(cube, 0, 1);
-set_planex_planey(cube, 0.66, 0);
-}
-if (plr_dir == 'S')
-{
-set_dirx_diry(cube, 1, 0);
-set_planex_planey(cube, 0, -0.66);
-}
-if (plr_dir == 'N')
-{
-set_dirx_diry(cube, -1, 0);
-set_planex_planey(cube, 0, 0.66);
-}
-return (0);
+	if (plr_dir == 'W')
+	{
+		set_dirx_diry(cube, 0, -1);
+		set_planex_planey(cube, -0.66, 0);
+	}
+	if (plr_dir == 'E')
+	{
+		set_dirx_diry(cube, 0, 1);
+		set_planex_planey(cube, 0.66, 0);
+	}
+	if (plr_dir == 'S')
+	{
+		set_dirx_diry(cube, 1, 0);
+		set_planex_planey(cube, 0, -0.66);
+	}
+	if (plr_dir == 'N')
+	{
+		set_dirx_diry(cube, -1, 0);
+		set_planex_planey(cube, 0, 0.66);
+	}
+	return (0);
 }
 ```
 
@@ -226,7 +226,7 @@ cube->rcstg.map_y = (int)cube->plr.pos_y;
 
 Сonsider the drawing below and introduce some more variables:
 
-![img_5.png](img_5.png)
+<img width="346" alt="image" src="https://user-images.githubusercontent.com/75123248/196048775-114677b1-77fc-48a7-9b97-5bf7c0b38c01.png">
 
 sideDistX and sideDistY are initially the distance the ray has to travel from its start position to the first x-side and the first y-side. Later in the code they will be incremented while steps are taken.
 
